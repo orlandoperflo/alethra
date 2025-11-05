@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALETHRA - Join the Clarity Movement</title>
+    
+<script src="https://cdn.tailwindcss.com"></script>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // PRIMARY COLOR VARIABLE
+                        'klyr-red': '#E72F3C',
+                        // DARK TEXT COLOR VARIABLE
+                        'klyr-dark': '#1F2937',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .skiptranslate {
+            display: none!important;
+        }
+        /* ===================================================================
+        GLOBAL STYLING
+        =================================================================== */
+        
+        /* --- CONFIGURATION VARIABLES FOR INDENTATION & SPACING --- */
+        /* Adjust these values (in pixels) to control the mobile navigation layout */
+        :root { 
+            --mobile-indent-px: 32px; /* Indentation for sub-menu items */
+            --mobile-group-spacing-px: 18px; /* Vertical space *between* main mobile groups */
+            /* Padding for sub-links to make them cleaner (was 48px) */
+            --mobile-sub-item-py: 16px; /* Vertical padding (top/bottom) for mobile sub-links (controls space *between* sub-links) */
+            --site-max-width: 1100px; 
+            --nav-footer-max-width: 2000px; 
+        }
+
+        .nav-item:hover {
+            color: #E72F3C;
+        }
+        /* -------------------------------------------------- */
+
+        /* Ensures Inter font loads smoothly */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: white;
+        }
+
+        /* Custom class for standard content width */
+        .max-w-site {
+            max-width: var(--site-max-width);
+        }
+
+        /* Custom class for header and footer content width */
+        .max-w-super-wide {
+            max-width: var(--nav-footer-max-width);
+        }
+        
+        /* Applying variables to crisis cards */
+        .crisis-card-style {
+            background-color: #f9f9f9; 
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Applying variables to content box */
+        #content-box.content-box-border-style {
+            border: 4px solid var(--klyr-red) !important;
+        }
+
+        /* CRITICAL: HIDES GOOGLE TRANSLATE UI ELEMENTS */
+        #google_translate_element, 
+        .goog-te-gadget,
+        .goog-te-banner-frame {
+            display: none !important;
+            visibility: hidden !important;
+        }
+        body { top: 0px !important; position: relative !important; }
+
+        /* ===================================================================
+        NAVIGATION & DROPDOWN STYLES
+        =================================================================== */
+        /* Desktop Navigation Item Base Style */
+        /* FIX: Explicitly set base color to klyr-dark for full visibility of hover transition */
+        .nav-item {
+            @apply text-klyr-dark hover:text-klyr-red transition duration-150 whitespace-nowrap;
+        }
+        
+        /* Mobile Accordion Wrapper (Main Navigation Items) */
+        .mobile-dropdown-group {
+            @apply border-b border-gray-100;
+        }
+        /* Add spacing between the main navigation items, but not before the first one */
+        .mobile-dropdown-group:not(:first-child) {
+            margin-top: var(--mobile-group-spacing-px);
+        }
+        
+        /* Consolidated Mobile Item Base Style for Links and Buttons */
+        .mobile-nav-item-base {
+            @apply w-full flex justify-between items-center text-left text-base font-medium text-klyr-dark hover:text-klyr-red py-3 pr-0 transition duration-150;
+        }
+        
+        /* Mobile Collapsible Content Area (CRITICAL HIDING CSS) */
+        .mobile-dropdown-content {
+            /* max-height: 0 is the starting state */
+            max-height: 0; 
+            /* Opacity starts at 0 */
+            opacity: 0; 
+            pointer-events: none; 
+            /* Use the variable defined at the top for indentation */
+            padding-left: var(--mobile-indent-px);
+            /* transition-all includes max-height and opacity/transform */
+            @apply overflow-hidden bg-gray-50 transition-all duration-300; 
+        }
+        
+        /* Class added by JS when the accordion is OPEN */
+        .mobile-dropdown-content.open {
+            opacity: 1;
+            pointer-events: auto; 
+            /* max-height set inline by JS when opening, not here */
+        }
+
+        /* Mobile Sub-Item Links (Dropdown Links) - Base style, no border here */
+        .mobile-sub-item {
+            /* Now uses CSS variable for vertical padding (controlling space between sub-items) */
+            padding-top: var(--mobile-sub-item-py);
+            padding-bottom: var(--mobile-sub-item-py);
+            /* Base styles */
+            @apply block text-sm text-klyr-dark hover:text-klyr-red uppercase; 
+        }
+        
+        /* FIX: Apply border-top ONLY to sub-items that are NOT the first child.
+           This creates a single, clean dividing line BETWEEN items. */
+        .mobile-dropdown-content .mobile-sub-item:not(:first-child) {
+            @apply border-t border-gray-300; 
+        }
+
+
+        /* Form Input Styles */
+        .klyr-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 0.5rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .klyr-input:focus {
+            outline: none;
+            border-color: #E72F3C;
+            box-shadow: 0 0 0 3px rgba(231, 47, 60, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    
+<div id="google_translate_element"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                autoDisplay: false,
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+    
+<header class="bg-white shadow-sm sticky top-0 z-50" id="nav-placeholder"></header>
+    
+<div id="nav-mobil-placeholder"></div>
+    <main>
+        
+<div id="homepage-content">
+            
+<section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    
+<div class="space-y-6">
+                        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-snug">
+                            <span class="text-klyr-dark">CONFUSION KILLS.</span>
+                            <br>
+                            <span class="text-klyr-dark">CLARITY SAVES.</span>
+                        </h1>
+                        <p class="text-gray-600 text-lg">
+                            Every mislabeled package, every mixed dose, every preventable death — they all come from one cause: confusion. 
+                            <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> was built to end it.
+                        </p>
+                        <p class="text-gray-600 text-lg">
+                            Now we’re building a movement that unites industries, innovators, and individuals who believe truth should never be compromised.
+                        </p>
+                    </div>
+                    
+<div id="content-box" class="content-box-border-style rounded-lg flex h-full overflow-hidden"> 
+                        
+<img id="content-logo-img" class="content-logo-border w-full h-full object-cover rounded-lg" alt="Kare Image Placeholder" onerror="this.outerHTML = '<span class=\'text-6xl font-extrabold text-klyr-red\'>KLYR™</span>';">
+                    </div>
+                </div>
+            </section>
+            
+            
+<section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-0 text-center hidden">
+                
+<p class="font-bold text-klyr-dark italic  mx-auto" style="font-size: calc(1.05 * 1.25rem);">
+                    <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> is the world’s first clarity technology — designed to stop confusion before it happens.
+                </p>
+            </section>
+
+
+            
+<section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-12 pb-0 text-center">
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+                    THE CLARITY MOVEMENT
+                </h2>
+                
+                <!-- UPDATED PARAGRAPH: KLYR changed to ALEHTRA in red --><p class="text-gray-600 text-lg max-w-3xl mx-auto mb-10">
+                    The Clarity Movement is a global initiative led by <span class="text-klyr-red">ALETHRA</span> Inc. — connecting manufacturers, hospitals, regulators, and citizens through a shared mission: to eliminate confusion before it causes harm.
+                    Every scan, every verified product, every <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> device deployed creates a ripple effect — saving lives, reducing waste, and rebuilding trust between people and the products they depend on.
+                </p>
+                
+                <!-- CENTER TEXT LINE --><p class="font-bold text-klyr-dark italic mx-auto mb-4" style="font-size: calc(1.05 * 1.25rem);">
+                    This isn’t an upgrade. It’s a revolution in responsibility.
+                </p>
+
+                <!-- NEW HEADINGS ADDED HERE --><h3 class="text-3xl md:text-5xl font-extrabold text-klyr-dark uppercase mt-12 mb-8">
+                    WHO JOINS THE MOVEMENT
+                </h3>
+
+                <!-- NEW SECTION: 5 GROUPS (SIMPLIFIED AND CENTERED) --><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center mb-16">
+                    
+                    <!-- Group 1: Manufacturers --><div class="flex flex-col items-center p-4">
+                        <img src="https://plusbrand.com/wp-content/uploads/2025/11/8-Join-Clarity-Movement_Img_2-1.png" alt="Manufacturer Icon" class="max-h-16 max-w-16 h-auto w-auto mb-3">
+                        <h4 class="text-lg font-extrabold text-klyr-dark uppercase mb-2">MANUFACTURERS</h4>
+                        <p class="text-base text-gray-600">who believe safety and transparency should be built into every product.</p>
+                    </div>
+
+                    <!-- Group 2: Hospitals & Clinics --><div class="flex flex-col items-center p-4">
+                        <img src="https://plusbrand.com/wp-content/uploads/2025/11/8-Join-Clarity-Movement_Img_3-1.png" alt="Hospital Icon" class="max-h-16 max-w-16 h-auto w-auto mb-3">
+                        <h4 class="text-lg font-extrabold text-klyr-dark uppercase mb-2">HOSPITALS & CLINICS</h4>
+                        <p class="text-base text-gray-600">who want to protect every patient from human and systemic error.</p>
+                    </div>
+
+                    <!-- Group 3: Retailers & Distributors --><div class="flex flex-col items-center p-4">
+                        <img src="https://plusbrand.com/wp-content/uploads/2025/11/8-Join-Clarity-Movement_Img_4-1.png" alt="Retailer Icon" class="max-h-16 max-w-16 h-auto w-auto mb-3">
+                        <h4 class="text-lg font-extrabold text-klyr-dark uppercase mb-2">RETAILERS & DISTRIBUTORS</h4>
+                        <p class="text-base text-gray-600">who want verified clarity from factory to shelf.</p>
+                    </div>
+
+                    <!-- Wrapper for the last two groups to center them --><div class="md:col-span-3 flex flex-col sm:flex-row justify-center items-start gap-8">
+                        <!-- Group 4: Governments & Regulators --><div class="flex flex-col items-center p-4 w-full sm:w-1/2 md:w-1/3"> 
+                            <img src="https://plusbrand.com/wp-content/uploads/2025/11/8-Join-Clarity-Movement_Img_5-1.png" alt="Government Icon" class="max-h-16 max-w-16 h-auto w-auto mb-3">
+                            <h4 class="text-lg font-extrabold text-klyr-dark uppercase mb-2">GOVERNMENTS & REGULATORS</h4>
+                            <p class="text-base text-gray-600">who see clarity as the new standard of compliance.</p>
+                        </div>
+                        
+                        <!-- Group 5: Every Consumer --><div class="flex flex-col items-center p-4 w-full sm:w-1/2 md:w-1/3"> 
+                            <img src="https://plusbrand.com/wp-content/uploads/2025/11/8-Join-Clarity-Movement_Img_1-1-scaled.png" alt="Consumer Icon" class="max-h-16 max-w-16 h-auto w-auto mb-3">
+                            <h4 class="text-lg font-extrabold text-klyr-dark uppercase mb-2">EVERY CONSUMER</h4>
+                            <p class="text-base text-gray-600">who has the right to know what they eat, drink, or take is authentic and safe.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END NEW SECTION --><h3 class="text-3xl md:text-5xl font-extrabold text-klyr-dark uppercase mb-4">
+                    HOW TO JOIN
+                </h3>
+                
+                <!-- START UPDATED: HOW TO JOIN - 3 STEPS (1 & 2 side-by-side, 3 centered below) --><div class="mb-16">
+                    <!-- Row 1: Steps 1 and 2 (Side by side on LG screens) --><div class="flex flex-col lg:flex-row gap-8 lg:max-w-4xl mx-auto mb-8">
+                        
+                        <!-- Step 1: Beta Testers --><div class="flex-1 p-6 border-2 border-gray-100 rounded-xl hover:shadow-lg transition duration-300 text-left">
+                            <div class="flex items-start mb-4">
+                                <span class="text-6xl font-extrabold text-klyr-red mr-3 leading-none">1.</span>
+                                <h4 class="text-xl font-extrabold text-klyr-dark pt-3 leading-tight">
+                                    BETA TESTERS <span class="text-klyr-red">MYALETHRA™</span> PROGRAM
+                                </h4>
+                            </div>
+                            <p class="text-gray-600 mb-6 text-base">
+                                Be among the first to experience clarity in your hands. Test the app, verify real products, and become part of the first generation of clarity users.
+                            </p>
+                            <a href="#" id="join-myalethra-beta" class="flex items-center text-klyr-red font-bold text-sm uppercase group hover:text-red-700 transition duration-200">
+                                JOIN MYALETHRA™ BETA
+                                <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1 duration-200"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Step 2: Enterprise Partners --><div class="flex-1 p-6 border-2 border-gray-100 rounded-xl hover:shadow-lg transition duration-300 text-left">
+                            <div class="flex items-start mb-4">
+                                <span class="text-6xl font-extrabold text-klyr-red mr-3 leading-none">2.</span>
+                                <h4 class="text-xl font-extrabold text-klyr-dark pt-3 leading-tight">
+                                    ENTERPRISE PARTNERS <span class="text-klyr-red">ALETHRA ENTERPRISE™</span>
+                                </h4>
+                            </div>
+                            <p class="text-gray-600 mb-6 text-base">
+                                Integrate ALETHRA’s hardware and software directly into your manufacturing, distribution, or medical systems.
+                            </p>
+                            <a href="#" class="flex items-center text-klyr-red font-bold text-sm uppercase group hover:text-red-700 transition duration-200">
+                                REQUEST ENTERPRISE ACCESS
+                                <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1 duration-200"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Row 2: Step 3 (Centered below) --><div class="flex justify-center">
+                        <div class="w-full lg:w-4/6 xl:w-1/2 p-6 border-2 border-gray-100 rounded-xl hover:shadow-lg transition duration-300 text-left">
+                            <!-- Step 3: Regulatory Collaborators --><div class="flex items-start mb-4">
+                                <span class="text-6xl font-extrabold text-klyr-red mr-3 leading-none">3.</span>
+                                <h4 class="text-xl font-extrabold text-klyr-dark pt-3 leading-tight">
+                                    REGULATORY COLLABORATORS <span class="text-klyr-red">ALETHRACERTIFIED™</span>
+                                </h4>
+                            </div>
+                            <p class="text-gray-600 mb-6 text-base">
+                                Partner with ALETHRA™ to establish global standards for clarity, compliance, and safety.
+                            </p>
+                            <a href="#" class="flex items-center text-klyr-red font-bold text-sm uppercase group hover:text-red-700 transition duration-200">
+                                CONTACT STANDARDS TEAM
+                                <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1 duration-200"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END UPDATED: HOW TO JOIN - 3 STEPS --><h3 class="text-3xl md:text-5xl font-extrabold text-klyr-dark uppercase mb-10">
+                    EVERY SCAN SAVES LIVES
+                </h3>
+
+                <!-- START NEW CONTENT: PARAGRAPH, IMAGE, BUTTONS --><div class="max-w-3xl mx-auto text-center mb-12">
+                    <!-- New Centered Paragraph --><p class="text-xl text-gray-700 font-medium mb-10">
+                        Every time a <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> device verifies truth, a life, a product, or a planet is protected. That’s what joining the Clarity Movement means.
+                    </p>
+                    
+                    <!-- Centered Image Placeholder - UPDATED WITH NEW URL, SMALLER SIZE, AND SUBTLER SHADOW --><img 
+                        src="https://plusbrand.com/wp-content/uploads/2025/11/8-Join-Clarity-Movement_Img_1-1-scaled.png" 
+                        alt="A close-up view of a hand holding a clear, verified product, demonstrating the ALETHRA device in use." 
+                        class="w-3/4 max-w-xl rounded-xl mx-auto mb-10"
+                        onerror="this.onerror=null;this.src='https://placehold.co/1000x500/E72F3C/ffffff?text=Image+Unavailable'; this.alt='Image Unavailable';"
+                    >
+                    
+                    <!-- Three Red Buttons --><div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                        <a href="#beta-signup-page" class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider whitespace-nowrap text-center">
+                            JOIN THE MOVEMENT
+                        </a>
+                        <a href="#" class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider whitespace-nowrap text-center">
+                            BECOME A PARTNER
+                        </a>
+                        <!-- NOTE: Corrected KLYR™ to ALETHRA™ for brand consistency, but styled to appear red/dark like the user requested if KLYR™ was meant to be the trademark --><a href="#" class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider whitespace-nowrap text-center">
+                            SEE HOW <span class="text-white">ALETHRA™</span> WORKS
+                        </a>
+                    </div>
+                </div>
+                <!-- END NEW CONTENT: PARAGRAPH, IMAGE, BUTTONS --></section>
+
+            
+<!-- REMOVED SECTION: Crisis Cards Section Removed Here --><section class="bg-klyr-red py-10">
+                <div class="max-w-super-wide mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+                    <p class="text-xl sm:text-2xl mb-1">
+                     We’re not asking you to believe in technology.<br>
+ We’re asking you to believe in truth.
+                    </p>
+                   
+                </div>
+            </section>
+
+            
+<section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+                    JOIN THE CLARITY MOVEMENT
+                </h2>
+                
+<p class="text-xl text-gray-700 mb-8">
+                    Become one of the first to experience <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> in action
+                </p>
+                <button id="join-beta-btn" class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider">
+                    JOIN THE BETA
+                </button>
+                
+<div id="message-box" class="mt-8 bg-gray-100 border border-gray-300 text-gray-700 p-4 rounded-lg hidden max-w-sm">
+                    Thank you for your interest! The beta sign-up page is coming soon.
+                </div>
+            </section>
+        </div>
+        
+<section id="beta-signup-page" class="hidden max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            
+<div id="beta-form-container">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4">
+                    Join the Global <span class="text-klyr-red">Clarity Movement</span>
+                </h1>
+                <h2 class="text-xl text-gray-600 mb-8">
+                    Help stop the world’s largest silent catastrophe — confusion itself.
+                </h2>
+                
+                <p class="text-lg text-gray-700 mb-6">
+                    
+<span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> is now entering its global beta phase. We’re inviting consumers, brands, and industry leaders to join the mission to teach clarity to the world. Every scan, every test, every idea helps the AI learn and protect more lives. Be among the first to shape a future without confusion.
+                </p>
+
+                
+<form id="beta-registration-form" class="space-y-6 bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100">
+                    <div>
+                        <label for="full_name" class="block text-sm font-medium text-klyr-dark mb-1">Full Name</label>
+                        <input type="text" id="full_name" name="full_name" required class="klyr-input" placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-klyr-dark mb-1">Email</label>
+                        <input type="email" id="email" name="email" required class="klyr-input" placeholder="name@company.com">
+                    </div>
+                    <div>
+                        <label for="country" class="block text-sm font-medium text-klyr-dark mb-1">Country</label>
+                        <select id="country-select" name="country" required class="klyr-input appearance-none">
+                            <option value="" disabled selected>Select your country</option>
+                            
+</select>
+                    </div>
+                    <div>
+                        <label for="interest" class="block text-sm font-medium text-klyr-dark mb-1">Interest Category</label>
+                        <select id="interest" name="interest" required class="klyr-input appearance-none">
+                            <option value="" disabled selected>Choose a category</option>
+                            <option value="consumer">Consumer</option>
+                            <option value="brand">Brand Partner</option>
+                            <option value="investor">Investor or Collaborator</option>
+                        </select>
+                    </div>
+                    
+                    
+<div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 pt-4">
+                        <button type="submit" class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded shadow-lg transition duration-300 transform hover:scale-[1.02] uppercase tracking-wider flex-1">
+                            Register Now
+                        </button>
+                        <button type="button" id="share-movement-btn" class="bg-gray-200 hover:bg-gray-300 text-klyr-dark font-semibold py-3 px-6 rounded shadow transition duration-300 transform hover:scale-[1.02] uppercase tracking-wider flex-1">
+                            Share This Movement
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            
+<div id="beta-confirmation-message" class="hidden text-center bg-white p-10 rounded-xl border-4 border-klyr-red shadow-2xl">
+                <i class="fas fas fa-check-circle text-6xl text-klyr-red mb-6 animate-pulse"></i>
+                <h3 class="text-3xl font-extrabold text-klyr-dark mb-4">Registration Complete!</h3>
+                <p class="text-xl text-gray-700 font-medium italic">
+                    “Welcome to the Clarity Generation. Together we’re making history.”
+                </p>
+                <button type="button" id="back-to-home-btn" class="mt-8 bg-klyr-dark hover:bg-gray-700 text-white font-bold py-3 px-6 rounded shadow transition duration-300 uppercase tracking-wider">
+                    Back to Homepage
+                </button>
+            </div>
+        </section>
+        
+</main>
+
+    
+<div id="country-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] hidden opacity-0 modal-transition">
+        <div id="modal-content" class="bg-white rounded-2xl shadow-2xl w-11/12 max-w-4xl p-8 relative transform scale-95 modal-transition">
+            
+<button id="close-modal-btn" class="absolute top-6 left-6 text-gray-500 hover:text-klyr-red transition duration-150">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            
+<div id="country-list-container" class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-4 max-h-[70vh] overflow-y-auto pt-4 pb-2">
+                
+</div>
+        </div>
+    </div>
+    
+    
+ <div id="footer-placeholder"></div>
+
+<script src="/nav-logic.js"></script>
+<script src="/inject.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALETHRA - Press Center</title>
+    
+<script src="https://cdn.tailwindcss.com"></script>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // PRIMARY COLOR VARIABLE
+                        'klyr-red': '#E72F3C',
+                        // DARK TEXT COLOR VARIABLE (UPDATED TO #1F2937)
+                        'klyr-dark': '#1F2937', 
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+         /* =================================================================== */
+        /* FIX: Ensures cards align horizontally by normalizing description height */
+        /* =================================================================== */
+        @media (min-width: 768px) {
+            .description-alignment-fix {
+                /* Min-height large enough for 2 lines of text-lg */
+                min-height: 3.5rem; 
+            }
+        }
+        .skiptranslate {
+            display: none!important;
+        }
+        /* CRITICAL: Ensures 16:9 aspect ratio */
+        .aspect-16-9 {
+            aspect-ratio: 16 / 9;
+        }
+        /* ===================================================================
+        GLOBAL STYLING
+        =================================================================== */
+        
+        /* --- CONFIGURATION VARIABLES FOR INDENTATION & SPACING --- */
+        /* Adjust these values (in pixels) to control the mobile navigation layout */
+        :root { 
+            --mobile-indent-px: 32px; /* Indentation for sub-menu items */
+            --mobile-group-spacing-px: 18px; /* Vertical space *between* main mobile groups */
+            /* Padding for sub-links to make them cleaner (was 48px) */
+            --mobile-sub-item-py: 16px; /* Vertical padding (top/bottom) for mobile sub-links (controls space *between* sub-links) */
+            --site-max-width: 1100px; 
+            --nav-footer-max-width: 2000px; 
+        }
+
+        .nav-item:hover {
+            color: #E72F3C;
+        }
+        /* -------------------------------------------------- */
+
+        /* Ensures Inter font loads smoothly */
+        @import url('https://fonts.fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: white;
+        }
+
+        /* Custom class for standard content width */
+        .max-w-site {
+            max-width: var(--site-max-width);
+        }
+
+        /* Custom class for header and footer content width */
+        .max-w-super-wide {
+            max-width: var(--nav-footer-max-width);
+        }
+        
+        /* Applying variables to crisis cards */
+        .crisis-card-style {
+            background-color: #f9f9f9; 
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Applying variables to content box */
+        #content-box.content-box-border-style {
+            border: 4px solid var(--klyr-red) !important;
+        }
+
+        /* CRITICAL: HIDES GOOGLE TRANSLATE UI ELEMENTS */
+        #google_translate_element, 
+        .goog-te-gadget,
+        .goog-te-banner-frame {
+            display: none !important;
+            visibility: hidden !important;
+        }
+        body { top: 0px !important; position: relative !important; }
+
+        /* Custom style to justify all paragraphs within the main article body */
+        .article-body p {
+            text-align: justify;
+        }
+        
+        /* ===================================================================
+        NAVIGATION & DROPDOWN STYLES
+        =================================================================== */
+        /* Desktop Navigation Item Base Style */
+        /* FIX: Explicitly set base color to klyr-dark for full visibility of hover transition */
+        .nav-item {
+            @apply text-klyr-dark hover:text-klyr-red transition duration-150 whitespace-nowrap;
+        }
+        
+        /* Mobile Accordion Wrapper (Main Navigation Items) */
+        .mobile-dropdown-group {
+            @apply border-b border-gray-100;
+        }
+        /* Add spacing between the main navigation items, but not before the first one */
+        .mobile-dropdown-group:not(:first-child) {
+            margin-top: var(--mobile-group-spacing-px);
+        }
+        
+        /* Consolidated Mobile Item Base Style for Links and Buttons */
+        .mobile-nav-item-base {
+            @apply w-full flex justify-between items-center text-left text-base font-medium text-klyr-dark hover:text-klyr-red py-3 pr-0 transition duration-150;
+        }
+        
+        /* Mobile Collapsible Content Area (CRITICAL HIDING CSS) */
+        .mobile-dropdown-content {
+            /* max-height: 0 is the starting state */
+            max-height: 0; 
+            /* Opacity starts at 0 */
+            opacity: 0; 
+            pointer-events: none; 
+            /* Use the variable defined at the top for indentation */
+            padding-left: var(--mobile-indent-px);
+            /* transition-all includes max-height and opacity/transform */
+            @apply overflow-hidden bg-gray-50 transition-all duration-300; 
+        }
+        
+        /* Class added by JS when the accordion is OPEN */
+        .mobile-dropdown-content.open {
+            opacity: 1;
+            pointer-events: auto; 
+            /* max-height set inline by JS when opening, not here */
+        }
+
+        /* Mobile Sub-Item Links (Dropdown Links) - Base style, no border here */
+        .mobile-sub-item {
+            /* Now uses CSS variable for vertical padding (controlling space between sub-items) */
+            padding-top: var(--mobile-sub-item-py);
+            padding-bottom: var(--mobile-sub-item-py);
+            /* Base styles */
+            @apply block text-sm text-klyr-dark hover:text-klyr-red uppercase; 
+        }
+        
+        /* FIX: Apply border-top ONLY to sub-items that are NOT the first child.
+           This creates a single, clean dividing line BETWEEN items. */
+        .mobile-dropdown-content .mobile-sub-item:not(:first-child) {
+            @apply border-t border-gray-300; 
+        }
+
+        /* ===================================================================
+        CUSTOM STYLING FOR RED DOT LIST
+        =================================================================== */
+        .red-dot-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .red-dot-list li {
+            position: relative;
+            padding-left: 1.75rem; /* Space for the custom bullet */
+            margin-bottom: 1.5rem; /* Space between list items */
+        }
+        
+        /* Red dot styling (::before) */
+        .red-dot-list li::before {
+            content: '';
+            position: absolute;
+            left: 0.25rem; /* Slight shift to align with text */
+            top: 0.5rem; 
+            width: 12px; /* Slightly bigger dot */
+            height: 12px;
+            background-color: var(--klyr-red); /* Uses CSS variable */
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+
+    
+<div id="google_translate_element"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                autoDisplay: false,
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+    
+<header class="bg-white shadow-sm sticky top-0 z-50" id="nav-placeholder"></header>
+<div id="nav-mobil-placeholder"></div>
+    <main>
+        
+<article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <!-- 1. HEADER (Title) -->
+            <!-- UPDATED: Reduced pb-8 to pb-4 to move content below it closer -->
+            <header class="border-b border-gray-100 pb-4">
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight text-klyr-dark mb-4">
+                    ALEHTRA INC INTRODUCES A NEW CATEGORY OF SAFETY TECHNOLOGY — <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span>
+                </h1>
+            </header>
+            
+            <!-- Blog Post Image Placeholder -->
+            <!-- UPDATED: Reduced mt-4 to mt-2 to further reduce space from title -->
+            <figure class="mt-2 mb-8">
+                <div class="aspect-[16/9] w-full bg-gray-200 rounded-lg flex items-center justify-center border border-gray-300">
+                    <span class="text-gray-500 font-medium">Blog Post Image Placeholder (16:9)</span>
+                </div>
+                <!-- <figcaption class="text-center text-sm text-gray-500 mt-2">Optional image caption</figcaption> -->
+            </figure>
+
+            <!-- 2. BODY CONTENT -->
+            <!-- `article-body` class is targeted by CSS to justify paragraphs -->
+            <div class="space-y-8 text-lg text-gray-700 leading-relaxed article-body">
+                
+                <!-- Removed custom styling (text-xl font-medium text-klyr-dark) to match other paragraphs -->
+                <p>
+                    <strong>Mérida, Mexico — 05 November 2025 —</strong> <span class="text-klyr-red">ALETHRA</span> Inc. today announced the creation of a new global safety category: Clarity Technology™ — a revolutionary framework and platform designed to eliminate confusion before it causes harm.
+                </p>
+                
+                <p>
+                    For decades, industries have advanced regulation and automation, yet one critical cause of loss and injury remains largely unaddressed: human confusion.
+                </p>
+
+                <p>
+                    Every year, look-alike packaging, labeling mix-ups, and simple visual misreads cause billions in waste, millions of recalls, and thousands of preventable injuries and deaths.
+                </p>
+
+                <p>
+                    <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> changes that by introducing the world’s first clarity layer — an AI-driven system that sees, understands, and prevents confusion in real time.
+                </p>
+
+                <!-- Subtitle: A New Category in Safety -->
+                <h2 class="text-2xl font-bold text-klyr-dark pt-4">A New Category in Safety</h2>
+                <p>
+                    Clarity Technology™ is a completely new class of safety system focused on preventing confusion-based harm before it happens.
+                </p>
+                <p>
+                    It transforms compliance from a static requirement into a living, intelligent safety layer that ensures what people see, they truly understand.
+                </p>
+                <p class="italic">
+                    “Confusion is invisible until it causes harm,” said Chad Willis, Creator of <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> and CEO of <span class="text-klyr-red">ALETHRA</span> Inc.
+                </p>
+                <p class="italic">
+                    “We built <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> to make clarity visible — measurable, teachable, and universal. For the first time, safety can be proactive, not reactive.”
+                </p>
+
+                <!-- Subtitle: The MyALETHRA™ App — Clarity for Everyone -->
+                <h2 class="text-2xl font-bold text-klyr-dark pt-4">The <span class="text-klyr-red">MyALETHRA</span><span class="text-klyr-dark">™</span> App — Clarity for Everyone</h2>
+                <p>
+                    The <span class="text-klyr-red">MyALETHRA</span><span class="text-klyr-dark">™</span> app brings the power of industrial clarity directly to individuals.
+                </p>
+                <p>
+                    It allows users to scan and verify medications, beverages, or packaged foods instantly — confirming that what they are about to take, drink, or share is correct, safe, and unspoiled.
+                </p>
+                
+                <!-- Specific use cases list (using red-dot-list class for style) -->
+                <ul class="red-dot-list text-base md:text-lg space-y-3">
+                    <li><strong class="text-klyr-red">In healthcare:</strong> a patient or caregiver can verify that a medicine is the right dosage and not confused with a similar-looking product.</li>
+                    <li><strong class="text-klyr-red">In food safety:</strong> <span class="text-klyr-red">MyALETHRA</span><span class="text-klyr-dark">™</span> can identify freshness, spoilage indicators, or labeling inconsistencies before consumption.</li>
+                    <li><strong class="text-klyr-red">In everyday life:</strong> it helps prevent accidental mix-ups, such as drinking someone else’s beverage or consuming the wrong supplement.</li>
+                </ul>
+
+                <p>
+                    The app creates a personal safety layer, using the same recognition intelligence that powers <span class="text-klyr-red">ALETHRA</span>’s enterprise and regulatory systems. Every scan contributes anonymized data to strengthen the global clarity network — helping <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> learn and prevent confusion for everyone.
+                </p>
+                <p>
+                    <span class="text-klyr-red">MyALETHRA</span><span class="text-klyr-dark">™</span> is available in beta for Apple App Store and Google Play, with early access registration now open at <a href="http://www.MyALETHRA.com" class="text-klyr-red hover:underline font-semibold">www.<span class="text-klyr-red">MyALETHRA</span>.com</a>.
+                </p>
+
+                <!-- Subtitle: How the ALETHRA™ Platform Works -->
+                <h2 class="text-2xl font-bold text-klyr-dark pt-4">How the <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> Platform Works</h2>
+                <p>
+                    The <span class="text-klyr-red">ALETHRA</span> ecosystem connects multiple systems into one clarity infrastructure:
+                </p>
+                
+                <!-- Components List -->
+                <ul class="list-disc ml-6 space-y-2 text-base md:text-lg text-klyr-dark">
+                    <li><strong class="text-klyr-red"><span class="text-klyr-red">ALETHRACAM</span><span class="text-klyr-dark">™</span> / <span class="text-klyr-red">ALETHRASCAN</span><span class="text-klyr-dark">™</span></strong> – Visual verification tools for hospitals, factories, and field use.</li>
+                    <li><strong class="text-klyr-red"><span class="text-klyr-red">ALETHRACLOUD</span><span class="text-klyr-dark">™</span></strong> – Secure AI environment for learning, fingerprinting, and compliance data.</li>
+                    <li><strong class="text-klyr-red"><span class="text-klyr-red">MyALETHRA</span><span class="text-klyr-dark">™</span> App</strong> – Consumer and professional interface for real-world clarity verification.</li>
+                    <li><strong class="text-klyr-red"><span class="text-klyr-red">ALETHRACERTIFIED</span><span class="text-klyr-dark">™</span></strong> – Official trust seal verifying measurable Clarity • Compliance • Safety.</li>
+                </ul>
+
+                <p>
+                    Together, these components create a seamless clarity network — preventing errors, capturing clarity data, and driving safer decision-making across industries and households.
+                </p>
+                
+                <!-- Subtitle: Solving the Global Confusion Crisis -->
+                <h2 class="text-2xl font-bold text-klyr-dark pt-4">Solving the Global Confusion Crisis</h2>
+                <p>
+                    Confusion is one of the most pervasive and preventable threats to human safety:
+                </p>
+
+                <!-- Confusion risks list (using red-dot-list class for style) -->
+                <ul class="red-dot-list text-base md:text-lg space-y-3">
+                    <li><strong class="text-klyr-red">In hospitals,</strong> patients receive the wrong medicine because of similar packaging.</li>
+                    <li><strong class="text-klyr-red">In food and beverage,</strong> mislabeled or expired products are consumed daily.</li>
+                    <li><strong class="text-klyr-red">In manufacturing,</strong> batch confusion causes shutdowns, losses, and recalls.</li>
+                    <li><strong class="text-klyr-red">In homes,</strong> shared products and look-alike containers cause accidental misuse.</li>
+                </ul>
+
+                <p>
+                    <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> addresses all of these risks through one unified clarity framework — protecting people and products from production to personal use.
+                </p>
+                
+                <!-- Subtitle: Regulatory and Standards Alignment -->
+                <h2 class="text-2xl font-bold text-klyr-dark pt-4">Regulatory and Standards Alignment</h2>
+                <p>
+                    <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> complements existing safety systems and operates within recognized global frameworks, including:
+                </p>
+                
+                <!-- Alignment List -->
+                <ul class="list-disc ml-6 space-y-2 text-base md:text-lg text-klyr-dark">
+                    <li>FDA – Safe Use Initiative & Human Factors Engineering</li>
+                    <li>NIST – AI Risk Management Framework</li>
+                    <li>WHO – Global Patient Safety Challenge: Medication Without Harm</li>
+                    <li>GS1 – Product identity and traceability through Digital Link integration</li>
+                    <li>ISO & EPA – Quality, sustainability, and waste-reduction standards</li>
+                </ul>
+
+                <p>
+                    By aligning with these institutions, <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> provides regulators with the data and tools they have long sought — measurable proof of clarity and compliance in the real world.
+                </p>
+                
+                <!-- Subtitle: ALETHRACERTIFIED™ – The New Global Standard -->
+                <h2 class="text-2xl font-bold text-klyr-dark pt-4"><span class="text-klyr-red">ALETHRACERTIFIED</span><span class="text-klyr-dark">™</span> – The New Global Standard</h2>
+                <p>
+                    The <span class="text-klyr-red">ALETHRACERTIFIED</span><span class="text-klyr-dark">™</span> mark is the new global symbol of verified clarity.
+                </p>
+                <p>
+                    Products, facilities, and systems that meet <span class="text-klyr-red">ALETHRA</span>’s stringent benchmarks earn certification — representing the highest commitment to Clarity, Compliance, and Safety.
+                </p>
+                <p>
+                    The certification program establishes a universal standard that can be adopted by regulators, manufacturers, and brands worldwide.
+                </p>
+                
+                <!-- Subtitle: Human, Economic, and Environmental Impact -->
+                <h2 class="text-2xl font-bold text-klyr-dark pt-4">Human, Economic, and Environmental Impact</h2>
+                <p>
+                    Confusion costs more than money — it costs trust, time, and lives.
+                </p>
+                <p>
+                    By preventing misreads and mix-ups before they happen, <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> creates measurable impact across every level of society:
+                </p>
+
+                <!-- Impact List -->
+                <ul class="list-disc ml-6 space-y-2 text-base md:text-lg text-klyr-dark">
+                    <li>Lives saved through error prevention and safe medication use.</li>
+                    <li>Billions in cost savings from avoided recalls, claims, and waste.</li>
+                    <li>Environmental protection through reduced disposal of misidentified or spoiled goods.</li>
+                </ul>
+
+                <p class="italic">
+                    “<span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> isn’t just a platform — it’s a shift in how the world defines safety,” added Willis.
+                </p>
+                <p class="italic">
+                    “From hospitals to homes, from packaging to people, <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> brings clarity where it’s needed most.”
+                </p>
+                
+                <!-- ABOUT & CONTACT SECTION -->
+                <div class="pt-8 border-t border-gray-200 mt-10 space-y-6">
+                    
+                    <!-- Subtitle: About ALETHRA Sciences Inc. -->
+                    <h2 class="text-2xl font-bold text-klyr-dark">About <span class="text-klyr-red">ALETHRA</span> Inc.</h2>
+                    <p>
+                        <span class="text-klyr-red">ALETHRA</span> Inc. is a technology company redefining safety through clarity innovation.
+                    </p>
+                    <p>
+                        Founded by Chad Willis, <span class="text-klyr-red">ALETHRA</span> develops advanced AI systems that prevent confusion-based harm across healthcare, food and beverage, manufacturing, and consumer sectors.
+                    </p>
+                    <p>
+                        The company’s ecosystem — including <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span>, <span class="text-klyr-red">MyALETHRA</span><span class="text-klyr-dark">™</span>, <span class="text-klyr-red">ALETHRASCAN</span><span class="text-klyr-dark">™</span>, <span class="text-klyr-red">ALETHRACAM</span><span class="text-klyr-dark">™</span>, <span class="text-klyr-red">ALETHRACLOUD</span><span class="text-klyr-dark">™</span>, and <span class="text-klyr-red">ALETHRAAI</span><span class="text-klyr-dark">™</span> — establishes **Clarity Technology™** as the next global standard for safety and human trust.
+                    </p>
+
+                    <!-- Media Contact -->
+                    <h3 class="text-xl font-bold text-klyr-dark pt-4">Media Contact</h3>
+                    <div class="text-base text-gray-700 space-y-1">
+                        <p><strong>Press:</strong> <a href="mailto:media@myalethra.com" class="text-klyr-red hover:underline">media@myalethra.com</a></p>
+                        <p><strong>Regulatory & Partnerships:</strong> <a href="mailto:compliance@myalethra.com" class="text-klyr-red hover:underline">compliance@myalethra.com</a></p>
+                        <p><strong>Website:</strong> <a href="http://www.MyALETHRA.com" class="text-klyr-red hover:underline">www.<span class="text-klyr-red">MyALETHRA</span>.com</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </article> <!-- End of main article -->
+
+        <!-- NEW: Related News Section -->
+        <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-gray-100">
+            <h2 class="text-3xl font-extrabold text-klyr-dark mb-10">
+                Related News
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                
+                <!-- Related Post Card 1 -->
+                <div class="flex flex-col bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <a href="#" class="block mb-4 group">
+                        <div class="aspect-[16/9] w-full bg-gray-200 rounded-lg flex items-center justify-center border border-gray-300 group-hover:opacity-90 transition-opacity">
+                             <span class="text-gray-500 font-medium">Related Image (16:9)</span>
+                        </div>
+                    </a>
+                    <p class="text-sm text-klyr-red font-semibold uppercase mb-2">OCTOBER 2025</p>
+                    <h3 class="text-xl font-bold text-klyr-dark mb-3">
+                        <a href="#" class="hover:text-klyr-red transition-colors"><span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> Ecosystem Expands with New Partners</a>
+                    </h3>
+                    <p class="text-gray-600 text-base mb-4 description-alignment-fix">
+                        Discover the new partners joining the <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> clarity network to enhance safety in manufacturing and logistics.
+                    </p>
+                    <div class="mt-auto">
+                        <a href="#" class="font-bold text-klyr-red hover:underline">Read More &raquo;</a>
+                    </div>
+                </div>
+
+                <!-- Related Post Card 2 -->
+                <div class="flex flex-col bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <a href="#" class="block mb-4 group">
+                        <div class="aspect-[16/9] w-full bg-gray-200 rounded-lg flex items-center justify-center border border-gray-300 group-hover:opacity-90 transition-opacity">
+                            <span class="text-gray-500 font-medium">Related Image (16:9)</span>
+                        </div>
+                    </a>
+                    <p class="text-sm text-klyr-red font-semibold uppercase mb-2">SEPTEMBER 2025</p>
+                    <h3 class="text-xl font-bold text-klyr-dark mb-3">
+                        <a href="#" class="hover:text-klyr-red transition-colors">The <span class="text-klyr-red">MyALETHRA</span><span class="text-klyr-dark">™</span> App: A Deep Dive</a>
+                    </h3>
+                    <p class="text-gray-600 text-base mb-4 description-alignment-fix">
+                        A detailed look at how the <span class="text-klyr-red">MyALETHRA</span><span class="text-klyr-dark">™</span> app empowers consumers to verify products and prevent harm at home.
+                    </p>
+                    <div class="mt-auto">
+                        <a href="#" class="font-bold text-klyr-red hover:underline">Read More &raquo;</a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+</main>
+
+    
+<div id="country-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] hidden opacity-0 modal-transition">
+        <div id="modal-content" class="bg-white rounded-2xl shadow-2xl w-11/12 max-w-4xl p-8 relative transform scale-95 modal-transition">
+            
+<button id="close-modal-btn" class="absolute top-6 left-6 text-gray-500 hover:text-klyr-red transition duration-150">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            
+<div id="country-list-container" class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-4 max-h-[70vh] overflow-y-auto pt-4 pb-2">
+                
+</div>
+        </div>
+    </div>
+    
+    
+ <div id="footer-placeholder"></div>
+
+
+
+    
+<div id="country-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] hidden opacity-0 modal-transition">
+        <div id="modal-content" class="bg-white rounded-2xl shadow-2xl w-11/12 max-w-4xl p-8 relative transform scale-95 modal-transition">
+            
+<button id="close-modal-btn" class="absolute top-6 left-6 text-gray-500 hover:text-klyr-red transition duration-150">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            
+<div id="country-list-container" class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-4 max-h-[70vh] overflow-y-auto pt-4 pb-2">
+                
+</div>
+        </div>
+    </div>
+    
+    
+<script src="/nav-logic.js"></script>
+<script src="/inject.js"></script>
+
+</body>
+</html>

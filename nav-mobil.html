@@ -1,0 +1,75 @@
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-[90] transform translate-x-full transition-transform duration-300 md:hidden">
+
+  <div class="flex justify-end items-center h-16 border-b border-gray-100 px-6">
+    <button id="mobile-close-btn" type="button" class="text-gray-500 hover:text-klyr-red p-2 rounded-md focus:outline-none">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+  </div>
+
+  <nav class="py-4 space-y-0 px-6">
+
+    <div class="mobile-dropdown-group">
+      <a href="/confusion" class="mobile-nav-item-base">
+        <span>THE PROBLEM</span>
+      </a>
+    </div>
+
+    <div class="mobile-dropdown-group">
+      <a href="/solution" class="mobile-nav-item-base">
+        <span>THE SOLUTION</span>
+      </a>
+      <button data-dropdown-id="solution-dropdown-mobile" class="mobile-nav-item-base mobile-dropdown-toggle" aria-expanded="false">
+        <i class="fas fa-chevron-down text-sm transition-transform duration-300 dropdown-icon"></i>
+      </button>
+      <div id="solution-dropdown-mobile" class="mobile-dropdown-content">
+        <a href="/technology" class="mobile-sub-item">TECHNOLOGY</a>
+        <a href="/impact" class="mobile-sub-item">ECOSYSTEM</a>
+      </div>
+    </div>
+
+    <div class="mobile-dropdown-group">
+      <a href="/impact" class="mobile-nav-item-base">
+        <span>IMPACT</span>
+      </a>
+      <button data-dropdown-id="impact-dropdown-mobile" class="mobile-nav-item-base mobile-dropdown-toggle" aria-expanded="false">
+        <i class="fas fa-chevron-down text-sm transition-transform duration-300 dropdown-icon"></i>
+      </button>
+      <div id="impact-dropdown-mobile" class="mobile-dropdown-content">
+        <a href="/case" class="mobile-sub-item">CASE STUDIES</a>
+      </div>
+    </div>
+
+    <div class="mobile-dropdown-group">
+      <a href="" class="mobile-nav-item-base">
+        <span>ABOUT</span>
+      </a>
+      <button data-dropdown-id="about-dropdown-mobile" class="mobile-nav-item-base mobile-dropdown-toggle" aria-expanded="false">
+        <i class="fas fa-chevron-down text-sm transition-transform duration-300 dropdown-icon"></i>
+      </button>
+      <div id="about-dropdown-mobile" class="mobile-dropdown-content">
+        <a href="/regulatory" class="mobile-sub-item uppercase">REGULATORY & STANDARDS ENGAGEMENT</a>
+        <a href="/certified" class="mobile-sub-item">ALETHRACERTIFIED™</a>
+      </div>
+    </div>
+
+    <div class="mobile-dropdown-group">
+      <a href="/press" class="mobile-nav-item-base">
+        <span>PRESS & MEDIA</span>
+      </a>
+    </div>
+
+    <div class="mobile-dropdown-group">
+      <a id="mobile-join-movement" href="/join" class="mobile-nav-item-base font-bold text-klyr-dark justify-start">
+        <span>JOIN THE MOVEMENT</span>
+      </a>
+    </div>
+
+    <div class="mobile-dropdown-group border-none">
+      <a id="global-link-mobile" href="/global" class="mobile-nav-item-base justify-start pr-0">
+        <i class="fas fa-globe text-lg"></i>
+        <span>SELECT REGION / LANGUAGE</span>
+      </a>
+    </div>
+
+  </nav>
+</div>
