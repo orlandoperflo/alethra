@@ -1,4 +1,4 @@
-function initNavLogic() {
+  function initNavLogic() {
 
         
   
@@ -310,7 +310,10 @@ function initNavLogic() {
 
             // --- Country Modal Logic ---
 
-            function openModal() {
+            // FIX: Updated to accept event object and prevent default navigation
+            function openModal(e) { 
+                if (e) e.preventDefault(); // <-- CRITICAL FIX: Stops the <a> tag from navigating
+                
                 if (!mobileMenu.classList.contains('translate-x-full')) {
                     toggleMobileMenu(); // Close mobile menu if open
                 }
