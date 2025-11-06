@@ -82,21 +82,34 @@
             const closeModalBtn = document.getElementById('close-modal-btn');
             const countryListContainer = document.getElementById('country-list-container');
             const modalContent = document.getElementById('modal-content');
-            const globalIconDesktop = document.getElementById('global-icon-desktop');
-            const globalLinkMobile = document.getElementById('global-link-mobile');
+            // const globalIconDesktop = document.getElementById('global-icon-desktop'); // Removed, handled by HTML onclick
+            
 
+            // --- Navigation Elements for Scroll to Top ---
+            const navLogoLink = document.querySelector('header a[href="/"]');
+            
             // --- Mobile Menu Elements ---
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileCloseBtn = document.getElementById('mobile-close-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileDropdownTriggers = document.querySelectorAll('button[data-dropdown-id]');
+            const closeMobileMenuBtn = document.getElementById('close-mobile-menu-btn');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+            // Mobile Dropdown Elements
+            const solutionToggle = document.getElementById('mobile-solution-toggle');
+            const solutionDropdown = document.getElementById('mobile-solution-dropdown');
+            const solutionIcon = document.getElementById('mobile-solution-icon');
             
-            // --- Navigation Elements for Scroll to Top ---
-            const navLogoLink = document.getElementById('nav-logo-link');
+            const impactToggle = document.getElementById('mobile-impact-toggle');
+            const impactDropdown = document.getElementById('mobile-impact-dropdown');
+            const impactIcon = document.getElementById('mobile-impact-icon');
+            
+            const aboutToggle = document.getElementById('mobile-about-toggle');
+            const aboutDropdown = document.getElementById('mobile-about-dropdown');
+            const aboutIcon = document.getElementById('mobile-about-icon');
+
 
             // --- Helper Functions ---
 
-            // Custom alert message function (now uses the newly added message box)
+            // Custom alert message function
             function alertMessage(message, isError = false) {
                 if (messageBoxContent) {
                     messageBoxContent.textContent = message;
@@ -141,7 +154,7 @@
                     translatePage('en');
                     alertMessage(`Region set to GLOBAL. Content translated to ENGLISH.`);
                 }
-                closeOutModal();
+                closeOutModal(); // Close Country Modal
             }
             
             function checkAndApplyTranslationOnLoad() {
@@ -158,64 +171,6 @@
                     }
                 }
             }
-
-
-            // --- Mobile Accordion Logic (FIXED) ---
-
-            function closeAccordion(button, content, icon) { 
-                content.classList.remove('open');
-                icon.classList.remove('rotate-180');
-                button.setAttribute('aria-expanded', 'false'); 
-
-                content.style.maxHeight = content.scrollHeight + 'px'; 
-                
-                requestAnimationFrame(() => {
-                    content.style.maxHeight = '0px';
-                });
-            }
-
-            function openAccordion(button, content, icon) { 
-                content.classList.add('open');
-                content.style.maxHeight = content.scrollHeight + "px";
-                icon.classList.add('rotate-180');
-                button.setAttribute('aria-expanded', 'true'); 
-            }
-
-            function toggleAccordion(button) {
-                const targetId = button.getAttribute('data-dropdown-id');
-                const content = document.getElementById(targetId);
-                const icon = button.querySelector('.dropdown-icon');
-                
-                const isContentOpen = button.getAttribute('aria-expanded') === 'true';
-
-                // 1. Close all other open accordions
-                mobileDropdownTriggers.forEach(otherButton => {
-                    const otherContentId = otherButton.getAttribute('data-dropdown-id');
-                    const otherContent = document.getElementById(otherContentId);
-                    const otherIcon = otherButton.querySelector('.dropdown-icon');
-                    
-                    if (otherButton !== button && otherButton.getAttribute('aria-expanded') === 'true') {
-                        closeAccordion(otherButton, otherContent, otherIcon); 
-                    }
-                });
-                
-                // 2. Toggle the current accordion
-                if (isContentOpen) {
-                    closeAccordion(button, content, icon); 
-                } else {
-                    openAccordion(button, content, icon); 
-                }
-            }
-
-            // Initialize Accordion: Ensure all dropdowns start visually closed immediately
-            mobileDropdownTriggers.forEach(button => {
-                const contentId = button.getAttribute('data-dropdown-id');
-                const content = document.getElementById(contentId);
-                content.style.maxHeight = '0px'; 
-                button.setAttribute('aria-expanded', 'false'); 
-                button.addEventListener('click', () => toggleAccordion(button));
-            });
-            // --- End Mobile Accordion Logic ---
 
 
             // --- Initialization Functions ---
@@ -246,78 +201,21 @@
                 e.preventDefault(); 
                  window.scrollTo({ top: 0, behavior: 'smooth' });
             }
-            
+
             if (navLogoLink) {
                 navLogoLink.addEventListener('click', scrollToTop);
             }
             
             // Ensure JOIN THE MOVEMENT links scroll to top as well
-            const joinMovementLinks = document.querySelectorAll('#nav-join-movement, #mobile-join-movement');
+            const joinMovementLinks = document.querySelectorAll('a[href="/join"]');
             joinMovementLinks.forEach(el => el.addEventListener('click', scrollToTop));
-
-
-            // --- Mobile Menu Toggle Logic (Sidebar) ---
-            function toggleMobileMenu() {
-                const isMenuHidden = mobileMenu.classList.contains('translate-x-full');
-                
-                if (isMenuHidden) {
-                    // --- OPENING THE MENU ---
-                    mobileMenu.classList.remove('translate-x-full');
-                    document.body.classList.add('overflow-hidden');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-times text-xl"></i>'; // Change to X icon
-                } else {
-                    // --- CLOSING THE MENU (FIX APPLIED HERE) ---
-                    
-                    // 1. Check for and close all open mobile dropdowns immediately
-                    let wasAnyDropdownOpen = false;
-                    mobileDropdownTriggers.forEach(button => {
-                        const contentId = button.getAttribute('data-dropdown-id');
-                        const content = document.getElementById(contentId);
-                        
-                        if (button.getAttribute('aria-expanded') === 'true') {
-                            closeAccordion(button, content, button.querySelector('.dropdown-icon'));
-                            wasAnyDropdownOpen = true;
-                        }
-                    });
-
-                    // 2. Determine the necessary delay before sliding out the sidebar
-                    const delay = wasAnyDropdownOpen ? 310 : 0; 
-
-                    // 3. Slide the sidebar out AFTER the content has collapsed
-                    setTimeout(() => {
-                        mobileMenu.classList.add('translate-x-full');
-                        document.body.classList.remove('overflow-hidden');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>'; // Change back to hamburger icon
-                    }, delay);
-                }
-            }
-
-            if (mobileMenuBtn) { mobileMenuBtn.addEventListener('click', toggleMobileMenu); }
-            if (mobileCloseBtn) { mobileCloseBtn.addEventListener('click', toggleMobileMenu); }
-
-            // Consolidated link click listener: Close mobile menu when navigating (clicking an <a> tag)
-            if (mobileMenu) {
-                mobileMenu.addEventListener('click', (e) => {
-                    const target = e.target.closest('a'); 
-                    
-                    // Check if the clicked element is a link and not the globe link (which opens a modal)
-                    if (target && target.id !== 'global-link-mobile') {
-                        setTimeout(toggleMobileMenu, 100);
-                    }
-                });
-            }
 
 
             // --- Country Modal Logic ---
 
-            // FIX: Updated to accept event object and prevent default navigation
-            function openModal(e) { 
-                if (e) e.preventDefault(); // <-- CRITICAL FIX: Stops the <a> tag from navigating
+            window.openModal = function (e) { 
+                if (e) e.preventDefault(); 
                 
-                if (!mobileMenu.classList.contains('translate-x-full')) {
-                    toggleMobileMenu(); // Close mobile menu if open
-                }
-
                 countryModal.classList.remove('hidden');
                 countryModal.offsetHeight; 
                 countryModal.classList.add('opacity-100');
@@ -365,9 +263,7 @@
                 countryListContainer.appendChild(link);
             });
 
-            // Attach listener to Desktop Icon and Mobile Link
-            if (globalIconDesktop) { globalIconDesktop.addEventListener('click', openModal); }
-            if (globalLinkMobile) { globalLinkMobile.addEventListener('click', openModal); }
+            // Attach listener to Desktop Icon (now just the close button and backdrop)
             if (closeModalBtn) { closeModalBtn.addEventListener('click', closeOutModal); }
             
             // Close modal if user clicks on the backdrop
@@ -378,9 +274,74 @@
                     }
                 });
             }
-       
+            
+            
+            // --- MOBILE MENU LOGIC ---
+
+            // FIX: Attach to window object to make globally accessible for inline 'onclick' attributes
+            window.openMobileMenu = function (e) {
+                if (e) e.preventDefault();
+                mobileMenuOverlay.classList.remove('hidden');
+                mobileMenuOverlay.offsetHeight; // Trigger reflow
+                mobileMenuOverlay.classList.remove('opacity-0', 'translate-x-full'); // Start from RIGHT, hidden
+                mobileMenuOverlay.classList.add('opacity-100', 'translate-x-0'); // Slide to visible
+                document.body.classList.add('overflow-hidden');
+            }
+
+            // FIX: Attach to window object to make globally accessible for inline 'onclick' attributes
+            window.closeMobileMenu = function (e) {
+                if (e) e.preventDefault();
+                mobileMenuOverlay.classList.remove('opacity-100', 'translate-x-0');
+                mobileMenuOverlay.classList.add('opacity-0', 'translate-x-full'); // Slide back RIGHT, hidden
+                document.body.classList.remove('overflow-hidden');
+
+                // Hide completely after transition
+                setTimeout(() => {
+                    mobileMenuOverlay.classList.add('hidden');
+                }, 300); // Matches transition duration
+                
+                // Close all dropdowns when closing the main menu
+                closeDropdown(solutionToggle, solutionDropdown, solutionIcon);
+                closeDropdown(impactToggle, impactDropdown, impactIcon);
+                closeDropdown(aboutToggle, aboutDropdown, aboutIcon);
+            }
+
+            // Helper function to toggle max-height and rotation for dropdowns
+            function toggleDropdown(toggleBtnEl, dropdownEl, iconEl) {
+                const isOpen = dropdownEl.classList.contains('max-h-40'); // Max height used for transition
+
+                if (isOpen) {
+                    closeDropdown(toggleBtnEl, dropdownEl, iconEl);
+                } else {
+                    // Close other dropdowns for accordion effect
+                    if (dropdownEl !== solutionDropdown) closeDropdown(solutionToggle, solutionDropdown, solutionIcon);
+                    if (dropdownEl !== impactDropdown) closeDropdown(impactToggle, impactDropdown, impactIcon);
+                    if (dropdownEl !== aboutDropdown) closeDropdown(aboutToggle, aboutDropdown, aboutIcon);
+                    
+                    // Open current dropdown
+                    dropdownEl.classList.remove('max-h-0', 'opacity-0');
+                    dropdownEl.classList.add('max-h-40', 'opacity-100'); // max-h-40 is arbitrary but large enough
+                    iconEl.classList.add('rotate-180');
+                    toggleBtnEl.classList.add('bg-gray-100'); // <--- NEW: Add gray background for active state
+                }
+            }
+            
+            function closeDropdown(toggleBtnEl, dropdownEl, iconEl) {
+                 dropdownEl.classList.remove('max-h-40', 'opacity-100');
+                 dropdownEl.classList.add('max-h-0', 'opacity-0');
+                 iconEl.classList.remove('rotate-180');
+                 toggleBtnEl.classList.remove('bg-gray-100'); // <--- NEW: Remove gray background
+            }
+
+            // Event Listeners - now referencing the functions attached to the window object
+            if (mobileMenuBtn) { mobileMenuBtn.addEventListener('click', window.openMobileMenu); }
+            if (closeMobileMenuBtn) { closeMobileMenuBtn.addEventListener('click', window.closeMobileMenu); }
+            
+            // Dropdown Toggles (UPDATED to pass the toggle button element)
+            if (solutionToggle) { solutionToggle.addEventListener('click', () => toggleDropdown(solutionToggle, solutionDropdown, solutionIcon)); }
+            if (impactToggle) { impactToggle.addEventListener('click', () => toggleDropdown(impactToggle, impactDropdown, impactIcon)); } 
+            if (aboutToggle) { aboutToggle.addEventListener('click', () => toggleDropdown(aboutToggle, aboutDropdown, aboutIcon)); }
+
 
    
 } // ← this closes the function properly
-
-
