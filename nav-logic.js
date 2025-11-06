@@ -1,4 +1,4 @@
-  function initNavLogic() {
+ function initNavLogic() {
 
         
   
@@ -196,19 +196,8 @@
 
             
             // --- Simple Page Navigation/Scroll to Top ---
-
-            function scrollToTop(e) {
-                e.preventDefault(); 
-                 window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
-            if (navLogoLink) {
-                navLogoLink.addEventListener('click', scrollToTop);
-            }
-            
-            // Ensure JOIN THE MOVEMENT links scroll to top as well
-            const joinMovementLinks = document.querySelectorAll('a[href="/join"]');
-            joinMovementLinks.forEach(el => el.addEventListener('click', scrollToTop));
+            // FIX: Removed scrollToTop function and listeners to restore native link behavior for Logo and /join links
+            // This ensures the Logo always navigates to / and mobile links navigate correctly.
 
 
             // --- Country Modal Logic ---
@@ -290,7 +279,9 @@
 
             // FIX: Attach to window object to make globally accessible for inline 'onclick' attributes
             window.closeMobileMenu = function (e) {
-                if (e) e.preventDefault();
+                // FIX: Removed e.preventDefault() to allow the anchor links to execute their href attribute
+                // if (e) e.preventDefault(); 
+                
                 mobileMenuOverlay.classList.remove('opacity-100', 'translate-x-0');
                 mobileMenuOverlay.classList.add('opacity-0', 'translate-x-full'); // Slide back RIGHT, hidden
                 document.body.classList.remove('overflow-hidden');
@@ -345,3 +336,4 @@
 
    
 } // ← this closes the function properly
+
