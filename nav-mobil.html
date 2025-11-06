@@ -1,76 +1,104 @@
-<div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-[90] transform translate-x-full transition-transform duration-300 md:hidden">
+<!-- Mobile Menu Overlay (Initial state hidden, fixed to half screen, slides from right) --><div id="mobile-menu-overlay" class="fixed inset-y-0 right-0 w-1/2 h-full bg-white z-[90] mobile-menu-transition hidden opacity-0 translate-x-full">
+        
+        <!-- Close Button --><button id="close-mobile-menu-btn" class="absolute top-4 right-4 p-3 text-klyr-dark hover:text-klyr-red transition z-[95]">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+        
+        <!-- Navigation List -->
+        <nav class="flex flex-col h-full pt-16 pb-8 overflow-y-auto space-y-0">
+            
+            <!-- Item 1: THE PROBLEM (Standalone) -->
+            <div class="w-full px-4">
+                <a href="/confusion" class="block text-base font-normal py-0.5 text-klyr-dark hover:text-klyr-red transition duration-150" onclick="closeMobileMenu()">
+                    THE PROBLEM
+                </a>
+            </div>
 
-  <div class="flex justify-end items-center h-16 border-b border-gray-100 px-6">
-    <button id="mobile-close-btn" type="button" class="text-gray-500 hover:text-klyr-red p-2 rounded-md focus:outline-none">
-      <i class="fas fa-times text-xl"></i>
-    </button>
-  </div>
+            <!-- Item 2: THE SOLUTION (Dropdown) -->
+            <div class="w-full px-4">
+                 <!-- Main Row: Text on left (now link), Toggle Icon Button on right -->
+                 <!-- IMPORTANT: The anchor link now handles navigation, the button handles the dropdown toggle -->
+                 <div class="flex justify-between items-center py-0.5">
+                    <a href="/solution" class="text-base font-normal text-klyr-dark hover:text-klyr-red transition duration-150" onclick="closeMobileMenu()">
+                        THE SOLUTION
+                    </a>
+                    <button id="mobile-solution-toggle" class="mobile-toggle-btn text-klyr-dark hover:text-klyr-red transition duration-150 w-7 h-7 rounded-full flex items-center justify-center mr-1">
+                        <i id="mobile-solution-icon" class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                </div>
+                 <!-- Sub-menu: Updated ECOSYSTEM link to /impact -->
+                <div id="mobile-solution-dropdown" class="mobile-dropdown-content overflow-hidden max-h-0 opacity-0 pl-4">
+                    <div class="flex flex-col space-y-0 py-0.5">
+                        <a href="/technology" class="text-base text-klyr-dark font-normal hover:text-klyr-red transition duration-150 uppercase py-0.5" onclick="closeMobileMenu()">Technology</a>
+                        <a href="/impact" class="text-base text-klyr-dark font-normal hover:text-klyr-red transition duration-150 uppercase py-0.5" onclick="closeMobileMenu()">Ecosystem</a>
+                    </div>
+                </div>
+            </div>
 
-  <nav class="py-4 space-y-0 px-6">
+            <!-- Item 3: IMPACT (Dropdown) -->
+            <div class="w-full px-4">
+                 <!-- Main Row: Text on left (now link), Toggle Icon Button on right -->
+                 <div class="flex justify-between items-center py-0.5">
+                    <a href="/impact" class="text-base font-normal text-klyr-dark hover:text-klyr-red transition duration-150" onclick="closeMobileMenu()">
+                        IMPACT
+                    </a>
+                    <button id="mobile-impact-toggle" class="mobile-toggle-btn text-klyr-dark hover:text-klyr-red transition duration-150 w-7 h-7 rounded-full flex items-center justify-center mr-1">
+                        <i id="mobile-impact-icon" class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                </div>
+                <!-- Sub-menu: Text color changed to klyr-dark -->
+                <div id="mobile-impact-dropdown" class="mobile-dropdown-content overflow-hidden max-h-0 opacity-0 pl-4">
+                    <div class="flex flex-col space-y-0 py-0.5">
+                        <a href="/case" class="text-base text-klyr-dark font-normal hover:text-klyr-red transition duration-150 uppercase py-0.5" onclick="closeMobileMenu()">CASE STUDIES</a>
+                    </div>
+                </div>
+            </div>
 
-    <div class="mobile-dropdown-group">
-      <a href="/confusion" class="mobile-nav-item-base">
-        <span>THE PROBLEM</span>
-      </a>
+            <!-- Item 4: ABOUT (Dropdown) -->
+            <div class="w-full px-4">
+                 <!-- Main Row: Text on left (now link), Toggle Icon Button on right -->
+                 <div class="flex justify-between items-center py-0.5">
+                    <a href="/about" class="text-base font-normal text-klyr-dark hover:text-klyr-red transition duration-150" onclick="closeMobileMenu()">
+                        ABOUT
+                    </a>
+                    <button id="mobile-about-toggle" class="mobile-toggle-btn text-klyr-dark hover:text-klyr-red transition duration-150 w-7 h-7 rounded-full flex items-center justify-center mr-1">
+                        <i id="mobile-about-icon" class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                </div>
+                <!-- Sub-menu: Text color changed to klyr-dark -->
+                <div id="mobile-about-dropdown" class="mobile-dropdown-content overflow-hidden max-h-0 opacity-0 pl-4">
+                    <div class="flex flex-col space-y-0 py-0.5">
+                        <a href="/regulatory" class="text-base text-klyr-dark font-normal hover:text-klyr-red transition duration-150 uppercase py-0.5" onclick="closeMobileMenu()">Regulatory & Standards Engagement</a>
+                        <a href="/certified" class="text-base text-klyr-dark font-normal hover:text-klyr-red transition duration-150 uppercase py-0.5" onclick="closeMobileMenu()">ALETHRACERTIFIED™</a>
+                        <a href="/global" class="text-base text-klyr-dark font-normal hover:text-klyr-red transition duration-150 uppercase py-0.5" onclick="closeMobileMenu()">GLOBAL INITIATIVE</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 5: PRESS & MEDIA (Standalone) -->
+            <div class="w-full px-4">
+                <a href="/press" class="block text-base font-normal py-0.5 text-klyr-dark hover:text-klyr-red transition duration-150" onclick="closeMobileMenu()">
+                    PRESS & MEDIA
+                </a>
+            </div>
+
+            <!-- Item 6: JOIN THE MOVEMENT (Standalone, Bold) -->
+            <!-- Text color changed from red to klyr-dark, hover is red -->
+            <div class="w-full px-4"> 
+                <a href="/join" class="block text-base font-bold py-0.5 text-klyr-dark hover:text-klyr-red transition duration-150" onclick="closeMobileMenu()">
+                    JOIN THE MOVEMENT
+                </a>
+            </div>
+
+            <!-- Item 7: Select Region / Language (Relocated Globe Icon) -->
+            <!-- FIX: Removed mt-2, pt-4, and border-t to normalize spacing -->
+            <!-- Text color changed from gray-500 to klyr-dark -->
+            <div class="w-full px-4"> 
+                <button id="mobile-global-toggle" class="text-base font-normal py-0.5 text-klyr-dark hover:text-klyr-red transition duration-150 flex items-center w-full justify-start" onclick="closeMobileMenu(); openModal();">
+                    <i class="fas fa-globe text-base mr-2"></i>
+                    Select Region / Language
+                </button>
+            </div>
+
+        </nav>
     </div>
-
-    <div class="mobile-dropdown-group">
-      <a href="/solution" class="mobile-nav-item-base">
-        <span>THE SOLUTION</span>
-      </a>
-      <button data-dropdown-id="solution-dropdown-mobile" class="mobile-nav-item-base mobile-dropdown-toggle" aria-expanded="false">
-        <i class="fas fa-chevron-down text-sm transition-transform duration-300 dropdown-icon"></i>
-      </button>
-      <div id="solution-dropdown-mobile" class="mobile-dropdown-content">
-        <a href="/technology" class="mobile-sub-item">TECHNOLOGY</a>
-        <a href="/impact" class="mobile-sub-item">ECOSYSTEM</a>
-      </div>
-    </div>
-
-    <div class="mobile-dropdown-group">
-      <a href="/impact" class="mobile-nav-item-base">
-        <span>IMPACT</span>
-      </a>
-      <button data-dropdown-id="impact-dropdown-mobile" class="mobile-nav-item-base mobile-dropdown-toggle" aria-expanded="false">
-        <i class="fas fa-chevron-down text-sm transition-transform duration-300 dropdown-icon"></i>
-      </button>
-      <div id="impact-dropdown-mobile" class="mobile-dropdown-content">
-        <a href="/case" class="mobile-sub-item">CASE STUDIES</a>
-      </div>
-    </div>
-
-    <div class="mobile-dropdown-group">
-      <a href="" class="mobile-nav-item-base">
-        <span>ABOUT</span>
-      </a>
-      <button data-dropdown-id="about-dropdown-mobile" class="mobile-nav-item-base mobile-dropdown-toggle" aria-expanded="false">
-        <i class="fas fa-chevron-down text-sm transition-transform duration-300 dropdown-icon"></i>
-      </button>
-      <div id="about-dropdown-mobile" class="mobile-dropdown-content">
-        <a href="/regulatory" class="mobile-sub-item uppercase">REGULATORY & STANDARDS ENGAGEMENT</a>
-        <a href="/certified" class="mobile-sub-item">ALETHRACERTIFIED™</a>
-        <a href="/global" class="mobile-sub-item">GLOBAL INITIATIVE</a>
-      </div>
-    </div>
-
-    <div class="mobile-dropdown-group">
-      <a href="/press" class="mobile-nav-item-base">
-        <span>PRESS & MEDIA</span>
-      </a>
-    </div>
-
-    <div class="mobile-dropdown-group">
-      <a id="" href="/join" class="mobile-nav-item-base font-bold text-klyr-dark justify-start">
-        <span>JOIN THE MOVEMENT</span>
-      </a>
-    </div>
-
-    <div class="mobile-dropdown-group border-none">
-      <a id="global-link-mobile" href="" class="mobile-nav-item-base justify-start pr-0">
-        <i class="fas fa-globe text-lg"></i>
-        <span>SELECT REGION / LANGUAGE</span>
-      </a>
-    </div>
-
-  </nav>
-</div>
