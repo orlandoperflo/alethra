@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALETHRA - Join the Clarity Movement</title>
+    <title>ALETHRA - Media Kit</title>
     
 <script src="https://cdn.tailwindcss.com"></script>
     
@@ -17,8 +17,11 @@
                     colors: {
                         // PRIMARY COLOR VARIABLE
                         'klyr-red': '#E72F3C',
-                        // DARK TEXT COLOR VARIABLE
-                        'klyr-dark': '#1F2937',
+                        // DARK TEXT COLOR VARIABLE (UPDATED TO #1F2937)
+                        'klyr-dark': '#1F2937', 
+                        // Added for Apple-like borders/backgrounds
+                        'apple-gray-light': '#f5f5f7', 
+                        'apple-gray-dark': '#d1d1d6',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -28,8 +31,6 @@
         }
     </script>
     <style>
-    
-
          /* =================================================================== */
         /* FIX: Ensures cards align horizontally by normalizing description height */
         /* =================================================================== */
@@ -63,10 +64,12 @@
         /* -------------------------------------------------- */
 
         /* Ensures Inter font loads smoothly */
-        @import url('https://fonts.fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
             background-color: white;
+            /* Added smooth scroll for anchor links */
+            scroll-behavior: smooth;
         }
 
         /* Custom class for standard content width */
@@ -128,7 +131,7 @@
             max-height: 0; 
             /* Opacity starts at 0 */
             opacity: 0; 
-  
+      
             /* Use the variable defined at the top for indentation */
             padding-left: var(--mobile-indent-px);
             /* transition-all includes max-height and opacity/transform */
@@ -157,6 +160,46 @@
             @apply border-t border-gray-300; 
         }
 
+        /* ===================================================================
+        CUSTOM STYLING FOR RED DOT LIST
+        =================================================================== */
+        .red-dot-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .red-dot-list li {
+            position: relative;
+            padding-left: 1.75rem; /* Space for the custom bullet */
+            margin-bottom: 1.5rem; /* Space between list items */
+        }
+        
+        /* Red dot styling (::before) */
+        .red-dot-list li::before {
+            content: '';
+            position: absolute;
+            left: 0.25rem; /* Slight shift to align with text */
+            top: 0.5rem; 
+            width: 12px; /* Slightly bigger dot */
+            height: 12px;
+            background-color: var(--klyr-red); /* Uses CSS variable */
+            border-radius: 50%;
+        }
+        
+        /* ===================================================================
+        FEATURE CARD STYLES
+        =================================================================== */
+        /* Style for the three smaller cards under 'Outcomes' */
+        .sustainability-card {
+            @apply bg-white p-8 rounded-3xl shadow-xl border border-gray-100 transition duration-300 hover:shadow-2xl hover:border-klyr-red/50;
+        }
+
+        /* Style for the two larger, premium, 'glass-like' feature panels */
+        .premium-panel {
+            @apply bg-white p-6 sm:p-10 rounded-3xl shadow-2xl border border-gray-100/50 transition duration-300 transform hover:scale-[1.01] hover:shadow-3xl;
+            cursor: default; /* ADDED: Ensures standard cursor instead of text-select I-beam */
+        }
+
     </style>
 </head>
 <body>
@@ -175,112 +218,105 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
-    
 <header class="bg-white shadow-sm sticky top-0 z-50" id="nav-placeholder"></header>
-
     
 <div id="nav-mobil-placeholder"></div>
-
+ 
     <main class="fade-in-section">
         
 <div id="homepage-content">
-             <!-- Section 1: Hero - Confusion Costs Lives -->
-            <section class="fade-in-section max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <!-- Left Content -->
-                    <div class="space-y-6">
-                        <!-- H1 Text -->
-                        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-snug">
-                            <span class="text-klyr-dark">TECHNOLOGY<br>THAT SEES <br> THE TRUTH.</span>
+             <!-- Section 1: Hero - Global Standard of Clarity --><section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-6 md:pt-24 md:pb-8 text-center">
+                <div class="max-w-4xl mx-auto space-y-6">
+                    
+                    <div class="flex flex-col items-center justify-center">
+                        
+                       
+                        <!-- H1 Text --><h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-snug text-klyr-dark inline-block uppercase">
+                           Corporate Media Kit
                         </h1>
-                        <!-- Paragraph Text -->
-                        <p class="text-gray-600 text-lg">
-                          <span class="text-klyr-red">ALETHRA</span>™ fuses computer vision, artificial intelligence, and blockchain to turn any camera into a verification tool. It doesn’t just detect — it understands, learns, and protects.
-                        </p>
                     </div>
-                    <!-- Right Box (Full-bleed image box) -->
-                    <div id="content-box" class="content-box-border-style rounded-lg flex h-full overflow-hidden"> 
-                        <!-- Content Logo -->
-                        <img id="content-logo-img" class="content-logo-border w-full h-full object-cover rounded-lg" alt="Kare Image Placeholder" onerror="this.outerHTML = '<span class=\'text-6xl font-extrabold text-klyr-red\'>ALETHRA™</span>';">
-                    </div>
-                </div>
-            </section>
 
-            <!-- Section 2: KLYR Technology Platform Image (NEW SECTION) -->
-            <section class="fade-in-section max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 text-center">
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 text-klyr-dark">
-                    KEY SYSTEM
-                </h2>
-                <div class="flex justify-center">
-                    <!-- Image source is set by the dynamic-klyr-image script below -->
-                    <img id="dynamic-klyr-image" 
-                         src="https://plusbrand.com/wp-content/uploads/2025/10/ALETHRA_4_THE-TECHNOLOGY-scaled.png" 
-                         alt="Visual representation of the KLYR Technology Platform" 
-                         class="w-full max-w-4xl h-auto rounded-xl"
-                         onerror="this.src='https://plusbrand.com/wp-content/uploads/2025/10/ALETHRA_4_THE-TECHNOLOGY-scaled.png';">
+                    <!-- Paragraph Text (UPDATED to text-gray-600) --><p style="text-align: justify;" class="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto pt-4">
+                       Logos, brand guidelines, Aletha avatar, product visuals. For press and partners.
+                    </p>
                 </div>
             </section>
             
-            <!-- NEW SECTION 2.5: Dual CTA Buttons -->
-            <section class="fade-in-section max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center">
-                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                    <!-- Button 1: Request Demo (KLYR Red) -->
-                    <a href="#" class="w-full sm:w-auto">
-                        <button class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider w-full sm:w-auto">
-                            Request Enterprise Demo
-                        </button>
-                    </a>
-                    <!-- Button 2: Partner (KLYR Red) -->
-                    <a href="#" class="w-full sm:w-auto">
-                        <button class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider w-full sm:w-auto">
-                            Partner with ALETHRA™
+            <!-- NEW SECTION: Media Kit Assets Grid (Apple-like Cards) -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-12 pb-12">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-klyr-dark mb-10 text-center uppercase tracking-wide">
+                    Available Assets
+                </h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Card 1: Logo Pack -->
+                    <div class="premium-panel flex flex-col items-center text-center p-6 transition duration-300 transform hover:shadow-klyr-red/30 hover:shadow-xl">
+                        <i class="fas fa-file-image text-4xl text-klyr-red mb-4"></i>
+                        <h3 class="text-lg font-bold text-klyr-dark mb-1">ALETHRA™ Logo Pack</h3>
+                        <p class="text-gray-500 text-sm">PNG/SVG formats</p>
+                    </div>
+
+                    <!-- Card 2: Brand Guidelines -->
+                    <div class="premium-panel flex flex-col items-center text-center p-6 transition duration-300 transform hover:shadow-klyr-red/30 hover:shadow-xl">
+                        <i class="fas fa-book-open text-4xl text-klyr-red mb-4"></i>
+                        <h3 class="text-lg font-bold text-klyr-dark mb-1">Brand Guidelines</h3>
+                        <p class="text-gray-500 text-sm">Comprehensive PDF</p>
+                    </div>
+
+                    <!-- Card 3: Aletha Avatar Renders -->
+                    <div class="premium-panel flex flex-col items-center text-center p-6 transition duration-300 transform hover:shadow-klyr-red/30 hover:shadow-xl">
+                        <i class="fas fa-user-circle text-4xl text-klyr-red mb-4"></i>
+                        <h3 class="text-lg font-bold text-klyr-dark mb-1">Aletha Avatar Renders</h3>
+                        <p class="text-gray-500 text-sm">High-resolution PNG</p>
+                    </div>
+
+                    <!-- Card 4: Product & UI Shots -->
+                    <div class="premium-panel flex flex-col items-center text-center p-6 transition duration-300 transform hover:shadow-klyr-red/30 hover:shadow-xl">
+                        <i class="fas fa-tablet-alt text-4xl text-klyr-red mb-4"></i>
+                        <h3 class="text-lg font-bold text-klyr-dark mb-1">Product & UI Shots</h3>
+                        <p class="text-gray-500 text-sm">Usage-ready PNGs</p>
+                    </div>
+                </div>
+            </section>
+            
+
+            <!-- UPDATED SECTION 2.5: Single CTA Button --><section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-10 text-center">
+                <div class="max-w-xs mx-auto">
+                    <!-- Button 1: DOWNLOAD MEDIA KIT (Updated Text) --><a href="#" class="w-full block">
+                        <button class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider w-full text-sm">
+                            DOWNLOAD MEDIA KIT
                         </button>
                     </a>
                 </div>
             </section>
-             <!-- Add a general message box for global feedback -->
-            <div id="general-message-box" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+             <!-- Add a general message box for global feedback --><div id="general-message-box" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4">
                 <div id="message-box-content" class="bg-gray-100 border border-gray-300 text-gray-700 p-4 rounded-lg hidden"></div>
             </div>
 
 
 
 
-             <section class="bg-klyr-red py-10">
-                <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-                    <p class="text-xl sm:text-2xl mb-1">
-                       Clarity isn’t a feature — it’s the foundation for a safer world.
-                    </p>
-                
-                </div>
-            </section>
+           
+            <!-- REMOVED: Regulatory Engagement Request Form -->
         </div>
         
 </main>
-
+<!-- REMOVED: Old unused country modal (id="country-modal") -->
     
-<div id="country-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] hidden opacity-0 modal-transition">
-        <div id="modal-content" class="bg-white rounded-2xl shadow-2xl w-11/12 max-w-4xl p-8 relative transform scale-95 modal-transition">
-            
-<button id="close-modal-btn" class="absolute top-6 left-6 text-gray-500 hover:text-klyr-red transition duration-150">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-            
-            
-<div id="country-list-container" class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-4 max-h-[70vh] overflow-y-auto pt-4 pb-2">
-                
-</div>
-        </div>
-    </div>
     
+<!-- REMOVED: Regulatory Country Modal (id="regulatory-country-modal") -->
     
  <div id="footer-placeholder"></div>
 
 <script src="/nav-logic.js"></script>
 <script src="/inject.js"></script>
+
+<!-- Cleaned up script block, retaining only the universal fade-in logic -->
 <script>
     // ===================================================================
     // LUXURY FADE-IN ANIMATION LOGIC (Intersection Observer)
+    // All form/modal-related JS has been removed as the associated elements were removed.
     // ===================================================================
     document.addEventListener('DOMContentLoaded', () => {
         const fadeSections = document.querySelectorAll('.fade-in-section');
@@ -314,6 +350,5 @@
         });
     });
 </script>
-
 </body>
 </html>

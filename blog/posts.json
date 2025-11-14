@@ -1,0 +1,34 @@
+[
+  {
+    "id": "ai-driven-clarity",
+    "title": "ALETHRA INC Introduces a New Category of Safety Technology — ==ALETHRA==™",
+    "date": "Nov 5, 2025",
+    "excerpt": "ALETHRA Inc. today announced the creation of a new global safety category: ALETHRA™ — a revolutionary framework and platform designed to eliminate confusion before it causes harm.",
+    "image": "https://placehold.co/800x450/1F2937/FFFFFF?text=AI+Launch",
+    "contentFile": "/blog/content/ai-driven-clarity.md"
+  },
+  {
+    "id": "ceo-future",
+    "title": "CEO on the Future of Verified Ecosystems",
+    "date": "Sep 5, 2025",
+    "excerpt": "In a recent interview, our CEO outlines the vision for a fully traceable and trustworthy global trade network powered by ALETHRA's technology.",
+    "image": "https://placehold.co/800x450/E72F3C/FFFFFF?text=CEO+Vision",
+    "contentFile": "/blog/content/ceo-future.md"
+  },
+  {
+    "id": "food-producer-adopts",
+    "title": "Major Food Producer Adopts ALETHRACERTIFIED™ Standard",
+    "date": "Aug 15, 2025",
+    "excerpt": "A multinational leader in sustainable foods is the first to achieve the highest level of certification, setting a new industry benchmark for clarity.",
+    "image": "https://placehold.co/800x450/1F2937/FFFFFF?text=Partnership+News",
+    "contentFile": "/blog/content/food-producer-adopts.md"
+  },
+  {
+    "id": "blockchain-integration",
+    "title": "Blockchain Integration for Immutable Log Records",
+    "date": "Jul 28, 2025",
+    "excerpt": "Our latest update enhances security and compliance by ensuring every production event is securely logged via ALETHRACLOUD™.",
+    "image": "https://placehold.co/800x450/E72F3C/FFFFFF?text=Blockchain+Update",
+    "contentFile": "/blog/content/blockchain-integration.md"
+  }
+]

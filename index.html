@@ -11,6 +11,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
     
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="/animation.css">
     
 <script>
         tailwind.config = {
@@ -90,6 +91,7 @@
             visibility: hidden !important;
         }
         body { top: 0px !important; position: relative !important; }
+
 
         /* ===================================================================
         NAVIGATION & DROPDOWN STYLES
@@ -186,14 +188,14 @@
     
 <div id="nav-mobil-placeholder"></div>
 
-    <main>
+    <main class="fade-in-section">
         
 <div id="homepage-content">
             
 <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     
-<div class="space-y-6">
+<div class="space-y-6" style="--delay: 0.2s;">
                         <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-snug">
                             <span class="text-klyr-dark">CLARITY STARTS HERE</span>
                             <br class="hidden sm:block">
@@ -208,15 +210,15 @@
                         </p>
                     </div>
                     
-<div id="content-box" class="content-box-border-style rounded-lg flex h-full overflow-hidden"> 
+<div id="content-box" class="content-box-border-style rounded-lg flex h-full overflow-hidden" style="--delay: 0.4s;"> 
                         
-<img id="content-logo-img" class="content-logo-border w-full h-full object-cover rounded-lg" alt="Kare Image Placeholder" onerror="this.outerHTML = '<span class=\'text-6xl font-extrabold text-klyr-red\'>KLYR™</span>';">
+<img id="content-logo-img" class="content-logo-border w-full h-full object-cover rounded-lg" alt="Kare Image Placeholder" loading="lazy">
                     </div>
                 </div>
             </section>
             
             
-<section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-0 text-center">
+<section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-0 text-center" style="--delay: 0s;">
                 
 <p class="font-bold text-klyr-dark italic  mx-auto" style="font-size: calc(1.05 * 1.25rem);">
                     <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> is the world’s first clarity technology — designed to stop confusion before it happens.
@@ -225,7 +227,7 @@
 
 
             
-<section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-12 pb-12 text-center">
+<section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-12 pb-12 text-center" style="--delay: 0s;">
                 <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
                     GLOBAL IMPACT STATS
                 </h2>
@@ -233,7 +235,7 @@
             </section>
 
             
-<section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
+<section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24 " style="--delay: 0.2s;">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
                     
@@ -257,7 +259,7 @@
                     
 <div class="rounded-xl crisis-card-style p-6 text-center">
                         <h3 class="text-sm font-bold text-klyr-dark mb-4">Manufacturing & Logistics</h3>
-                      
+                       
                         <div class="text-5xl font-extrabold text-klyr-red mb-4">300B+</div>
                         <p class="text-sm text-gray-600">
                             in global waste from mismatched products and line errors.
@@ -276,7 +278,7 @@
             </section>
 
             
-<section class="bg-klyr-red py-10">
+<section class="bg-klyr-red py-10" style="--delay: 0s;">
                 <div class="max-w-super-wide mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
                     <p class="text-xl sm:text-2xl mb-1">
                         <strong>Estimated annual global loss:</strong> $500 – $700 billion
@@ -288,7 +290,7 @@
             </section>
 
             
-<section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+<section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32" style="--delay: 0s;">
                 <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
                     JOIN THE CLARITY MOVEMENT
                 </h2>
@@ -296,9 +298,9 @@
 <p class="text-xl text-gray-700 mb-8">
                     Become one of the first to experience <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> in action
                 </p>
-                <button id="join-beta-btn" class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider">
+                <a href="/join" id="join-beta-btn" class="inline-block bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider">
                     JOIN THE BETA
-                </button>
+                </a>
                 
 <div id="message-box" class="mt-8 bg-gray-100 border border-gray-300 text-gray-700 p-4 rounded-lg hidden max-w-sm">
                     Thank you for your interest! The beta sign-up page is coming soon.
@@ -395,8 +397,42 @@
     
 <script src="/inject.js"></script>
 
+<script>
+    // ===================================================================
+    // LUXURY FADE-IN ANIMATION LOGIC (Intersection Observer)
+    // ===================================================================
+    document.addEventListener('DOMContentLoaded', () => {
+        const fadeSections = document.querySelectorAll('.fade-in-section');
 
-    
+        // Create the observer
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // Check if the element is currently visible in the viewport
+                if (entry.isIntersecting) {
+                    // Add the 'is-visible' class to trigger the CSS transition
+                    entry.target.classList.add('is-visible');
+                    // Stop observing the element once it has faded in
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            // Options for the observer
+            root: null, // Use the viewport as the container
+            rootMargin: '0px', // No extra margin
+            threshold: 0.1 // Trigger when 10% of the item is visible
+        });
+
+        // Loop through all elements and observe them
+        fadeSections.forEach((section, index) => {
+            // Apply a staggered delay based on its order in the array
+            // The delay is only applied if the delay style variable is defined on the element
+            const delay = parseFloat(section.style.getPropertyValue('--delay') || '0');
+            section.style.setProperty('--delay', `${delay + 0.05}s`); 
+            
+            observer.observe(section);
+        });
+    });
+</script>
 
 </body>
 </html>

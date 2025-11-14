@@ -8,7 +8,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
     
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+<link rel="stylesheet" href="/animation.css">
 <script>
         tailwind.config = {
             theme: {
@@ -27,6 +27,7 @@
         }
     </script>
     <style>
+   
         .skiptranslate {
             display: none!important;
         }
@@ -181,12 +182,12 @@
 <header class="bg-white shadow-sm sticky top-0 z-50" id="nav-placeholder"></header>
 <div id="nav-mobil-placeholder"></div>
 
-    <main>
+    <main class="fade-in-section">
         
 <div id="homepage-content">
             
 
-             <!-- Section 1: Hero - Clarity Technology Heading + Image/Content Grid --><!-- MODIFIED: Reduced bottom padding from py-24 to pb-12 on desktop --><section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 md:pt-24 md:pb-12">
+             <!-- Section 1: Hero - Clarity Technology Heading + Image/Content Grid --><!-- MODIFIED: Reduced bottom padding from py-24 to pb-12 on desktop --><section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 md:pt-24 md:pb-12 fade-in-section">
                 
                 <!-- PRIMARY HEADING (Size adjusted, now left-aligned) --><h1 class="text-left text-3xl md:text-5xl font-extrabold tracking-tight leading-snug text-klyr-dark mb-12">
                     THE WORLD'S FIRST <br> CLARITY TECHNOLOGY
@@ -213,13 +214,13 @@
             </section>
 
             <!-- Section 2: Centered Subheading (Replaces KEY SYSTEMS image section) --><!-- MODIFIED: Reduced bottom padding for tight fit (pb-4/pb-6) --><section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-4 md:pt-6 md:pb-6 text-center">
-                <h2 class="text-xl md:text-3xl font-bold tracking-tight text-klyr-dark">
+                <h2 class="fade-in-section text-xl md:text-3xl font-bold tracking-tight text-klyr-dark">
                     EVERY PRODUCT, PACKAGE AND ITEM IS VERIFIED INSTANTLY
                 </h2>
             </section>
             
             <!-- NEW Section: Clarity Pillars (Images) --><!-- MODIFIED: Increased bottom padding for space to red banner --><section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12 md:pt-6 md:pb-20">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="fade-in-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Pillar 1: Visual Fingerprinting --><div class="text-center">
                         <img src="https://plusbrand.com/wp-content/uploads/2025/10/3-solution_finger_print.png" alt="Visual Fingerprinting Icon" class="mx-auto w-32 h-32 object-contain mb-4">
                         <p class="font-semibold text-klyr-dark text-lg">VISUAL FINGERPRINTING</p>
@@ -268,9 +269,9 @@ ALETHRA™ repairs the system with clarity.
 <p class="text-xl text-gray-700 mb-8">
                     Become one of the first to experience <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> in action
                 </p>
-                <button id="join-beta-btn" class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider">
+                <a href="/join" id="join-beta-btn" class="inline-block bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider">
                     JOIN THE BETA
-                </button>
+                </a>
                 
 <div id="message-box" class="mt-8 bg-gray-100 border border-gray-300 text-gray-700 p-4 rounded-lg hidden max-w-sm">
                     Thank you for your interest! The beta sign-up page is coming soon.
@@ -367,5 +368,42 @@ ALETHRA™ repairs the system with clarity.
 
 <script src="/nav-logic.js"></script>
 <script src="/inject.js"></script>
+
+<script>
+    // ===================================================================
+    // LUXURY FADE-IN ANIMATION LOGIC (Intersection Observer)
+    // ===================================================================
+    document.addEventListener('DOMContentLoaded', () => {
+        const fadeSections = document.querySelectorAll('.fade-in-section');
+
+        // Create the observer
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // Check if the element is currently visible in the viewport
+                if (entry.isIntersecting) {
+                    // Add the 'is-visible' class to trigger the CSS transition
+                    entry.target.classList.add('is-visible');
+                    // Stop observing the element once it has faded in
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            // Options for the observer
+            root: null, // Use the viewport as the container
+            rootMargin: '0px', // No extra margin
+            threshold: 0.1 // Trigger when 10% of the item is visible
+        });
+
+        // Loop through all elements and observe them
+        fadeSections.forEach((section, index) => {
+            // Apply a staggered delay based on its order in the array
+            // The delay is only applied if the delay style variable is defined on the element
+            const delay = parseFloat(section.style.getPropertyValue('--delay') || '0');
+            section.style.setProperty('--delay', `${delay + 0.05}s`); 
+            
+            observer.observe(section);
+        });
+    });
+</script>
 </body>
 </html>
