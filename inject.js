@@ -1,4 +1,4 @@
-// Inject favicon into every page
+// Inject favicon
 (function() {
   const link = document.createElement("link");
   link.rel = "icon";
@@ -7,20 +7,12 @@
   document.head.appendChild(link);
 })();
 
-// NAV
+// NAV (ONE FILE ONLY)
 fetch("/nav.html")
   .then(r => r.text())
   .then(html => {
     document.getElementById("nav-placeholder").innerHTML = html;
-    initNavLogic();
-  });
-
-  //NAV MOBIL
-fetch("/nav-mobil.html")
-  .then(r => r.text())
-  .then(html => {
-    document.getElementById("nav-mobil-placeholder").innerHTML = html;
-    initNavLogic();
+    initNavLogic(); // runs once = stable
   });
 
 // FOOTER
