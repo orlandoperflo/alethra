@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALETHRA - Join the Clarity Movement</title>
+    <title>ALETHRA - Impact</title>
     
 <script src="https://cdn.tailwindcss.com"></script>
     
@@ -28,7 +28,7 @@
     </script>
     <style>
     
-         /* =================================================================== */
+        /* =================================================================== */
         /* FIX: Ensures cards align horizontally by normalizing description height */
         /* =================================================================== */
         @media (min-width: 768px) {
@@ -126,7 +126,7 @@
             max-height: 0; 
             /* Opacity starts at 0 */
             opacity: 0; 
-         
+            
             /* Use the variable defined at the top for indentation */
             padding-left: var(--mobile-indent-px);
             /* transition-all includes max-height and opacity/transform */
@@ -150,7 +150,7 @@
         }
         
         /* FIX: Apply border-top ONLY to sub-items that are NOT the first child.
-           This creates a single, clean dividing line BETWEEN items. */
+            This creates a single, clean dividing line BETWEEN items. */
         .mobile-dropdown-content .mobile-sub-item:not(:first-child) {
             @apply border-t border-gray-300; 
         }
@@ -179,7 +179,8 @@
     <main class="fade-in-section">
         
 <div id="homepage-content">
-             
+            
+            
 
 <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -191,8 +192,8 @@
                         </h1>
                         
 <p class="text-gray-600 text-lg">
-                     Every confusion event — every recall, contamination, or misidentification — destroys usable goods and the trust that built them.
-  <span class="text-klyr-red">ALETHRA</span>™ transforms waste prevention into planetary protection — safeguarding health, economy, and environment through clarity.  
+                            Every confusion event — every recall, contamination, or misidentification — destroys usable goods and the trust that built them.
+                            <span class="text-klyr-red">ALETHRA</span>™ transforms waste prevention into planetary protection — safeguarding health, economy, and environment through clarity.  
                         </p>
                     </div>
                     
@@ -203,6 +204,7 @@
                 </div>
             </section>
 
+            
             
 
 <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-12 pb-8 md:pb-12">
@@ -243,53 +245,59 @@
     
     <!-- 2x3 Grid Container (1 column on mobile, 3 columns on desktop) --><div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12">
         
-        <!-- Group 1: ALETHRA ENV™ --><div class="flex items-start">
+        <!-- Group 1: ALETHRA ENV™ -->
+        <a href="/env" class="group flex items-start transition duration-150">
             <!-- UPDATED: h-20 w-auto to preserve aspect ratio, removed rounded-lg --><img src="https://plusbrand.com/wp-content/uploads/2025/11/ENV-scaled.webp" alt="ALETHRA ENV Icon Placeholder" class="h-20 w-auto mr-4 flex-shrink-0 mt-1">
             <div>
                 <h3 class="text-lg font-extrabold text-klyr-red uppercase mb-1">ALETHRA ENV™</h3>
-                <p class="text-gray-600 description-alignment-fix">Monitors environmental compliance and material clarity across facilities.</p>
+                <p class="text-gray-600 description-alignment-fix group-hover:text-klyr-dark transition duration-150">Monitors environmental compliance and material clarity across facilities.</p>
             </div>
-        </div>
+        </a>
         
-        <!-- Group 2: ALETHRA FLOW™ --><div class="flex items-start">
+        <!-- Group 2: ALETHRA FLOW™ -->
+        <a href="/flow" class="group flex items-start transition duration-150">
             <!-- UPDATED: h-20 w-auto to preserve aspect ratio, removed rounded-lg --><img src="https://plusbrand.com/wp-content/uploads/2025/11/FLOW-scaled.webp" alt="ALETHRA FLOW Icon Placeholder" class="h-20 w-auto mr-4 flex-shrink-0 mt-1">
             <div>
                 <h3 class="text-lg font-extrabold text-klyr-red uppercase mb-1">ALETHRA FLOW™</h3>
-                <p class="text-gray-600 description-alignment-fix">Industrial scanning at line speed for production and logistics.</p>
+                <p class="text-gray-600 description-alignment-fix group-hover:text-klyr-dark transition duration-150">Industrial scanning at line speed for production and logistics.</p>
             </div>
-        </div>
+        </a>
 
-        <!-- Group 3: ALETHRA NODE™ --><div class="flex items-start">
+        <!-- Group 3: ALETHRA NODE™ -->
+        <a href="/node" class="group flex items-start transition duration-150">
             <!-- UPDATED: h-20 w-auto to preserve aspect ratio, removed rounded-lg --><img src="https://plusbrand.com/wp-content/uploads/2025/11/NODE.webp" alt="ALETHRA NODE Icon Placeholder" class="h-20 w-auto mr-4 flex-shrink-0 mt-1">
             <div>
                 <h3 class="text-lg font-extrabold text-klyr-red uppercase mb-1">ALETHRA NODE™</h3>
-                <p class="text-gray-600 description-alignment-fix">Secure verification and blockchain record storage at every checkpoint.</p>
+                <p class="text-gray-600 description-alignment-fix group-hover:text-klyr-dark transition duration-150">Secure verification and blockchain record storage at every checkpoint.</p>
             </div>
-        </div>
+        </a>
 
-        <!-- Group 4: ALETHRA SENSE™ --><div class="flex items-start">
+        <!-- Group 4: ALETHRA SENSE™ -->
+        <a href="/sense" class="group flex items-start transition duration-150">
             <!-- UPDATED: h-20 w-auto to preserve aspect ratio, removed rounded-lg --><img src="https://plusbrand.com/wp-content/uploads/2025/11/SNSE-scaled.webp" alt="ALETHRA SENSE Icon Placeholder" class="h-20 w-auto mr-4 flex-shrink-0 mt-1">
             <div>
                 <h3 class="text-lg font-extrabold text-klyr-red uppercase mb-1">ALETHRA SENSE™</h3>
-                <p class="text-gray-600 description-alignment-fix">Detects composition integrity and contamination before release.</p>
+                <p class="text-gray-600 description-alignment-fix group-hover:text-klyr-dark transition duration-150">Detects composition integrity and contamination before release.</p>
             </div>
-        </div>
+        </a>
 
-        <!-- Group 5: ALETHRA MOBILE™ --><div class="flex items-start">
+        <!-- Group 5: ALETHRA MOBILE™ -->
+        <a href="/mobil" class="group flex items-start transition duration-150">
             <!-- UPDATED: h-20 w-auto to preserve aspect ratio, removed rounded-lg --><img src="https://plusbrand.com/wp-content/uploads/2025/11/MOBIL-scaled.webp" alt="ALETHRA MOBILE Icon Placeholder" class="h-20 w-auto mr-4 flex-shrink-0 mt-1">
             <div>
-                <h3 class="text-lg font-extrabold text-klyr-red uppercase mb-1">ALETHRA MOBILE™</h3>
-                <p class="text-gray-600 description-alignment-fix">Instant handheld verification for field, hospital, and retail use.</p>
+                <h3 class="text-lg font-extrabold text-klyr-red uppercase mb-1">ALETHRA MOBIL™</h3>
+                <p class="text-gray-600 description-alignment-fix group-hover:text-klyr-dark transition duration-150">Instant handheld verification for field, hospital, and retail use.</p>
             </div>
-        </div>
+        </a>
 
-        <!-- Group 6: ALETHRA SCAN™ --><div class="flex items-start">
+        <!-- Group 6: ALETHRA SCAN™ -->
+        <a href="/scan" class="group flex items-start transition duration-150">
             <!-- UPDATED: h-20 w-auto to preserve aspect ratio, removed rounded-lg --><img src="https://plusbrand.com/wp-content/uploads/2025/11/SCAN_1.webp" alt="ALETHRA SCAN Icon Placeholder" class="h-20 w-auto mr-4 flex-shrink-0 mt-1">
             <div>
                 <h3 class="text-lg font-extrabold text-klyr-red uppercase mb-1">ALETHRA SCAN™</h3>
-                <p class="text-gray-600 description-alignment-fix">AI camera system that reads and confirms every product’s visual fingerprint.</p>
+                <p class="text-gray-600 description-alignment-fix group-hover:text-klyr-dark transition duration-150">AI camera system that reads and confirms every product’s visual fingerprint.</p>
             </div>
-        </div>
+        </a>
         
     </div>
 </section>
@@ -349,7 +357,7 @@
 
 <a href="/sustainability" class="w-full sm:w-auto">
                         <button class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider w-full sm:w-auto">
-                           SEE OUR SUSTAINABILITY INITIATIVE
+                            SEE OUR SUSTAINABILITY INITIATIVE
                         </button>
                     </a>
                     
@@ -361,21 +369,20 @@
                     </a>
                 </div>
             </section>
-             
+            
+            
 
 <div id="general-message-box" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4">
                 <div id="message-box-content" class="bg-gray-100 border border-gray-300 text-gray-700 p-4 rounded-lg hidden"></div>
             </div>
 
 
-
-
-             <section class="bg-klyr-red py-10">
+            <section class="bg-klyr-red py-10">
                 <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
                     <p class="text-xl sm:text-2xl mb-1">
-                       When We Stop Confusion, We Stop Waste.<br>
- When We Stop wasting, We Save the Planet.<br>
- Clarity isn’t just innovation — it’s preservation.
+                        When We Stop Confusion, We Stop Waste.<br>
+                        When We Stop wasting, We Save the Planet.<br>
+                        Clarity isn’t just innovation — it’s preservation.
                     </p>
                 
                 </div>
@@ -400,8 +407,8 @@
     </div>
     
     
- <div id="footer-placeholder"></div>
-<scrip src="/animation.js"></scrip>
+<div id="footer-placeholder"></div>
+<script src="/animation.js"></script>
 <script src="/nav-logic.js"></script>
 <script src="/inject.js"></script>
 <script type="text/javascript">
