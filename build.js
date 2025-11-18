@@ -9,10 +9,18 @@ const postsPath = path.join(__dirname, "blog/posts.json");
 const templatePath = path.join(__dirname, "press/blog-template.html");
 const outputBase = path.join(__dirname, "press");
 
-// Load data
+// Load posts + template
 const posts = JSON.parse(fs.readFileSync(postsPath, "utf-8"));
 const template = fs.readFileSync(templatePath, "utf-8");
 
+// CLI arg
+const onlyPost = process.argv.find(a => a.startsWith("--post="))
+  ?.replace("--post=", "")
+  ?.trim();
+
+// ---------------------------------------------------------------------
+// META + CONTENT INJECTION
+// ---------------------------------------------------------------------
 function ensureMetaTags(html) {
   const hasHead = /<head>[\s\S]*<\/head>/i.test(html);
   if (!hasHead) {
@@ -21,25 +29,19 @@ function ensureMetaTags(html) {
 
   let headContent = html.match(/<head>([\s\S]*?)<\/head>/i)[1];
 
-  // Inject meta tags if missing
-  if (!headContent.includes("<meta name=\"description\""))
-    headContent += `\n<meta name="description" content="">`;
-  if (!headContent.includes("<meta property=\"og:title\""))
-    headContent += `\n<meta property="og:title" content="">`;
-  if (!headContent.includes("<meta property=\"og:description\""))
-    headContent += `\n<meta property="og:description" content="">`;
-  if (!headContent.includes("<meta property=\"og:image\""))
-    headContent += `\n<meta property="og:image" content="">`;
-  if (!headContent.includes("<meta property=\"og:type\""))
-    headContent += `\n<meta property="og:type" content="article">`;
-  if (!headContent.includes("<meta name=\"twitter:card\""))
-    headContent += `\n<meta name="twitter:card" content="summary_large_image">`;
-  if (!headContent.includes("<meta name=\"twitter:title\""))
-    headContent += `\n<meta name="twitter:title" content="">`;
-  if (!headContent.includes("<meta name=\"twitter:description\""))
-    headContent += `\n<meta name="twitter:description" content="">`;
-  if (!headContent.includes("<meta name=\"twitter:image\""))
-    headContent += `\n<meta name="twitter:image" content="">`;
+  const addIfMissing = (needle, tag) => {
+    if (!headContent.includes(needle)) headContent += `\n${tag}`;
+  };
+
+  addIfMissing('name="description"', `<meta name="description" content="">`);
+  addIfMissing('property="og:title"', `<meta property="og:title" content="">`);
+  addIfMissing('property="og:description"', `<meta property="og:description" content="">`);
+  addIfMissing('property="og:image"', `<meta property="og:image" content="">`);
+  addIfMissing('property="og:type"', `<meta property="og:type" content="article">`);
+  addIfMissing('name="twitter:card"', `<meta name="twitter:card" content="summary_large_image">`);
+  addIfMissing('name="twitter:title"', `<meta name="twitter:title" content="">`);
+  addIfMissing('name="twitter:description"', `<meta name="twitter:description" content="">`);
+  addIfMissing('name="twitter:image"', `<meta name="twitter:image" content="">`);
 
   return html.replace(/<head>[\s\S]*<\/head>/i, `<head>${headContent}</head>`);
 }
@@ -47,10 +49,10 @@ function ensureMetaTags(html) {
 function injectContent(template, postHtml, post, allPosts) {
   let result = ensureMetaTags(template);
 
-  // Inject <title>
+  // Title
   result = result.replace(/<title>.*<\/title>/, `<title>${post.title}</title>`);
 
-  // Inject meta tags
+  // Meta tags
   result = result
     .replace(/<meta name="description" content=".*">/, `<meta name="description" content="${post.excerpt}">`)
     .replace(/<meta property="og:title" content=".*">/, `<meta property="og:title" content="${post.title}">`)
@@ -60,7 +62,7 @@ function injectContent(template, postHtml, post, allPosts) {
     .replace(/<meta name="twitter:description" content=".*">/, `<meta name="twitter:description" content="${post.excerpt}">`)
     .replace(/<meta name="twitter:image" content=".*">/, `<meta name="twitter:image" content="${post.image}">`);
 
-  // Inject blog post content
+  // Blog content
   result = result.replace(
     /<main id="blog-content">[\s\S]*?<\/main>/,
     `<main id="blog-content">${postHtml}</main>`
@@ -90,11 +92,48 @@ function injectContent(template, postHtml, post, allPosts) {
   return result;
 }
 
-async function build() {
-  console.log("⚙️ Building static blog pages...");
+// ---------------------------------------------------------------------
+// SMART REBUILD LOGIC
+// ---------------------------------------------------------------------
+function needsRebuild(post, mdPath, outputPath) {
+  if (!fs.existsSync(outputPath)) return true; // no file = build needed
+  if (!fs.existsSync(mdPath)) return true;
 
-  for (const post of posts) {
+  const mdTime = fs.statSync(mdPath).mtimeMs;
+  const outTime = fs.statSync(outputPath).mtimeMs;
+  const jsonTime = fs.statSync(postsPath).mtimeMs;
+
+  // Rebuild if:
+  // - md is newer
+  // - posts.json is newer
+  return mdTime > outTime || jsonTime > outTime;
+}
+
+// ---------------------------------------------------------------------
+// MAIN BUILD FUNCTION
+// ---------------------------------------------------------------------
+async function build() {
+  console.log("⚙️ Building blog...");
+
+  const targetPosts = onlyPost
+    ? posts.filter(p => p.id === onlyPost)
+    : posts;
+
+  if (onlyPost && targetPosts.length === 0) {
+    console.log(`❌ No post found with id "${onlyPost}"`);
+    process.exit(1);
+  }
+
+  for (const post of targetPosts) {
     const mdPath = path.join(__dirname, post.contentFile);
+    const postDir = path.join(outputBase, post.id);
+    const outputFile = path.join(postDir, "index.html");
+
+    if (!needsRebuild(post, mdPath, outputFile)) {
+      console.log(`⏩ Skipped (no changes): ${post.id}`);
+      continue;
+    }
+
     if (!fs.existsSync(mdPath)) {
       console.warn(`⚠️ Missing markdown: ${mdPath}`);
       continue;
@@ -102,16 +141,15 @@ async function build() {
 
     const mdContent = fs.readFileSync(mdPath, "utf-8");
     const html = marked.parse(mdContent);
-    const outputHtml = injectContent(template, html, post, posts);
+    const fullHtml = injectContent(template, html, post, posts);
 
-    const postDir = path.join(outputBase, post.id);
     fs.mkdirSync(postDir, { recursive: true });
-    fs.writeFileSync(path.join(postDir, "index.html"), outputHtml);
+    fs.writeFileSync(outputFile, fullHtml);
 
     console.log(`✅ Built /press/${post.id}/index.html`);
   }
 
-  console.log("✨ All posts generated successfully!");
+  console.log("✨ Done!");
 }
 
 build().catch(console.error);
