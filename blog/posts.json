@@ -8,27 +8,51 @@
     "contentFile": "/blog/content/ai-driven-clarity.md"
   },
   {
-    "id": "ceo-future",
-    "title": "CEO on the Future of Verified Ecosystems",
-    "date": "Sep 5, 2025",
-    "excerpt": "In a recent interview, our CEO outlines the vision for a fully traceable and trustworthy global trade network powered by ALETHRA's technology.",
-    "image": "https://placehold.co/800x450/E72F3C/FFFFFF?text=CEO+Vision",
-    "contentFile": "/blog/content/ceo-future.md"
-  },
-  {
-    "id": "food-producer-adopts",
-    "title": "Major Food Producer Adopts ALETHRACERTIFIED™ Standard",
-    "date": "Aug 15, 2025",
-    "excerpt": "A multinational leader in sustainable foods is the first to achieve the highest level of certification, setting a new industry benchmark for clarity.",
-    "image": "https://placehold.co/800x450/1F2937/FFFFFF?text=Partnership+News",
-    "contentFile": "/blog/content/food-producer-adopts.md"
-  },
-  {
-    "id": "blockchain-integration",
-    "title": "Blockchain Integration for Immutable Log Records",
-    "date": "Jul 28, 2025",
-    "excerpt": "Our latest update enhances security and compliance by ensuring every production event is securely logged via ALETHRACLOUD™.",
+    "id": "when-clarity-fails-people-die-the-hidden-crisis-of-hospital-blood-type-and-medication-route-errors-and-how-alethra-ends-it",
+    "title": "When Clarity Fails, People Die: The Hidden Crisis of Hospital Blood-Type & Medication-Route Errors — And How ALETHRA™ Ends It",
+    "date": "Nov 15, 2025",
+    "excerpt": "The Tragedy Hiding in Plain Sight Hospitals save lives every day. But they also lose thousands of lives to preventable failures — not because doctors or nurses lack skill, but beca...",
     "image": "https://placehold.co/800x450/E72F3C/FFFFFF?text=Blockchain+Update",
-    "contentFile": "/blog/content/blockchain-integration.md"
+    "contentFile": "/blog/content/when-clarity-fails-people-die-the-hidden-crisis-of-hospital-blood-type-and-medication-route-errors-and-how-alethra-ends-it.md"
+  },
+  {
+    "id": "the-last-line-of-defense-how-alethra-all-scratch-can-end-consumer-confusion-illness-and-massive-beverage-waste",
+    "title": "The Last Line of Defense: How ALETHRA™ + ALL-SCRATCH™ Can End Consumer Confusion, Illness, & Massive Beverage Waste",
+    "date": "Nov 15, 2025",
+    "excerpt": "A Crisis Hiding in Plain Sight Most people think the biggest risks in beverages happen inside factories — contamination, mislabels, expired ingredients, wrong nutritional panels, a...",
+    "image": "https://placehold.co/800x450/1F2937/FFFFFF?text=Partnership+News",
+    "contentFile": "/blog/content/the-last-line-of-defense-how-alethra-all-scratch-can-end-consumer-confusion-illness-and-massive-beverage-waste.md"
+  },
+  {
+    "id": "the-invisible-threat-how-misread-labels-in-hospitals-lead-to-tragedy-and-how-alethra-ends-it",
+    "title": "The Invisible Threat: How Misread Labels in Hospitals Lead to Tragedy — And How ALETHRA™ Ends It",
+    "date": "Nov 15, 2025",
+    "excerpt": "The Silent Killer No One Sees Coming In medicine, everyone fears the catastrophic diagnosis, the rare disease, the unpredictable crisis. But inside American hospitals, the deadlies...",
+    "image": "https://placehold.co/800x450/1F2937/FFFFFF?text=Partnership+News",
+    "contentFile": "/blog/content/the-invisible-threat-how-misread-labels-in-hospitals-lead-to-tragedy-and-how-alethra-ends-it.md"
+  },
+  {
+    "id": "the-billion-dollar-produce-problem-how-contamination-is-making-people-sick-and-creating-unimaginable-waste",
+    "title": "The Billion-Dollar Produce Problem: How Contamination Is Making People Sick — and Creating Unimaginable Waste",
+    "date": "Nov 15, 2025",
+    "excerpt": "The Hidden Crisis We Don’t Talk About Enough When people hear about foodborne illness, they think of bad luck — the wrong salad, the wrong meal, the wrong day. But the real story i...",
+    "image": "https://placehold.co/800x450/1F2937/FFFFFF?text=Partnership+News",
+    "contentFile": "/blog/content/the-billion-dollar-produce-problem-how-contamination-is-making-people-sick-and-creating-unimaginable-waste.md"
+  },
+  {
+    "id": "when-confusion-reaches-the-cafeteria-how-contaminated-school-food-is-sickening-children-and-creating-massive-waste-and-how-alethra-ends-it",
+    "title": "When Confusion Reaches the Cafeteria: How Contaminated School Food Is Sickening Children and Creating Massive Waste — And How ALETHRA™ Ends It",
+    "date": "Nov 15, 2025",
+    "excerpt": "The Crisis We Don’t Want to Admit Every parent believes one thing when they send their child to school: “My kids are safe.” But in thousands of public schools across the country, t...",
+    "image": "https://placehold.co/800x450/1F2937/FFFFFF?text=Partnership+News",
+    "contentFile": "/blog/content/when-confusion-reaches-the-cafeteria-how-contaminated-school-food-is-sickening-children-and-creating-massive-waste-and-how-alethra-ends-it.md"
+  },
+  {
+    "id": "the-hidden-crisis-in-every-medicine-cabinet-otc-supplement-fraud-fake-ingredients-and-the-cost-of-confusion",
+    "title": "The Hidden Crisis in Every Medicine Cabinet: OTC Supplement Fraud, Fake Ingredients & the Cost of Confusion",
+    "date": "Nov 15, 2025",
+    "excerpt": "The Conversation No One Wants to Have Walk into any pharmacy, grocery store, gas station, or airport and you’ll see shelves overflowing with “health” — vitamins, herbal supplements...",
+    "image": "https://placehold.co/800x450/1F2937/FFFFFF?text=Partnership+News",
+    "contentFile": "/blog/content/the-hidden-crisis-in-every-medicine-cabinet-otc-supplement-fraud-fake-ingredients-and-the-cost-of-confusion.md"
   }
 ]
