@@ -76,7 +76,7 @@ ALETHRA is a __family-driven launch__, built by people I trust with my life, my 
 This is not a startup chasing hype.  
 This is a family that lived the problem, named it, solved it, and built the technology to end it permanently.
 
-We’ve spent months architecting this system—hardware, AI, sensors, verification logic, enterprise frameworks, and a global model built to scale across every sector.  
+We’ve spent years architecting this system—hardware, AI, sensors, verification logic, enterprise frameworks, and a global model built to scale across every sector.  
 ALETHRA isn’t just launching; it’s defining a new global standard of trust and truth.
 
 ### __Our mission is bold and non-negotiable:__
