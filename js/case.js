@@ -8,18 +8,66 @@ document.addEventListener("DOMContentLoaded", async () => {
     const relatedContainer = document.getElementById("related-cases-container");
     const pageContainer = document.getElementById("case-container");
 
-    // ==highlight== text → red
-    const parseRedText = text =>
-        text.replace(/==(.+?)==/g, (_, p1) => `<span class="text-klyr-red">${p1}</span>`);
+    // ------------------------------------------------------------
+    //  PRODUCT-SAFE HIGHLIGHTER (WORKS INSIDE ALL HTML)
+    // ------------------------------------------------------------
+    function highlightHTML(html) {
+        if (!html) return html;
 
-    // Date formatter (in case you use dates later)
-    const formatDate = dateString => {
-        if (!dateString) return "";
-        const date = new Date(dateString.replace(/-/g, "/"));
-        return date.toLocaleDateString("en-US", { month: "long", year: "numeric" }).toUpperCase();
-    };
+        // 1 — ALETHRA™ + full product name
+        html = html.replace(
+            /ALETHRA™\s+(FLOW|SENSE|AI)/g,
+            (m, product) =>
+                `<span class="text-klyr-red">ALETHRA</span><span>™</span> <span class="text-klyr-red">${product}</span>`
+        );
 
-    // Related case card builder
+        // 2 — ALETHRA™ stand-alone
+        html = html.replace(
+            /ALETHRA™/g,
+            `<span class="text-klyr-red">ALETHRA</span><span>™</span>`
+        );
+
+        // 3 — ALETHRA (not followed by TM)
+        html = html.replace(
+            /ALETHRA(?!™)/g,
+            `<span class="text-klyr-red">ALETHRA</span>`
+        );
+
+        return html;
+    }
+
+    // ==text== → red (no bold forcing) then highlight products
+    function parseRed(text) {
+        if (!text) return text;
+        const withRed = text.replace(/==(.+?)==/g, (_, p1) =>
+            `<span class="text-klyr-red">${p1}</span>`
+        );
+        return highlightHTML(withRed);
+    }
+
+    // ------------------------------------------------------------
+    //  FORMATTER: underlines <a>, adds target=_blank, and bullet circles for <li>
+    // ------------------------------------------------------------
+    function applyFormatting(html) {
+        if (!html) return html;
+
+        // <a> underline + new tab
+        html = html.replace(
+            /<a\b([^>]*)>/g,
+            (full, attrs) => `<a${attrs} class="underline" target="_blank" rel="noopener noreferrer">`
+        );
+
+        // <li> → bullet circle
+        html = html.replace(
+            /<li>/g,
+            `<li class="list-disc ml-6">`
+        );
+
+        return html;
+    }
+
+    // ------------------------------------------------------------
+
     const createRelatedCaseCard = caseItem => `
         <div class="flex flex-col bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
             <a href="${caseItem.url}" class="block mb-4 group">
@@ -31,11 +79,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             </a>
             <h3 class="text-xl font-bold text-klyr-dark mb-3">
                 <a href="${caseItem.url}" class="hover:text-klyr-red transition-colors">
-                    ${parseRedText(caseItem.title)}
+                    ${highlightHTML(caseItem.title)}
                 </a>
             </h3>
             <p class="text-gray-600 text-base mb-4 description-alignment-fix">
-                ${parseRedText(caseItem.excerpt || "")}
+                ${highlightHTML(caseItem.excerpt || "")}
             </p>
             <div class="mt-auto">
                 <a href="${caseItem.url}" class="font-bold text-klyr-red hover:underline">
@@ -46,7 +94,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     `;
 
     try {
-        // --- 1. Load cases.json ---
+        // --- 1. Load JSON ---
         const res = await fetch(CASES_JSON_PATH);
         if (!res.ok) throw new Error("Failed to load cases.json");
 
@@ -54,56 +102,47 @@ document.addEventListener("DOMContentLoaded", async () => {
         const cases = Array.isArray(raw) ? raw : raw.cases;
 
         if (!Array.isArray(cases)) {
-            throw new Error("cases.json is not an array and has no `.cases` array");
+            throw new Error("cases.json must be an array");
         }
 
-        // --- 2. Extract {id} from ANY valid case path ---
-        // Works for:
-        // /case/id/
-        // /case/id
-        // /case/id/index.html
+        // --- 2. Get case ID from URL ---
         let path = window.location.pathname.replace(/\/index\.html$/, "");
         let segments = path.split("/").filter(Boolean);
+        let pathId = segments[1]; // /case/{id}/
 
-        let pathId = segments[1]; // because segments = ["case", "{id}"]
-
-        // --- 3. Find matching case ---
         const current = cases.find(c => c.id === pathId);
-        if (!current) throw new Error("Case not found in JSON");
+        if (!current) throw new Error("Case not found");
 
-        // --- 4. Load Markdown content ---
+        // --- 3. Load Markdown file ---
         let markdown = "";
         if (current.contentFile) {
             const mdRes = await fetch(current.contentFile);
-
-            if (mdRes.ok) {
-                markdown = await mdRes.text();
-            } else {
-                console.error("Markdown NOT FOUND:", current.contentFile);
-            }
+            if (mdRes.ok) markdown = await mdRes.text();
         }
 
-        // If markdown is empty → show fallback instead of a blank page
         if (!markdown.trim()) {
-            contentEl.innerHTML = `<p class="text-red-500">Case content is missing.</p>`;
+            contentEl.innerHTML = `<p class='text-red-500'>Case content is missing.</p>`;
         } else {
-            contentEl.innerHTML = marked.parse(parseRedText(markdown));
+            let html = marked.parse(markdown);
+            html = highlightHTML(html);
+            html = applyFormatting(html);
+            contentEl.innerHTML = html;
         }
 
-        // --- 5. Title & image ---
-        titleEl.innerHTML = parseRedText(current.title);
+        // --- 4. Title & image ---
+        titleEl.innerHTML = highlightHTML(current.title);
 
         if (current.image) {
             imageEl.innerHTML = `
-                <img src="${current.image}" alt="${current.title}" 
-                class="w-full h-full object-cover rounded-lg border border-gray-300">
+                <img src="${current.image}" alt="${current.title}"
+                     class="w-full h-full object-cover rounded-lg border border-gray-300">
             `;
         }
 
         document.title = `${current.title} – Case Study`;
         pageContainer.style.opacity = 1;
 
-        // --- 6. Related cases ---
+        // --- 5. Related cases ---
         const otherCases = cases.filter(c => c.id !== current.id);
         const related = otherCases.slice(0, MAX_RELATED_CASES);
 
@@ -115,7 +154,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     } catch (err) {
         console.error("Case page error:", err);
-        contentEl.innerHTML = `<p class="text-red-500">Failed to load case study.</p>`;
+        contentEl.innerHTML = `<p class='text-red-500'>Failed to load case study.</p>`;
         pageContainer.style.opacity = 1;
         if (relatedContainer) relatedContainer.parentElement.style.display = "none";
     }

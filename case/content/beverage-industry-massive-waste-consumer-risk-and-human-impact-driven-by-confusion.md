@@ -15,8 +15,7 @@ What started as a routine ingredient substitution led to a catastrophic clarity 
 The human fallout:
 - __Consumer illnesses__, including allergic reactions and GI distress
 - __Parents reporting sick children__ who drank mislabeled beverages
-- __Diabetics unknowingly consuming full-sugar drinks
-__
+- __Diabetics unknowingly consuming full-sugar drinks__
 - Retailers pulling all products out of caution
 - Consumers losing trust in a brand they grew up with
 The company destroyed over __112 million bottles__ because it couldn’t prove what was safe.
@@ -66,8 +65,8 @@ ALETHRA™ FLOW links:
 - Pallet IDs
 - Shipment routes
 - Retailer inventory
-If a risk appears, ALETHRA™ isolates __micro-batches — not entire product lines__.
-The difference? __112 million bottles destroyed __vs. __a single pallet quarantined__.
+If a risk appears, ALETHRA™ isolates __micro-batches__ — __not entire product lines__.
+The difference? __112 million bottles destroyed__ vs. __a single pallet quarantined__.
 # __What Would Have Happened With ALETHRA™__
 - Incorrect ingredient barrels identified on arrival
 - Allergen contamination blocked in real time

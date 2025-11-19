@@ -13,14 +13,15 @@ Over the three-year period, fresh produce (leafy greens, salad kits, onions, spr
 - No single truth-layer to reconcile growing, harvesting, sensor data, packing operations, QA logs, and supplier inputs.
 ## __The ALETHRA™ Solution__
 With ALETHRA™ implemented across the produce lifecycle (field → harvest → packing → distribution), each risk point would be mitigated.
-__1. Real-Time Contamination & Residue Detection
-__ALETHRA™ SENSE tools, deployed in the field and in packing houses, monitor microbial/chemical residues, enabling the immediate quarantine of at-risk batches.
-__2. Verified Harvest & Pack-Line Compliance
-__Harvest cycles, washing/sorting, cooling, and packing operations are all logged, verified, and cross-checked via ALETHRA’s truth-layer. Deviations halted instantly.
-__3. Ingredient & Batch Traceability Across Supply Chain
-__ALETHRA™ FLOW connects farm lots, packing-house runs, produce shipments, and retail batches—so if one lot diverges, it can be isolated, ignoring the entire chain.
-__4. Unified Clarity Intelligence Layer
-__Sensors, field data, pack-house equipment logs, QA checks, and supplier certifications all feed into ALETHRA’s single verified source of truth—eliminating confusion and enabling proactive risk management.
+
+__1. Real-Time Contamination & Residue Detection__ ALETHRA™ SENSE tools, deployed in the field and in packing houses, monitor microbial/chemical residues, enabling the immediate quarantine of at-risk batches.
+
+__2. Verified Harvest & Pack-Line Compliance__ Harvest cycles, washing/sorting, cooling, and packing operations are all logged, verified, and cross-checked via ALETHRA’s truth-layer. Deviations halted instantly.
+
+__3. Ingredient & Batch Traceability Across Supply Chain__ ALETHRA™ FLOW connects farm lots, packing-house runs, produce shipments, and retail batches—so if one lot diverges, it can be isolated, ignoring the entire chain.
+__4. Unified Clarity Intelligence Layer__ 
+Sensors, field data, pack-house equipment logs, QA checks, and supplier certifications all feed into ALETHRA’s single verified source of truth—eliminating confusion and enabling proactive risk management.
+
 ## __What Would Have Happened With ALETHRA™__
 - Contaminated or residue-excess batches detected before distribution.
 - Harvest batches quarantined early—no mass recall.

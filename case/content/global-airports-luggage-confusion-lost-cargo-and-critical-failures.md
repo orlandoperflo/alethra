@@ -24,14 +24,14 @@ The root cause was always the same: __confusion between systems__, siloed data, 
 When the system went down, everything went down, instantly.
 ## __The ALETHRA™ Solution__
 If ALETHRA™ had been deployed across airport and airline baggage infrastructures, these failures would have been contained before they cascaded into global chaos.
-__1. Real-Time Multi-Sensor Verification
-__ALETHRA™ SENSE cross-checks every scanner, every tag, every belt signal, and every routing update to eliminate routing conflicts and stop mis-sent luggage instantly.
-__2. Verified Handoff & Routing Integrity
-__Every point where a bag changes hands — from check-in, to belt, to container, to aircraft, to arrival — is validated through ALETHRA’s truth layer.
-__3. Priority Cargo Protection (Medical & Critical Shipments)
-__Organ shipments, medical devices, and urgent cargo are tracked with real-time verification and hazard-alerting. If something diverts, ALETHRA™ stops the chain *immediately*.
-__4. Unified Clarity Intelligence Across Entire Airport Systems
-__ALETHRA™ merges data from:
+
+__1. Real-Time Multi-Sensor Verification__ ALETHRA™ SENSE cross-checks every scanner, every tag, every belt signal, and every routing update to eliminate routing conflicts and stop mis-sent luggage instantly.
+
+__2. Verified Handoff & Routing Integrity__ Every point where a bag changes hands — from check-in, to belt, to container, to aircraft, to arrival — is validated through ALETHRA’s truth layer.
+
+__3. Priority Cargo Protection (Medical & Critical Shipments)__ Organ shipments, medical devices, and urgent cargo are tracked with real-time verification and hazard-alerting. If something diverts, ALETHRA™ stops the chain *immediately*.
+
+__4. Unified Clarity Intelligence Across Entire Airport Systems__ ALETHRA™ merges data from:
 - Airline routing systems
 - Airport conveyor networks
 - RFID/barcode scanners

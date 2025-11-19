@@ -123,5 +123,4 @@ Every moment.
 
 We will never solve every problem in healthcare, but we *can* eliminate the confusion that causes harm. And we’re going to do precisely that.”
 
-__Chad Willis  
-__ Founder & President, ALETHRA™
+__Chad Willis__ <br> Founder & President, ALETHRA™

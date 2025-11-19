@@ -20,12 +20,12 @@ A nationally ranked metropolitan hospital — viewed as a beacon of safety — e
 
 In just 22 minutes, the system failed:
 
-- 1. Two blood samples were mislabeled during a shift-change handoff.
-- 2. A barcode scanner misread a wrinkled patient label.
-- 3. The blood bank and ER had conflicting routing logs.
-- 4. A universal-safe O-unit sat untouched.
-- 5. An incompatible A+ unit was transfused.
-- 6. The patient went into hemolytic shock and died.
+- Two blood samples were mislabeled during a shift-change handoff.
+- A barcode scanner misread a wrinkled patient label.
+- The blood bank and ER had conflicting routing logs.
+- A universal-safe O-unit sat untouched.
+- An incompatible A+ unit was transfused.
+- The patient went into hemolytic shock and died.
 
 
 No incompetence. No lack of care. Just a deadly lack of verified clarity.

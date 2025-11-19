@@ -12,14 +12,15 @@ These products reached consumers, bypassing effective detection systems, leading
 - Harm surfaced only after the product reached end-users — i.e., too late.
 ## __The ALETHRA™ Solution__
 With ALETHRA™ in place, the event would likely have been prevented.
-__1. Real-Time Sterility & Microbial Risk Monitoring
-__ALETHRA™ SENSE tracks microbial anomalies during the manufacturing process, enabling instant alerts if contamination begins.
-__2. Verified Clean-Room & Line Integrity
-__All clean-room cycles, line purges, and environmental checks are verified through ALETHRA’s truth layer. Deviations trigger stoppage before production continues.
-__3. Batch & Supply-Chain Traceability
-__ALETHRA™ FLOW links raw materials, environment sensor logs, batch records, and final product codes — isolating risk if one segment diverges.
-__4. Unified Clarity Intelligence Layer
-__Sensor data, QA logs, and human checks all converge into one verified system — eliminating blind spots and misreporting.
+
+__1. Real-Time Sterility & Microbial Risk Monitoring__ ALETHRA™ SENSE tracks microbial anomalies during the manufacturing process, enabling instant alerts if contamination begins.
+
+__2. Verified Clean-Room & Line Integrity__ All clean-room cycles, line purges, and environmental checks are verified through ALETHRA’s truth layer. Deviations trigger stoppage before production continues.
+
+__3. Batch & Supply-Chain Traceability__ ALETHRA™ FLOW links raw materials, environment sensor logs, batch records, and final product codes — isolating risk if one segment diverges.
+
+__4. Unified Clarity Intelligence Layer__ Sensor data, QA logs, and human checks all converge into one verified system — eliminating blind spots and misreporting.
+
 ## __What Would Have Happened With ALETHRA™__
 - Contamination event flagged at the production stage.
 - Batch quarantined before distribution.

@@ -23,14 +23,14 @@ Each incident resulted in widespread illness, hospitalization, deaths, global he
 In other words, __the entire safety system was reactive rather than preventive, creating ideal__ conditions for lethal confusion.
 ## __The ALETHRA™ Solution__
 If ALETHRA™ had been in place across distilleries, distributors, retail channels, and hospitality environments, these tragedies would have been prevented.
-__1. Real-Time Alcohol Purity & Methanol Detection
-__ALETHRA™ SENSE can instantly identify methanol concentrations, ethanol-mismatch signatures, residue contamination, and other chemical risks — at the bottling stage or at the point of sale.
-__2. Verified Authenticity & Anti-Counterfeit Layer
-__ALETHRA™ FLOW authenticates bottles, batches, labels, and distribution paths with a unified truth-layer that cannot be forged. Fake bottles fail authentication immediately.
-__3. Distributor & Retail Verification
-__Every batch is scanned and verified at warehouses, bars, hotels, and retailers. ALETHRA™ flags suspicious inventory before it reaches consumers.
-__4. Unified Clarity Intelligence for Enforcement & Compliance
-__ALETHRA™ delivers a real-time, end-to-end map of bottle movement, composition data, and authenticity status, enabling regulators, brands, and retailers to instantly identify and stop contaminated inventory.
+
+__1. Real-Time Alcohol Purity & Methanol Detection__ ALETHRA™ SENSE can instantly identify methanol concentrations, ethanol-mismatch signatures, residue contamination, and other chemical risks — at the bottling stage or at the point of sale.
+
+__2. Verified Authenticity & Anti-Counterfeit Layer__ ALETHRA™ FLOW authenticates bottles, batches, labels, and distribution paths with a unified truth-layer that cannot be forged. Fake bottles fail authentication immediately.
+
+__3. Distributor & Retail Verification__ Every batch is scanned and verified at warehouses, bars, hotels, and retailers. ALETHRA™ flags suspicious inventory before it reaches consumers.
+
+__4. Unified Clarity Intelligence for Enforcement & Compliance__ ALETHRA™ delivers a real-time, end-to-end map of bottle movement, composition data, and authenticity status, enabling regulators, brands, and retailers to instantly identify and stop contaminated inventory.
 ## __What Would Have Happened With ALETHRA__™
 - Tainted spirits flagged the moment methanol was detected
 - Counterfeit bottles are identified instantly at the distributor or retail level

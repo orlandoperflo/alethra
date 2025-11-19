@@ -11,14 +11,14 @@ Tyson Foods initiated a voluntary recall of its “Fun Nuggets” fully-cooked, 
 - The issue was only detected after consumer complaints — meaning contaminated products had already reached households.
 ## __The ALETHRA™ Solution__
 Had ALETHRA™ been deployed across Tyson’s supply chain and production line, this event would’ve been prevented before shipping:
-__1. Real-Time Foreign-Object & Contaminant Detection
-__ ALETHRA™ SENSE continuously monitors production lines for foreign materials like metal fragments and triggers immediate alerts.
-__2. Verified Sanitation & Line Integrity Validation
-__ Every cleaning cycle, preventive maintenance, and inspection event is automatically verified by ALETHRA’s truth-layer. Any deviation triggers a stop.
-__3. Batch & Supply-Chain Traceability
-__ ALETHRA™ FLOW links ingredient lots, machine runs, packaging codes, and final product codes — making isolation of any deviant micro-batch automatic.
-__4. Unified Clarity Intelligence Layer
-__ All sensor output, human inspection data, machine logs, and QA entries merge into one verified data truth-layer. No blind spots. No conflicting data. Zero confusion.
+
+__1. Real-Time Foreign-Object & Contaminant Detection__ ALETHRA™ SENSE continuously monitors production lines for foreign materials like metal fragments and triggers immediate alerts.
+
+__2. Verified Sanitation & Line Integrity Validation__ Every cleaning cycle, preventive maintenance, and inspection event is automatically verified by ALETHRA’s truth-layer. Any deviation triggers a stop.
+
+__3. Batch & Supply-Chain Traceability__ ALETHRA™ FLOW links ingredient lots, machine runs, packaging codes, and final product codes — making isolation of any deviant micro-batch automatic.
+
+__4. Unified Clarity Intelligence Layer__ All sensor output, human inspection data, machine logs, and QA entries merge into one verified data truth-layer. No blind spots. No conflicting data. Zero confusion.
 ## __What Would Have Happened With ALETHRA™__
 - Contaminants are flagged in real time.
 - Production and packaging halted automatically.

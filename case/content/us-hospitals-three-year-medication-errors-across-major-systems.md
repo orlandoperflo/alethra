@@ -12,14 +12,18 @@ Over three years, major U.S. hospital systems documented repeated medication-err
 - No unified “truth layer” to reconcile sensor data, machine logs, human entries, and patient outcomes
 ## __The ALETHRA™ Solution__
 With ALETHRA™ deployed across hospital medication workflows, this systemic failure would have been disrupted.
-__1. Real-Time Medication Verification & Anomaly Alerts
-__ALETHRA™ SENSE continuously monitors medication ordering, dispensing and administration; it flags dosage outliers and potential interactions at the moment of entry.
-__2. Verified Dispense & Administration Compliance
-__ALETHRA™ FLOW ties together e-prescription entries, pharmacy operations, nursing administration, and patient monitoring data — verifying that each step is completed correctly.
-__3. Patient Monitoring & Feedback Loop
-__If a patient’s vitals or responses diverge unexpectedly after drug administration, ALETHRA™ triggers an immediate alert and rollback of further doses.
-__4. Unified Clarity Intelligence Layer
-__ All data—from sensors, machines, staff entries, medication records, and outcomes—flow into ALETHRA’s Clarity AI engine. This provides a single, verified source of truth for every medication event across all wards in every hospital.
+
+__1. Real-Time Medication Verification & Anomaly Alerts__
+ALETHRA™ SENSE continuously monitors medication ordering, dispensing and administration; it flags dosage outliers and potential interactions at the moment of entry.
+
+__2. Verified Dispense & Administration Compliance__
+ALETHRA™ FLOW ties together e-prescription entries, pharmacy operations, nursing administration, and patient monitoring data — verifying that each step is completed correctly.
+
+__3. Patient Monitoring & Feedback Loop__
+If a patient’s vitals or responses diverge unexpectedly after drug administration, ALETHRA™ triggers an immediate alert and rollback of further doses.
+
+__4. Unified Clarity Intelligence Layer__
+ All data—from sensors, machines, staff entries, medication records, and outcomes—flow into ALETHRA’s Clarity AI engine. This provides a single, verified source of truth for every medication event across all wards in every hospital.
 ## __What Would Have Happened With ALETHRA™__
 - Medication errors flagged at the moment of order or administration, not after harm occurred
 - Wrong-dose events prevented, patients spared severe injury or death.

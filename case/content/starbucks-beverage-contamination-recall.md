@@ -12,14 +12,14 @@ The recall was classified by the U.S. Food & Drug Administration (FDA) as a Clas
 - No real-time correlation across sensor, line-data, and QA logs — leading to unnoticed deviations until distribution.
 ## __The ALETHRA™ Solution__
 With ALETHRA™ deployed across the supplier-bottling ecosystem, this incident would have been intercepted prior to product release.
-__1. Real-Time Microbial & Foreign-Object Detection
-__ALETHRA™ SENSE monitors production lines live for fragments (glass, metal) and microbial spikes; potential contamination is flagged instantly.
-__2. Verified Sanitation & Line-Integrity Validation
-__Every cleaning cycle and machine check is validated by ALETHRA’s truth layer—any deviation triggers an automatic pause for inspection.
-__3. Ingredient & Batch-Traceability Tracking
-__ALETHRA™ FLOW connects raw-material lots, micro-batch runs, and final product codes; isolation of a deviating batch is automatic.
-__4. Unified Clarity Intelligence Layer
-__All machine sensors, QA logs, human input, and supplier systems feed into one verified truth-layer—no conflicting reports, no blind spots.
+
+__1. Real-Time Microbial & Foreign-Object Detection__ ALETHRA™ SENSE monitors production lines live for fragments (glass, metal) and microbial spikes; potential contamination is flagged instantly.
+
+__2. Verified Sanitation & Line-Integrity Validation__ Every cleaning cycle and machine check is validated by ALETHRA’s truth layer—any deviation triggers an automatic pause for inspection.
+
+__3. Ingredient & Batch-Traceability Tracking__ ALETHRA™ FLOW connects raw-material lots, micro-batch runs, and final product codes; isolation of a deviating batch is automatic.
+
+__4. Unified Clarity Intelligence Layer__ All machine sensors, QA logs, human input, and supplier systems feed into one verified truth-layer—no conflicting reports, no blind spots.
 ## __What Would Have Happened With ALETHRA™__
 - Contaminated batch flagged at the line.
 - Production paused immediately.

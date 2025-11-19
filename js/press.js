@@ -10,32 +10,46 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
+    const highlightAlethra = text =>
+      text.replace(/ALETHRA/g, '<span class="text-klyr-red font-bold">ALETHRA</span>');
+
     container.innerHTML = posts.map(post => {
-      // 1. Create a cleaned title by replacing all '==' with an empty string
+      // Remove == from titles
       const cleanedTitle = post.title.replace(/==/g, '');
+      const highlightedTitle = highlightAlethra(cleanedTitle);
+      const highlightedExcerpt = highlightAlethra(post.excerpt);
+
       return `
         <article class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-100">
-<a href="/press/${post.id}/" class="block">
+          <a href="/press/${post.id}/" class="block">
 
             <div class="aspect-[16/9] w-full bg-gray-100">
               <img src="${post.image}" alt="${post.title}" loading="lazy" class="object-cover w-full h-full">
             </div>
+
             <div class="p-6 space-y-3">
               <p class="text-sm font-semibold text-klyr-red uppercase">
                 ${new Date(post.date).toLocaleDateString('en-US', {year:'numeric', month:'short', day:'numeric'})}
               </p>
+
               <h2 class="text-xl font-bold text-klyr-dark hover:text-klyr-red transition duration-150 leading-snug">
-                ${cleanedTitle}
+                ${highlightedTitle}
               </h2>
-              <p class="text-gray-600 text-base line-clamp-3">${post.excerpt}</p>
+
+              <p class="text-gray-600 text-base line-clamp-3">
+                ${highlightedExcerpt}
+              </p>
+
               <span class="inline-flex items-center text-klyr-red font-semibold text-sm pt-2 hover:underline">
                 Read More <i class="fas fa-arrow-right ml-2 text-xs"></i>
               </span>
             </div>
+
           </a>
         </article>
       `;
     }).join('');
+
   } catch (err) {
     console.error('Error loading posts:', err);
     container.innerHTML = '<p class="text-center text-gray-500">Failed to load press articles.</p>';

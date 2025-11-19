@@ -220,5 +220,4 @@ We verify every ingredient, every label, every supplier, and every bottle — wi
 
 Clarity protects people. Clarity protects brands. Clarity protects the truth. And with ALETHRA™, clarity finally becomes standard in supplements.”
 
-— __Chad Willis  
-__ Founder & President, ALETHRA™
+— __Chad Willis__ <br>Founder & President, ALETHRA™

@@ -58,9 +58,9 @@ One lie breaks a system. One truth layer fixes it.
 
 ALETHRA™ ensures the product leaving the facility is exactly what the label claims. But what about the bottle __after__ it leaves the factory? That’s where the second half of your ecosystem comes in.
 
-# __ALL-SCRATCH™: The First Consumer-Facing Verification Layer in Beverage History__
+# __==ALL-SCRATCH==™ : The First Consumer-Facing Verification Layer in Beverage History__
 
-Once the product reaches a shopper, something new happens: __The truth is now in their hands. __ALL-SCRATCH™ gives consumers the ability to verify authenticity instantly.
+Once the product reaches a shopper, something new happens: __The truth is now in their hands. __ALL-SCRATCH™__ gives consumers the ability to verify authenticity instantly.
 
 ### __How It Works:__
 
@@ -184,7 +184,7 @@ Verified data
 
 Instant scratch ID
 
-For the first time in beverage history __there is a truth layer on both sides of the bottle. __ALETHRA™ protects production and ALL-SCRATCH™ protects people. Together, they protect the world.
+For the first time in beverage history __there is a truth layer on both sides of the bottle. __ALETHRA™__ protects production and ALL-SCRATCH™ protects people. Together, they protect the world.
 
 # __A Message From Founder & President, Chad Willis__
 
@@ -196,5 +196,4 @@ I built ALETHRA™ to eliminate confusion at the system level — to keep danger
 
 Together, these technologies create the first truly end-to-end safety ecosystem in beverages. No more guesswork. No more blind trust. No more confusion. Just clarity — at the factory, in the supply chain, and in the hands of every consumer.”
 
-— __Chad Willis  
-__ Founder & President, ALETHRA™ & ALL-SCRATCH\!®
+— __Chad Willis__ <br> Founder & President, ALETHRA™ & ==ALL-SCRATCH\!®==

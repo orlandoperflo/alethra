@@ -59,7 +59,7 @@ Because produce is the perfect storm for confusion:
 
 - And the supply chain changes hands over a dozen times
 
-__Confusion compounds at every step. __By the time someone discovers a problem, the food is already in trucks, warehouses, stores, and homes. So the industry does the only thing it can:  
+__Confusion compounds at every step.__ By the time someone discovers a problem, the food is already in trucks, warehouses, stores, and homes. So the industry does the only thing it can:  
  __destroy everything.__
 
 # __The ALETHRA™ Solution: Clarity From Soil to Shelf__
@@ -110,8 +110,7 @@ No more conflicting logs. No more inconsistent labels. No more “we don’t kno
 
 - Massive recalls reduced to targeted removals  
 
-- Millions of pounds of perfectly safe produce __saved  
-__
+- Millions of pounds of perfectly safe produce __saved__
 - Farmers protected  
 
 - Brands protected  
@@ -144,5 +143,4 @@ Protect the future.
 
 One system. One truth. Zero confusion.”
 
-__Chad Willis  
-__ Founder & President, ALETHRA™
+__Chad Willis__ <br>Founder & President, ALETHRA™
