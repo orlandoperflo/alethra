@@ -205,71 +205,101 @@
 
     <main class="fade-in-section">
         
-<div id="homepage-content">
-             <!-- Section 1: Hero - Global Standard of Clarity --><section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 text-center">
-                <div class="max-w-4xl mx-auto space-y-6">
+    <div id="homepage-content">
+             <!-- Section 1: Hero - Global Standard of Clarity -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 text-left">
+                <div class="max-w-4xl space-y-6">
                     
-                    <div class="flex flex-col items-center justify-center">
+                    <div class="flex flex-col items-start justify-center">
                         
-                        <!-- Certification Icon (Small) - MOVED ABOVE H1 and changed mt-4 to mb-4 --><img src="https://plusbrand.com/wp-content/uploads/2025/11/ALETHRA_Certified-scaled.webp" 
+                        <!-- Certification Icon (Small) - Left Aligned -->
+                        <img src="https://plusbrand.com/wp-content/uploads/2025/11/ALETHRA_Certified-scaled.webp" 
                              alt="ALETHRA Certified Icon" 
-                             class="h-24 w-auto mb-4 mx-auto"
+                             class="h-24 w-auto mb-4"
                              onerror="this.outerHTML = '<i class=\'fas fa-certificate text-7xl text-klyr-red mb-4\'></i>';"
                         >
 
-                        <!-- H1 Text (UPDATED) --><h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-snug text-klyr-dark inline-block">
+                        <!-- H1 Text (Left Aligned) -->
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-snug text-klyr-dark inline-block text-left">
                             <strong class="text-klyr-red">ALETHRACERTIFIED</strong>™ DEFINES THE NEW GLOBAL CLARITY MARK.
                         </h1>
                     </div>
 
-                    <!-- Paragraph Text (UPDATED) --><p class="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto pt-4">
+                    <!-- Paragraph Text (Left Aligned) -->
+                    <p class="text-gray-600 text-lg md:text-xl max-w-3xl pt-4 text-left">
                         It represents adherence to measurable safety, authenticity, and environmental benchmarks across production and distribution chains.
                     </p>
                 </div>
             </section>
-          
-   <!-- Divider: Red Line --><div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Divider: Red Line -->
+            <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
                 <hr class="border-t-4 border-klyr-red w-full">
             </div>
-            <!-- Section 1.5: ALETHRACERTIFIED™ Requirements (REPLACING OLD REGULATORY CONTENT) --><section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6 md:pt-16 md:pb-8 text-center">
-                <!-- Content Block (Left-Aligned inside the section) -->
-                <div class="mt-4 text-left max-w-4xl mx-auto">
+
+            <!-- Section 1.5: ALETHRACERTIFIED™ Requirements -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6 md:pt-16 md:pb-8 text-left">
+                <!-- Content Block -->
+                <div class="mt-4 text-left max-w-full mx-auto">
                     
-                    <!-- Heading: CERTIFICATION REQUIREMENTS: (Style matched to removed regulatory heading) -->
-                    <h3 class="text-xl md:text-2xl font-extrabold tracking-tight mb-8 text-klyr-dark">
+                    <!-- Heading: CERTIFICATION REQUIREMENTS -->
+                    <h3 class="text-xl md:text-2xl font-extrabold tracking-tight mb-12 text-klyr-dark text-left">
                         CERTIFICATION REQUIREMENTS:
                     </h3>
                     
-                    <!-- Custom Red Dot List -->
-                    <ul class="red-dot-list text-gray-600 text-lg md:text-xl">
-                        <li>
-                            Verified integration of <strong class="text-klyr-red">ALETHRA</strong>™ <strong class="text-klyr-red">AI</strong> and visual fingerprinting technology.
-                        </li>
-                        <li>
-                            Secure blockchain event logging through <strong class="text-klyr-red">ALETHRACLOUD</strong>™.
-                        </li>
-                        <li>
-                            Transparency reporting through the <strong class="text-klyr-red">ALETHRA ENTERPRISE</strong>™ dashboard.
-                        </li>
-                        <li>
-                            Third-party audit of clarity system performance and compliance accuracy.
-                        </li>
-                    </ul>
+                    <!-- Vertical Divider Grid Transformation for Requirements -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-0">
+                        
+                        <!-- Item 1 -->
+                        <!-- Border Right on MD/LG, Bottom on Mobile -->
+                        <div class="pl-0 pr-6 pb-6 md:pb-0 border-b border-gray-200 md:border-b-0 md:border-r-2 md:border-black flex flex-col justify-start h-full">
+                            <p class="text-gray-600 text-lg font-medium">
+                                Verified integration of <strong class="text-klyr-red">ALETHRA</strong>™ <strong class="text-klyr-red">AI</strong> and visual fingerprinting technology.
+                            </p>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <!-- Border Right on LG. No Right Border on MD (end of row 1). Bottom on Mobile -->
+                        <div class="pl-0 md:pl-8 pr-6 pb-6 md:pb-0 border-b border-gray-200 md:border-b-0 lg:border-r-2 lg:border-black flex flex-col justify-start h-full">
+                            <p class="text-gray-600 text-lg font-medium">
+                                Secure blockchain event logging through <strong class="text-klyr-red">ALETHRACLOUD</strong>™.
+                            </p>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <!-- Border Right on MD/LG. Bottom on Mobile -->
+                        <div class="pl-0 lg:pl-8 pr-6 pb-6 md:pb-0 border-b border-gray-200 md:border-b-0 md:border-r-2 md:border-black flex flex-col justify-start h-full pt-6 md:pt-6 lg:pt-0 border-t md:border-t-2 md:border-black lg:border-t-0">
+                             <!-- Note: complex border logic for responsive grid. 
+                                  Mobile: Stacked (Border B)
+                                  MD: 2x2 (Item 3 is Bottom Left - needs Right Border, Top Border from row above)
+                                  LG: 1x4 (Item 3 is 3rd col - needs Right Border, No Top Border)
+                                  Simplified for clean Vertical Divider style on LG, stacked on mobile. 
+                             -->
+                             <!-- Re-simplifying to standard vertical divider logic -->
+                             <p class="text-gray-600 text-lg font-medium">
+                                Transparency reporting through the <strong class="text-klyr-red">ALETHRA ENTERPRISE</strong>™ dashboard.
+                            </p>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="pl-0 md:pl-8 lg:pl-8 pt-6 md:pt-6 lg:pt-0 border-t border-gray-200 md:border-t-2 md:border-black lg:border-t-0 flex flex-col justify-start h-full">
+                            <p class="text-gray-600 text-lg font-medium">
+                                Third-party audit of clarity system performance and compliance accuracy.
+                            </p>
+                        </div>
+
+                    </div>
 
                     <!-- Final Sentence -->
-                    <p class="text-gray-600 text-lg md:text-xl mt-10">
+                    <p class="text-gray-600 text-lg md:text-xl mt-16 text-left">
                         Once certified, a product, facility, or system earns the <strong class="text-klyr-red">ALETHRACERTIFIED™</strong> badge — the visible proof of verified clarity.
                     </p>
 
                 </div>
             </section>
 
-
-        
-
-
-          
         </div>
+        
         
 </main>
 
