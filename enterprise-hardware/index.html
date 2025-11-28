@@ -180,19 +180,34 @@
         
 <div id="homepage-content">
               
-    <!-- HERO SECTION: Heading, Subhead, and CTAs -->
-    <!-- Removed text-center -->
+    <!-- HERO SECTION: Heading, Subhead, and CTAs + Image Grid -->
     <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-10 md:pb-16 text-left">
-        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-klyr-dark">
-            <span class="text-klyr-red">ALETHRA ENTERPRISE</span>™
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mb-10">
-            Industrial intelligence built for real-time clarity, compliance, and operational truth.
-        </p>
+        
+        <!-- Grid Container: 2 Columns -->
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+            
+            <!-- Left Column: Content -->
+            <div class="space-y-6">
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-klyr-dark">
+                    <span class="text-klyr-red">ALETHRA ENTERPRISE </span>™
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mb-10">
+                    Industrial intelligence built for real-time clarity, compliance, and operational truth.
+                </p>
 
-        <!-- Hero CTA Buttons -->
-        <!-- Changed justify-center to justify-start and added items-start for column flex -->
-        <div class="flex flex-col sm:flex-row justify-start items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                <!-- MOVED CTA BUTTONS OUT OF HERE -->
+            </div>
+
+            <!-- Right Column: Image -->
+            <div id="" class="content-box-border-style rounded-lg flex overflow-hidden"> 
+                <!-- MODIFIED: Changed to h-auto and object-contain to respect aspect ratio without cropping -->
+                <img id="" src="https://plusbrand.com/wp-content/uploads/2025/11/Aletha-1.webp" class="content-logo-border w-full h-auto object-contain rounded-lg"  onerror="this.outerHTML = '<span class=\'text-6xl font-extrabold text-klyr-red\'>ALETHRA™</span>';">
+            </div>
+
+        </div>
+
+        <!-- Hero CTA Buttons - MOVED BELOW GRID -->
+        <div class="mt-10 flex flex-col sm:flex-row justify-start items-start space-y-4 sm:space-y-0 sm:space-x-6">
             <a href="/downloads/ALETHRA_Equipment.pdf" target="_blank" class="w-full sm:w-auto" >
                 <button class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg shadow-xl transition duration-300 transform hover:scale-105 uppercase tracking-wider w-full sm:w-auto">
                     Download Full Hardware Pack (PDF)

@@ -235,31 +235,42 @@
  
     <main class="fade-in-section">
         
-   
-        <div id="homepage-content">
+    <div id="homepage-content">
              <!-- Section 1: Hero - Global Standard of Clarity -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 text-left">
-                <div class="max-w-4xl space-y-6">
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-12 text-left">
+                
+                <!-- Grid Container: 2 Columns -->
+                <div class="grid md:grid-cols-2 gap-12 items-start">
                     
-                    <div class="flex flex-col items-start justify-center">
+                    <!-- Left Column: Content -->
+                    <div class="space-y-6">
                         
-                        <!-- Certification Icon (Small) -->
-                        <img src="https://plusbrand.com/wp-content/uploads/2025/11/ALETHRA_Certified-scaled.webp" 
-                             alt="ALETHRA Certified Icon" 
-                             class="h-24 w-auto mb-4"
-                             onerror="this.outerHTML = '<i class=\'fas fa-certificate text-7xl text-klyr-red mb-4\'></i>';"
-                        >
-
                         <!-- H1 Text -->
                         <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-snug text-klyr-dark inline-block text-left">
                             BUILDING THE GLOBAL<br> STANDARD OF CLARITY.
                         </h1>
+
+                        <!-- Paragraph Text -->
+                        <p class="text-gray-600 text-lg md:text-xl max-w-3xl pt-4 text-left">
+                            <span class="font-bold text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> is more than a technology — it’s a movement toward measurable truth. Our systems are designed to meet and advance the world’s highest standards for safety, traceability, and compliance. <br> <br>Through the <span class="font-bold text-klyr-red">ALETHRACERTIFIED</span>™ framework, <span class="font-bold text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> partners with international regulators, agencies, and industry leaders to create a unified clarity standard — protecting consumers, industries, and the planet.
+                        </p>
                     </div>
 
-                    <!-- Paragraph Text -->
-                    <p class="text-gray-600 text-lg md:text-xl max-w-3xl pt-4 text-left">
-                        <span class="font-bold text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> is more than a technology — it’s a movement toward measurable truth. Our systems are designed to meet and advance the world’s highest standards for safety, traceability, and compliance. <br> <br>Through the <span class="font-bold text-klyr-red">ALETHRACERTIFIED</span>™ framework, <span class="font-bold text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> partners with international regulators, agencies, and industry leaders to create a unified clarity standard — protecting consumers, industries, and the planet.
-                    </p>
+                    <!-- Right Column: Image & Icon -->
+                    <div class="flex flex-col items-center">
+                        <div id="" class="content-box-border-style rounded-lg flex overflow-hidden mb-8 w-full"> 
+                            <!-- MODIFIED: Changed to h-auto and object-contain to respect aspect ratio without cropping -->
+                            <img id="" src="https://plusbrand.com/wp-content/uploads/2025/11/Aletha-1.webp" class="content-logo-border w-full h-auto object-contain rounded-lg"  onerror="this.outerHTML = '<span class=\'text-6xl font-extrabold text-klyr-red\'>ALETHRA™ REGULATORY</span>';">
+                        </div>
+                        
+                        <!-- Certification Icon (Larger, below image) -->
+                        <img src="https://plusbrand.com/wp-content/uploads/2025/11/ALETHRA_Certified-scaled.webp" 
+                             alt="ALETHRA Certified Icon" 
+                             class="h-32 w-auto"
+                             onerror="this.outerHTML = '<i class=\'fas fa-certificate text-7xl text-klyr-red\'></i>';"
+                        >
+                    </div>
+
                 </div>
             </section>
             
@@ -288,7 +299,7 @@
                         ENGAGEMENT FOCUSES ON
                     </h3>
                     
-                    <!-- Centered Image (Aligned left relative to section container logic, but image itself usually looks best visually centered or full width. Keeping centered based on layout flow of diagrams, or strictly left if user insisted on 'all content'. I will use flex-start to align left) -->
+                    <!-- Centered Image -->
                     <div class="flex justify-start mb-12">
                         <img src="https://plusbrand.com/wp-content/uploads/2025/11/12-Regulatory-Standards-Engagement_Img_1-scaled.png" 
                              alt="Diagram illustrating regulatory engagement and standards development" 
@@ -311,28 +322,24 @@
                         </div>
 
                         <!-- Item 2 -->
-                        <!-- Right border on MD and LG -->
                         <div class="pl-0 md:pl-8 pr-6 border-b border-gray-200 md:border-b-0 lg:border-r-2 lg:border-black">
                             <p class="font-extrabold uppercase mb-2 text-klyr-dark">U.S. DEPARTMENT OF AGRICULTURE (USDA)</p>
                             <p class="text-gray-600 text-base">Enhancing food safety and traceability programs.</p>
                         </div>
 
                         <!-- Item 3 -->
-                        <!-- No right border on LG (end of row 1) -->
                         <div class="pl-0 md:pl-0 lg:pl-8 pr-6 border-b border-gray-200 md:border-b-0 md:border-r-2 lg:border-r-0 md:border-black">
                             <p class="font-extrabold uppercase mb-2 text-klyr-dark">EUROPEAN MEDICINES AGENCY (EMA)</p>
                             <p class="text-gray-600 text-base">Working toward harmonized verification standards in healthcare.</p>
                         </div>
 
                         <!-- Item 4 -->
-                        <!-- Right border on LG -->
                         <div class="pl-0 lg:pl-0 pr-6 border-b border-gray-200 md:border-b-0 lg:border-r-2 md:border-black">
                             <p class="font-extrabold uppercase mb-2 text-klyr-dark">WORLD HEALTH ORGANIZATION (WHO)</p>
                             <p class="text-gray-600 text-base">Research cooperation on confusion-related injury and prevention.</p>
                         </div>
 
                         <!-- Item 5 -->
-                        <!-- Right border on MD and LG -->
                         <div class="pl-0 md:pl-8 pr-6 border-b border-gray-200 md:border-b-0 md:border-r-2 md:border-black">
                             <p class="font-extrabold uppercase mb-2 text-klyr-dark">ISO & IEC COMMITTEES</p>
                             <p class="text-gray-600 text-base">Participation in the development of next-generation data verification and product identification standards.</p>

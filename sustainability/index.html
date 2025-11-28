@@ -224,21 +224,32 @@
         
  <div id="homepage-content">
              <!-- Section 1: Hero - Global Standard of Clarity -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-6 md:pt-24 md:pb-8 text-left">
-                <div class="max-w-4xl space-y-6">
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-12 text-left">
+                
+                <!-- Grid Container: 2 Columns -->
+                <div class="grid md:grid-cols-2 gap-12 items-start">
                     
-                    <div class="flex flex-col items-start justify-center">
-                        
-                        <!-- H1 Text -->
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-snug text-klyr-dark inline-block uppercase text-left">
-                            Intelligence with<br> <span class="font-bold text-klyr-red">measurable</span> impact
-                        </h1>
+                    <!-- Left Column: Content -->
+                    <div class="max-w-4xl space-y-6">
+                        <div class="flex flex-col items-start justify-center">
+                            <!-- H1 Text -->
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-snug text-klyr-dark inline-block uppercase text-left">
+                                Intelligence with<br> <span class="font-bold text-klyr-red">measurable</span> impact
+                            </h1>
+                        </div>
+
+                        <!-- Paragraph Text -->
+                        <p class="text-gray-600 text-lg md:text-xl max-w-3xl pt-4 text-left">
+                            <span class="font-bold text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> is designed to reduce waste, eliminate counterfeit risk, and optimize resources across product lifecycles.
+                        </p>
                     </div>
 
-                    <!-- Paragraph Text -->
-                    <p class="text-gray-600 text-lg md:text-xl max-w-3xl pt-4 text-left">
-                        <span class="font-bold text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> is designed to reduce waste, eliminate counterfeit risk, and optimize resources across product lifecycles.
-                    </p>
+                    <!-- Right Column: Image -->
+                    <div id="content-box" class="content-box-border-style rounded-lg flex overflow-hidden"> 
+                        <!-- MODIFIED: Changed to h-auto and object-contain to respect aspect ratio without cropping -->
+                        <img id="" src="https://plusbrand.com/wp-content/uploads/2025/11/Aletha-1.webp" class="content-logo-border w-full h-auto object-contain rounded-lg"  onerror="this.outerHTML = '<span class=\'text-6xl font-extrabold text-klyr-red\'>ALETHRA™</span>';">
+                    </div>
+
                 </div>
             </section>
             
