@@ -177,12 +177,15 @@
 <div class="bg-white shadow-sm sticky top-0 z-50" id="nav-placeholder"></div>
 
     <main class="">
-     
-      <div id="alethra-content" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-20">
+      <div id="alethra-content" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- [IMAGE 1] SECTION 1: HERO -->
-            <section class="mb-12">
-                <div class="grid md:grid-cols-2 gap-12 items-start pt-10">
+            <!-- [IMAGE 1] SECTION 1: HERO 
+                 Rule: Top 6rem(d)/4rem(m). Bottom 3rem(d)/2rem(m).
+                 Internal Spacing: 3rem(d)/2rem(m).
+            -->
+            <section class="pt-16 pb-8 md:pt-24 md:pb-12">
+                <!-- GRID GAP: 2rem (8) Mobile, 3rem (12) Desktop -->
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
                     <!-- Left Column: Content -->
                     <div class="space-y-6">
                         <h1 class="text-4xl md:text-5xl font-extrabold text-klyr-dark leading-tight uppercase">
@@ -195,25 +198,28 @@
 
                     <!-- Right Column: Image -->
                     <div id="" class="content-box-border-style rounded-lg flex overflow-hidden"> 
-                        <!-- MODIFIED: Changed to h-auto and object-contain to respect aspect ratio without cropping -->
                         <img id="" src="https://plusbrand.com/wp-content/uploads/2025/11/Aletha-1.webp" class="content-logo-border w-full h-auto object-contain rounded-lg"  onerror="this.outerHTML = '<span class=\'text-6xl font-extrabold text-klyr-red\'>ALETHRA™</span>';">
                     </div>
                 </div>
 
-                <!-- Moved Text Below Grid -->
-                <div class="mt-10 max-w-4xl">
+                <!-- Text Below Grid: MARGIN TOP 2rem (8) Mobile, 3rem (12) Desktop -->
+                <div class="mt-8 md:mt-12 max-w-4xl">
                     <p class="text-lg text-gray-600 leading-relaxed">
                         Before AI makes a decision, <span class="text-klyr-red">ALETHRA</span><span class="text-black">™</span> makes sure the physical data it depends on is actually true. No high-stakes AI decision should be made on unverified physical inputs. <span class="text-klyr-red">ALETHRA</span><span class="text-black">™</span> exists to make sure it never is.
                     </p>
                 </div>
             </section>
 
-            <!-- [IMAGE 1] SECTION 2: HIDDEN FAILURE POINT -->
-            <section class="space-y-6">
+            <!-- [IMAGE 1] SECTION 2: HIDDEN FAILURE POINT 
+                 Rule: Top 0 (relies on prev pb). Bottom 3rem(d)/2rem(m).
+                 Internal Spacing: 3rem(d)/2rem(m) between H2 and Text.
+            -->
+            <section class="space-y-8 md:space-y-12 pb-8 md:pb-12">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-klyr-dark uppercase leading-tight">
                     THE HIDDEN FAILURE POINT <br>IN MODERN AI
                 </h2>
-                <div class="text-lg text-gray-600 space-y-4 leading-relaxed">
+                <!-- Text Block: slightly tighter internal spacing for readability, but block gap is enforced by parent -->
+                <div class="text-lg text-gray-600 space-y-6 leading-relaxed">
                     <p>
                         AI is everywhere. It runs in hospitals, factories, farms, logistics networks, financial systems, and government infrastructure. Cloud platforms now host thousands of models, agents, and autonomous workflows.
                     </p>
@@ -231,14 +237,17 @@
                 </div>
             </section>
 
-            <!-- [IMAGE 1] SECTION 3: CLARITY LAYER -->
-            <section class="space-y-8">
+            <!-- [IMAGE 1] SECTION 3: CLARITY LAYER 
+                 Rule: Top 0. Bottom 3rem(d)/2rem(m).
+                 Internal Spacing: 3rem(d)/2rem(m) between elements.
+            -->
+            <section class="space-y-8 md:space-y-12 pb-8 md:pb-12">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-klyr-dark uppercase">
                     <span class="text-klyr-red">ALETHRA</span><span class="text-black">™</span>: A NEW REAL-WORLD <br>CLARITY LAYER
                 </h2>
 
-                <!-- Diagram Visualization (Matching Image 1 Flow) -->
-                <div class="flex flex-col md:flex-row items-center justify-between py-8 gap-8">
+                <!-- Diagram Gap: 2rem(8) Mobile, 3rem(12) Desktop -->
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
                     <!-- Globe -->
                     <div class="flex flex-col items-center">
                         <i class="fas fa-globe-americas text-6xl text-klyr-red"></i>
@@ -294,7 +303,7 @@
                 <p class="text-lg text-gray-600">
                     The platform verifies the identity, continuity, and conditions of physical products, materials, and items before their data ever reaches a cloud platform, AI agent, or enterprise system.
                 </p>
-                <p class="text-lg text-gray-600 mb-4">
+                <p class="text-lg text-gray-600">
                     <span class="text-klyr-red">ALETHRA</span><span class="text-black">™</span> combines four core components:
                 </p>
 
@@ -317,35 +326,44 @@
                     </div>
                 </div>
                 
-                <p class="font-bold italic text-klyr-dark text-lg mt-4">
+                <p class="font-bold italic text-klyr-dark text-lg">
                     Together, these components convert the physical world from “assumed” to “proven.”
                 </p>
             </section>
 
-            <!-- [IMAGE 2] SECTION 4: HYPERSCALE FOUNDATION -->
-            <section class="space-y-8">
+            <!-- [IMAGE 2] SECTION 4: HYPERSCALE FOUNDATION 
+                 Rule: Top 0. Bottom 3rem(d)/2rem(m).
+                 Internal Spacing: 3rem(d)/2rem(m).
+            -->
+            <section class="space-y-8 md:space-y-12 pb-8 md:pb-12">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-klyr-dark uppercase leading-tight">
                     WHY HYPERSCALE AI NEEDS <br>A FOUNDATION LAYER
                 </h2>
-                <div class="text-lg text-gray-600 space-y-4 leading-relaxed">
+                <div class="text-lg text-gray-600 space-y-6 leading-relaxed">
                     <p>
                         Hyperscale cloud platforms are exceptionally good at compute, storage, and orchestration. They are not designed to prove whether a medication is authentic, a component is original, a crop is clean, or a sterile pack was compromised.
                     </p>
                     <p>
                         Agents, copilots, and autonomous decision systems inherit this blind spot. They assume the physical inputs they operate on are correct because the digital records say so. <span class="text-klyr-red">ALETHRA</span><span class="text-black">™</span> inserts verification at the only place it actually matters: the point where the physical world becomes data.
                     </p>
-                    <p class="text-xl font-bold italic text-klyr-dark pl-0 py-2 my-6">
+                    <p class="text-xl font-bold italic text-klyr-dark pl-0 md:pt-6">
                         Cloud secures the workload. <span class="text-klyr-red">ALETHRA</span><span class="text-black">™</span> secures the reality underneath it.
                     </p>
                 </div>
 
-                <div class="pt-8">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-klyr-dark uppercase mb-8">
+                <!-- Removed pt-8, relying on parent space-y-8/12 -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-klyr-dark uppercase">
                         HOW <span class="text-klyr-red">ALETHRA</span><span class="text-black">™</span> FITS INTO <br>THE MODERN AI STACK
                     </h2>
 
                     <!-- 3 Column Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-gray-200 pt-8">
+                    <!-- Removed pt-8, grid sits 2rem/3rem below header via mb-8 above, or we can use gap on container.
+                         Actually, let's remove mb-8 on H2 and use space-y on this container for consistency? 
+                         But grid gap is structural. Let's keep mb-8 (2rem) as consistent header margin, or increase to 12.
+                         Let's update mb-8 to mb-8 md:mb-12.
+                    -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 border-t border-gray-200 mt-0 md:mt-12 pt-8 md:pt-0">
                         <!-- Col 1 -->
                         <div class="border-l-2 border-klyr-dark pl-4">
                             <h3 class="text-klyr-dark font-bold uppercase mb-2 text-sm tracking-wider">CLOUD PLATFORMS</h3>
@@ -369,22 +387,25 @@
                         </div>
                     </div>
 
-                    <p class="text-gray-700 text-sm italic mt-8">
+                    <p class="text-gray-700 text-sm italic mt-8 md:mt-12">
                         Instead of trusting labels, logs, and barcodes by default, cloud and AI systems receive a higher-order signal: verified physical truth delivered in real time.
                     </p>
                 </div>
             </section>
 
-            <!-- [IMAGE 3] SECTION 5: THE FLOW -->
-            <section class="space-y-8">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-klyr-dark uppercase mb-12">
+            <!-- [IMAGE 3] SECTION 5: THE FLOW 
+                 Rule: Top 0. Bottom 3rem(d)/2rem(m).
+                 Internal Spacing: 3rem(d)/2rem(m).
+            -->
+            <section class="space-y-8 md:space-y-12 pb-8 md:pb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-klyr-dark uppercase md:mb-12 mb-8">
                     FROM OBJECT TO TRUTH STATE: <br>THE <span class="text-klyr-red">ALETHRA</span><span class="text-black">™</span> FLOW
                 </h2>
 
                 <div class="relative pl-0 md:pl-0">
                     
                     <!-- Item Grid with Icons on Right -->
-                    <div class="space-y-12 relative">
+                    <div class="space-y-8 md:space-y-12 relative">
                         
                         <!-- Connecting Line (Right Side) -->
                         <div class="absolute right-[2.25rem] md:right-[2.5rem] top-8 bottom-8 w-1 bg-klyr-red hidden md:block z-0"></div>
@@ -488,13 +509,17 @@
                 </div>
             </section>
 
-            <!-- [IMAGE 4] SECTION 6: IMMEDIATE IMPACT -->
-            <section class="space-y-8 pt-8">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-klyr-dark uppercase leading-tight mb-12">
+            <!-- [IMAGE 4] SECTION 6: IMMEDIATE IMPACT 
+                 Rule: Top 0. Bottom 3rem(d)/2rem(m).
+                 Internal Spacing: 3rem(d)/2rem(m).
+            -->
+            <section class="space-y-8 md:space-y-12 pb-8 md:pb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-klyr-dark uppercase leading-tight mb-8 md:mb-12">
                     WHERE <span class="text-klyr-red">ALETHRA</span><span class="text-black">™</span> DELIVERS <br>IMMEDIATE IMPACT
                 </h2>
 
-                <div class="space-y-10">
+                <!-- Spacing changed from space-y-10 to space-y-8/12 -->
+                <div class="space-y-8 md:space-y-12">
                     <!-- Item 1 -->
                     <div class="flex flex-col items-start gap-4">
                         <div class="text-klyr-red">
@@ -572,12 +597,15 @@
                 </div>
             </section>
 
-                <!-- SECTION 4: BUILT FOR AUDITS -->
-                <section class="space-y-8 pt-8">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-klyr-dark uppercase leading-tight">
+            <!-- SECTION 4: BUILT FOR AUDITS 
+                 Rule: Top 0. Bottom 6rem(d)/4rem(m) (EXCEPTION RULE).
+                 Internal Spacing: 3rem(d)/2rem(m).
+            -->
+            <section class="space-y-8 md:space-y-12 pb-16 md:pb-24">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-klyr-dark uppercase leading-tight">
                     BUILT FOR AUDITS, STANDARDS, <br>AND ACCOUNTABILITY
                 </h2>
-                <div class="text-lg text-gray-600 space-y-4 leading-relaxed">
+                <div class="text-lg text-gray-600 space-y-6 leading-relaxed">
                     <p>
                         Regulators, standards bodies, and policymakers are converging on the same expectations for AI and data-intensive systems: traceability, auditability, and demonstrable control over risk.
                     </p>
@@ -595,15 +623,15 @@
                         <li>What verification did you perform, and how?</li>
                         <li>Where is the record of that evidence?</li>
                     </ul>
-                    <p class="font-bold italic text-klyr-dark mt-4">
+                    <p class="font-bold italic text-klyr-dark mt-4 md:pt-6">
                         <span class="text-klyr-red">ALETHRA</span><span class="text-black">™</span> turns those answers from guesswork into a matter of record.
                     </p>
                 </div>
 
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-klyr-dark uppercase leading-tight mt-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-klyr-dark uppercase leading-tight">
                     THE CLARITY LAYER BENEATH THE <br>NEXT DECADE OF AI
                 </h2>
-                <div class="text-lg text-gray-600 space-y-6 leading-relaxed">
+                <div class="text-lg text-gray-600 space-y-8 md:space-y-12 leading-relaxed">
                     <p>
                         AI will not slow down. Cloud will not shrink. Agents will not retreat. The world is moving toward more autonomy, more automation, and more decisions made by systems that never see the real world directly.
                     </p>
@@ -614,7 +642,7 @@
                         By anchoring physical reality to digital infrastructure, <span class="text-klyr-red">ALETHRA</span><span class="text-black">™</span> protects human life, safeguards supply chains, and raises the standard for what “trusted AI” actually means.
                     </p>
                     
-                    <div class="pt-4 pb-12">
+                    <div>
                         <p class="text-xl font-bold text-klyr-dark leading-snug">
                             AI built on assumption is fragile.<br>
                             AI built on <span class="text-klyr-red">ALETHRA</span><span class="text-black">™</span> is clear.
@@ -625,7 +653,6 @@
             </section>
 
         </div>
-        
 
 </main>
 

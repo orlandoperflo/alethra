@@ -180,9 +180,10 @@
   <div id="about-content">
             
             <!-- HERO SECTION -->
-            <!-- Left aligned grid layout -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-12 md:pb-16 text-left">
-                <div class="grid md:grid-cols-2 gap-12 items-start">
+            <!-- Rule 1: Desktop pt-24/pb-12, Mobile pt-16/pb-8 -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12 text-left">
+                <!-- Rule 1: Mobile Gap 2rem (gap-8) -->
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
                     
                     <!-- Left Column: Content -->
                     <div class="space-y-6">
@@ -205,9 +206,11 @@
             </section>
 
             <!-- MISSION & ORIGIN (Gray Background) -->
-            <section class="bg-gray-50 py-16 md:py-20 border-t border-gray-100">
+            <!-- Rule 2: Desktop py-12, Mobile py-8 -->
+            <section class="bg-gray-50 py-8 md:py-12 border-t border-gray-100">
                 <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+                    <!-- Rule 2: Max gap 2rem mobile -->
+                    <div class="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
                         
                         <!-- Mission -->
                         <div class="space-y-6">
@@ -247,7 +250,8 @@
             </section>
 
             <!-- WHAT WE DO SECTION -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+            <!-- Rule 2: Desktop py-12, Mobile py-8 -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-black text-left mb-6 uppercase">
                     WHAT WE DO?
                 </h2>
@@ -255,10 +259,12 @@
                     We enable enterprises, regulators, and frontline operators to verify identity, authenticity, quality, contamination, and safety with unmatched accuracy.
                 </p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3">
+                <!-- Rule 5 (Strip & Gap): Added gap-y-8 to parent, removed padding/borders from children on mobile -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-y-8">
                     
                     <!-- Item 1 -->
-                    <div class="md:pr-8 md:border-r-2 md:border-black h-full pb-8 md:pb-0">
+                    <!-- Removed mobile pb-8. Kept desktop padding/borders -->
+                    <div class="md:pr-8 md:border-r-2 md:border-black h-full md:pb-0">
                         <h3 class="text-xl font-extrabold uppercase mb-4 leading-tight">
                             <span class="text-klyr-red">CLARITY</span><br>
                             <span class="text-black">INTELLIGENCE</span>
@@ -269,7 +275,8 @@
                     </div>
 
                     <!-- Item 2 -->
-                    <div class="md:px-8 md:border-r-2 md:border-black h-full py-8 md:py-0 border-t-2 border-gray-100 md:border-t-0">
+                    <!-- Removed mobile py-8 & border-t-2. Kept desktop padding/borders -->
+                    <div class="md:px-8 md:border-r-2 md:border-black h-full md:py-0 md:border-t-0">
                         <h3 class="text-xl font-extrabold uppercase mb-4 leading-tight">
                             <span class="text-klyr-red">REAL-WORLD</span><br>
                             <span class="text-black">VERIFICATION</span>
@@ -280,7 +287,8 @@
                     </div>
 
                     <!-- Item 3 -->
-                    <div class="md:pl-8 h-full pt-8 md:pt-0 border-t-2 border-gray-100 md:border-t-0">
+                    <!-- Removed mobile pt-8 & border-t-2. Kept desktop padding/borders -->
+                    <div class="md:pl-8 h-full md:pt-0 md:border-t-0">
                         <h3 class="text-xl font-extrabold uppercase mb-4 leading-tight">
                             <span class="text-klyr-red">HUMAN-CENTERED</span> <span class="text-black">AI</span><br>
                             <span class="text-black">INTERFACE</span>
@@ -294,7 +302,8 @@
             </section>
 
             <!-- IMPACT SECTION -->
-            <section class="bg-klyr-red py-16 md:py-20">
+            <!-- Rule 2: Desktop py-12, Mobile py-8 -->
+            <section class="bg-klyr-red py-8 md:py-12">
                 <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 text-left text-white">
                     <h2 class="text-4xl md:text-5xl font-extrabold uppercase mb-8">THE IMPACT WE DRIVE</h2>
                     
@@ -343,7 +352,8 @@
             </section>
 
             <!-- LEADERSHIP & ADVISORY (UPDATED: BIO OVERLAY) -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+            <!-- Rule 2: Desktop py-12, Mobile py-8 -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
                 <div class="mb-12">
                     <h2 class="text-4xl md:text-5xl font-extrabold text-black text-left uppercase mb-6">
                         LEADERSHIP & ADVISORY
@@ -356,7 +366,8 @@
                     </p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
+                <!-- Rule 2: Max gap 2rem mobile (gap-y-8) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 md:gap-y-12">
                     
                     <!-- 1 -->
                     <div class="flex flex-col items-center text-center group">
@@ -511,13 +522,15 @@
             </section>
 
             <!-- VALUES SECTION -->
-            <section class="bg-gray-50 py-16 md:py-24">
+            <!-- Rule 2: Desktop py-12, Mobile py-8 -->
+            <section class="bg-gray-50 py-8 md:py-12">
                 <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-4xl md:text-5xl font-extrabold text-black text-left uppercase mb-12">
                         OUR VALUES
                     </h2>
                     
-                    <div class="grid md:grid-cols-3 gap-y-12">
+                    <!-- Rule 5 (Strip & Gap) & Rule 2: Max gap 2rem mobile -->
+                    <div class="grid md:grid-cols-3 gap-y-8 md:gap-y-12">
                         <!-- Value 1 -->
                         <div class="md:pr-8 md:border-r-2 md:border-black">
                             <h3 class="text-xl font-bold text-black uppercase mb-4">INTEGRITY</h3>
@@ -558,8 +571,10 @@
             </section>
 
             <!-- GLOBAL RESPONSIBILITY & COMMITMENT -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-                <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+            <!-- Rule 2: Desktop py-12, Mobile py-8 -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+                <!-- Rule 2: Max gap 2rem mobile -->
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
                     
                     <div>
                         <h2 class="text-2xl font-bold text-klyr-red uppercase mb-4">GLOBAL RESPONSIBILITY</h2>
@@ -585,7 +600,8 @@
             </section>
 
             <!-- CTA SECTION -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-8 text-left">
+            <!-- Rule Update: Desktop py-12 (3rem), Mobile py-8 (2rem) -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-8 md:pb-12 md:pt-0 text-left">
                 <div class="flex flex-col sm:flex-row gap-4">
                     
                     <a href="/technology">

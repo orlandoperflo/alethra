@@ -182,12 +182,14 @@
     
 
     <main class="fade-in-section">
-        
-   <div id="homepage-content">
-             
+    <div id="homepage-content">
+              
             <!-- Section 1: Hero - Confusion Kills -->
+            <!-- Rule 1: Hero Padding - Desktop pt-24 pb-12, Mobile pt-16 pb-8 -->
+            <!-- Provides the bottom spacing for the transition to the next section -->
             <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Rule 1: Mobile Element Spacing - Gap must be gap-8 (2rem) on mobile -->
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
                     
                     <div class="space-y-6 text-left">
                         <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-snug">
@@ -204,14 +206,16 @@
                         </p>
                     </div>
                     
-                    <div id="" class="content-box-border-style rounded-lg flex h-full overflow-hidden"> 
+                    <div id="" class="content-box-border-style rounded-lg flex overflow-hidden"> 
                         <img id="" src="https://plusbrand.com/wp-content/uploads/2025/11/Aletha-1.webp" class="content-logo-border w-full  object-contain rounded-lg"  onerror="this.outerHTML = '<span class=\'text-6xl font-extrabold text-klyr-red\'>ALETHRA™</span>';">
                     </div>
                 </div>
             </section>
             
             <!-- Section 2: The Clarity Movement -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-12 pb-0 text-left">
+            <!-- FIX: Removed Top Padding (pt-0) because Section 1 has pb-8/pb-12. -->
+            <!-- This ensures exact 2rem (mobile) and 3rem (desktop) gap between content blocks. -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-0 text-left">
                 <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-left">
                     THE CLARITY MOVEMENT
                 </h2>
@@ -225,50 +229,51 @@
                     This isn’t an upgrade. It’s a revolution in responsibility.
                 </p>
 
-                <h3 class="text-3xl md:text-5xl font-extrabold text-klyr-dark uppercase mt-12 mb-8 text-left">
+                <!-- Rule 3: Cumulative Spacing - Reduced mt to balance with previous text if needed, but standard 3rem/2rem applies -->
+                <h3 class="text-3xl md:text-5xl font-extrabold text-klyr-dark uppercase mt-8 md:mt-12 mb-8 md:mb-12 text-left">
                     WHO JOINS THE MOVEMENT
                 </h3>
 
                 <!-- VERTICAL DIVIDER GRID: Who Joins (5 Items) -->
-                <!-- Removed border-b classes to remove horizontal lines -->
-                <!-- Added gap-y-16 for clearer separation between rows -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 mb-16">
+                <!-- Rule 5: Strip & Gap Protocol. Mobile gap-y-8, Desktop gap-y-12 -->
+                <!-- Rule 3: Set mb-0 here and rely on next header's mt-8 to achieve exact 2rem/3rem gap -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-y-12 mb-0">
                     
                     <!-- Item 1 -->
-                    <!-- Border Right on MD and LG. No Bottom Border -->
-                    <div class="flex flex-col items-start p-6 pl-0 md:border-r-2 md:border-black text-left">
+                    <!-- Rule 5 & 4: Mobile p-0, border-none, pl-0. Desktop md:p-6, md:border-solid, md:pl-0 -->
+                    <div class="flex flex-col items-start p-0 md:p-6 md:pl-0 md:border-r-2 md:border-black text-left">
                         <img src="https://plusbrand.com/wp-content/uploads/2025/11/8-Join-Clarity-Movement_Img_2-1.png" alt="Manufacturer Icon" class="max-h-16 max-w-16 h-auto w-auto mb-3">
                         <h4 class="text-lg font-extrabold text-klyr-dark uppercase mb-2">MANUFACTURERS</h4>
                         <p class="text-base text-gray-600">who believe safety and transparency should be built into every product.</p>
                     </div>
 
                     <!-- Item 2 -->
-                    <!-- Border Right on LG. No Right Border on MD (end of row 1). No Bottom Border -->
-                    <div class="flex flex-col items-start p-6 md:pl-8 lg:border-r-2 lg:border-black text-left">
+                    <!-- Rule 5 & 4: Mobile p-0, pl-0. Desktop md:p-6, md:pl-8 -->
+                    <div class="flex flex-col items-start p-0 md:p-6 md:pl-8 lg:border-r-2 lg:border-black text-left">
                         <img src="https://plusbrand.com/wp-content/uploads/2025/11/8-Join-Clarity-Movement_Img_3-1.png" alt="Hospital Icon" class="max-h-16 max-w-16 h-auto w-auto mb-3">
                         <h4 class="text-lg font-extrabold text-klyr-dark uppercase mb-2">HOSPITALS & CLINICS</h4>
                         <p class="text-base text-gray-600">who want to protect every patient from human and systemic error.</p>
                     </div>
 
                     <!-- Item 3 -->
-                    <!-- Border Right on MD. No Right Border on LG (end of row 1). No Bottom Border -->
-                    <div class="flex flex-col items-start p-6 md:pl-0 lg:pl-8 md:border-r-2 lg:border-r-0 md:border-black text-left">
+                    <!-- Rule 5 & 4: Mobile p-0, pl-0. Desktop md:p-6, md:pl-0, lg:pl-8 -->
+                    <div class="flex flex-col items-start p-0 md:p-6 md:pl-0 lg:pl-8 md:border-r-2 lg:border-r-0 md:border-black text-left">
                         <img src="https://plusbrand.com/wp-content/uploads/2025/11/8-Join-Clarity-Movement_Img_4-1.png" alt="Retailer Icon" class="max-h-16 max-w-16 h-auto w-auto mb-3">
                         <h4 class="text-lg font-extrabold text-klyr-dark uppercase mb-2">RETAILERS & DISTRIBUTORS</h4>
                         <p class="text-base text-gray-600">who want verified clarity from factory to shelf.</p>
                     </div>
 
                     <!-- Item 4 -->
-                    <!-- Border Right on LG. No Right Border on MD. No Bottom Border -->
-                    <div class="flex flex-col items-start p-6 md:pl-8 lg:pl-0 lg:border-r-2 lg:border-black text-left">
+                    <!-- Rule 5 & 4: Mobile p-0, pl-0. Desktop md:p-6, md:pl-8, lg:pl-0 -->
+                    <div class="flex flex-col items-start p-0 md:p-6 md:pl-8 lg:pl-0 lg:border-r-2 lg:border-black text-left">
                         <img src="https://plusbrand.com/wp-content/uploads/2025/11/8-Join-Clarity-Movement_Img_5-1.png" alt="Government Icon" class="max-h-16 max-w-16 h-auto w-auto mb-3">
                         <h4 class="text-lg font-extrabold text-klyr-dark uppercase mb-2">GOVERNMENTS & REGULATORS</h4>
                         <p class="text-base text-gray-600">who see clarity as the new standard of compliance.</p>
                     </div>
                     
                     <!-- Item 5 -->
-                    <!-- No Borders -->
-                    <div class="flex flex-col items-start p-6 pl-0 md:pl-0 lg:pl-8 md:border-r-2 lg:border-r-0 md:border-black text-left">
+                    <!-- Rule 5 & 4: Mobile p-0, pl-0. Desktop md:p-6, lg:pl-8 -->
+                    <div class="flex flex-col items-start p-0 md:p-6 md:pl-0 lg:pl-8 md:border-r-2 lg:border-r-0 md:border-black text-left">
                         <img src="https://plusbrand.com/wp-content/uploads/2025/11/8-Join-Clarity-Movement_Img_1-1-scaled.png" alt="Consumer Icon" class="max-h-16 max-w-16 h-auto w-auto mb-3">
                         <h4 class="text-lg font-extrabold text-klyr-dark uppercase mb-2">EVERY CONSUMER</h4>
                         <p class="text-base text-gray-600">who has the right to know what they eat, drink, or take is authentic and safe.</p>
@@ -277,15 +282,18 @@
                 </div>
                 
                 <!-- HOW TO JOIN -->
-                <h3 class="text-3xl md:text-5xl font-extrabold text-klyr-dark uppercase mb-4 text-left">
+                <!-- Rule 3: Previous grid has 0 bottom margin. Header takes mt-8 (2rem) mobile, mt-12 (3rem) desktop. -->
+                <h3 class="text-3xl md:text-5xl font-extrabold text-klyr-dark uppercase mt-8 md:mt-12 mb-8 md:mb-12 text-left">
                     HOW TO JOIN
                 </h3>
                 
                 <!-- VERTICAL DIVIDER GRID: How to Join (3 Items) -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 mb-16">
+                <!-- Rule 5: Strip & Gap Protocol applied -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-y-8 md:gap-y-12 mb-8 md:mb-12">
                     
                     <!-- Step 1 -->
-                    <div class="p-6 pl-0 lg:border-r-2 lg:border-black text-left">
+                    <!-- Rule 5 & 4: Mobile p-0, pl-0. Desktop md:p-6, md:pl-0 -->
+                    <div class="p-0 md:p-6 md:pl-0 lg:border-r-2 lg:border-black text-left">
                         <div class="flex items-start mb-4">
                             <span class="text-6xl font-extrabold text-klyr-red mr-3 leading-none">1.</span>
                             <h4 class="text-xl font-extrabold text-klyr-dark pt-3 leading-tight">
@@ -302,7 +310,8 @@
                     </div>
                     
                     <!-- Step 2 -->
-                    <div class="p-6 lg:pl-8 lg:border-r-2 lg:border-black text-left">
+                    <!-- Rule 5 & 4: Mobile p-0, pl-0. Desktop md:p-6, lg:pl-8 -->
+                    <div class="p-0 md:p-6 lg:pl-8 lg:border-r-2 lg:border-black text-left">
                         <div class="flex items-start mb-4">
                             <span class="text-6xl font-extrabold text-klyr-red mr-3 leading-none">2.</span>
                             <h4 class="text-xl font-extrabold text-klyr-dark pt-3 leading-tight">
@@ -319,7 +328,8 @@
                     </div>
                     
                     <!-- Step 3 -->
-                    <div class="p-6 lg:pl-8 text-left">
+                    <!-- Rule 5 & 4: Mobile p-0, pl-0. Desktop md:p-6, lg:pl-8 -->
+                    <div class="p-0 md:p-6 lg:pl-8 text-left">
                         <div class="flex items-start mb-4">
                             <span class="text-6xl font-extrabold text-klyr-red mr-3 leading-none">3.</span>
                             <h4 class="text-xl font-extrabold text-klyr-dark pt-3 leading-tight">
@@ -337,8 +347,10 @@
                 </div>
 
                 <!-- EVERY SCAN SAVES LIVES Section - 2 Column Grid -->
-                <!-- CHANGED items-center TO items-start TO RISE THE IMAGE -->
-                <div class="grid md:grid-cols-2 gap-12 items-start mb-16">
+                <!-- Rule 1: Mobile Element Spacing - gap-8 on mobile, gap-12 on desktop -->
+                <!-- Rule 3: Reduced mb from 16 to 8 (mobile) / 12 (desktop) -->
+                <!-- FIXED: MOBILE LAYOUT IMAGE INJECTION -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start mb-8 md:mb-12">
                     <!-- Left Column: Text & Buttons -->
                     <div class="text-left">
                          <h3 class="text-3xl md:text-5xl font-extrabold text-klyr-dark uppercase mb-6">
@@ -347,6 +359,15 @@
                         <p class="text-xl text-gray-700 font-medium mb-8">
                             Every time a <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> device verifies truth, a life, a product, or a planet is protected. That’s what joining the Clarity Movement means.
                         </p>
+
+                        <!-- MOBILE IMAGE (Hidden on Desktop, Visible on Mobile) -->
+                        <div class="block md:hidden mb-8 flex justify-center">
+                            <img src="https://plusbrand.com/wp-content/uploads/2025/11/8-Join-Clarity-Movement_Img_1-1-scaled.png" 
+                                    alt="A close-up view of a hand holding a clear, verified product, demonstrating the ALETHRA device in use." 
+                                    class="w-full max-w-xs rounded-xl shadow-lg"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/1000x500/E72F3C/ffffff?text=Image+Unavailable'; this.alt='Image Unavailable';">
+                        </div>
+
                         <div class="flex flex-col sm:flex-row justify-start space-y-4 sm:space-y-0 sm:space-x-6">
                             <a href="#regulatory-form" class="smooth-scroll bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider whitespace-nowrap text-center">
                                 JOIN THE MOVEMENT
@@ -360,8 +381,8 @@
                         </div>
                     </div>
                     
-                    <!-- Right Column: Image -->
-                    <div class="flex justify-center md:justify-end">
+                    <!-- Right Column: Image (Desktop Only - Hidden on Mobile) -->
+                    <div class="hidden md:flex justify-center md:justify-end">
                         <img src="https://plusbrand.com/wp-content/uploads/2025/11/8-Join-Clarity-Movement_Img_1-1-scaled.png" 
                                 alt="A close-up view of a hand holding a clear, verified product, demonstrating the ALETHRA device in use." 
                                 class="w-full max-w-xs rounded-xl shadow-lg"
@@ -372,7 +393,8 @@
             </section>
 
             <!-- Beta & Community Join (Centered Content) -->
-            <section id="regulatory-form" class="bg-gray-100 pt-10 pb-16 md:pb-24">
+            <!-- FIX: Updated to 2rem mobile (py-8) and 3rem desktop (py-12) as requested -->
+            <section id="regulatory-form" class="bg-gray-100 py-8 md:py-12">
                 <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
                     
                     <h3 class="text-2xl md:text-4xl font-extrabold tracking-tight mb-10 text-klyr-dark text-center uppercase">
@@ -510,7 +532,6 @@
         </div>
         
 
-        
 </main>
 
     

@@ -179,22 +179,37 @@
     <main class="fade-in-section">
         <div id="env-product-content">
             
-            <!-- HERO SECTION: ENV Product Page -->
-            <!-- MODIFIED: Reduced bottom padding from pb-10 md:pb-16 to pb-4 md:pb-6 -->
-            <!-- ALIGNMENT: Changed text-center to text-left -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-4 md:pb-6 text-left">
-                <!-- Heading -->
-                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-klyr-dark">
-                    <span class="text-klyr-red">ALETHRA ENV™</span>
-                </h1>
-                <!-- Subhead -->
-                <!-- ALIGNMENT: Removed mx-auto -->
-                <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mb-10">
-                    Facility-wide environmental intelligence and material clarity monitoring.
-                </p>
+           <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-4 md:pb-6 text-left">
+                <!-- MODIFIED: Added mb-10 to grid to separate from buttons below -->
+                <!-- MODIFIED: Changed items-center to items-start for top alignment -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-10">
+                    
+                    <!-- LEFT COLUMN: Text Content -->
+                    <div>
+                        <!-- Heading -->
+                        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-klyr-dark">
+                            <span class="text-klyr-red">ALETHRA ENV™</span>
+                        </h1>
+                        <!-- Subhead -->
+                        <p class="text-xl md:text-2xl text-gray-600 max-w-3xl">
+                            Facility-wide environmental intelligence and material clarity monitoring.
+                        </p>
+
+                        <!-- MOVED: CTA Buttons removed from here -->
+                    </div>
+
+                    <!-- RIGHT COLUMN: Image -->
+                    <div>
+                        <div id="hero-image" class="content-box-border-style rounded-lg flex overflow-hidden"> 
+                            <!-- MODIFIED: Changed to h-auto and object-contain to respect aspect ratio without cropping -->
+                            <img id="" src="https://plusbrand.com/wp-content/uploads/2025/11/Aletha-1.webp" class="content-logo-border w-full h-auto object-contain rounded-lg" onerror="this.outerHTML = '<span class=\'text-6xl font-extrabold text-klyr-red\'>ALETHRA™</span>';">
+                        </div>
+                    </div>
+
+                </div>
 
                 <!-- Hero CTA Buttons -->
-                <!-- ALIGNMENT: Changed justify-center to justify-start, items-center to items-start -->
+                <!-- MOVED: Placed below the grid to prevent squeezing -->
                 <div class="flex flex-col sm:flex-row justify-start items-start space-y-4 sm:space-y-0 sm:space-x-6">
                     <!-- CTA 1: Download Spec Sheet -->
                     <a href="/downloads/ALETHRA_ENV.pdf" target="_blank" class="w-full sm:w-auto" download>
@@ -210,6 +225,7 @@
                     </a>
                 </div>
             </section>
+
 
             <!-- SECTION: Purpose-Built for Total Environmental Visibility -->
             <!-- MODIFIED: Reduced vertical padding from py-8 md:py-12 to py-4 md:py-6 -->

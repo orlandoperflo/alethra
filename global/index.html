@@ -183,13 +183,14 @@
 
 
     <main class="fade-in-section">
-        
  <div id="homepage-content">
              <!-- Section 1: Hero - Corporate Statement -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <!-- Rule 1: Desktop pt-24/pb-12, Mobile pt-16/pb-8 -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12">
                 
                 <!-- Grid Container: 2 Columns -->
-                <div class="grid md:grid-cols-2 gap-12 items-start mb-12">
+                <!-- Rule 2: gap-8 (2rem) mobile, gap-12 desktop. mb-8 (2rem) mobile, mb-12 desktop -->
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start mb-0 md:mb-0 ">
                     
                     <!-- Left Column: Content -->
                     <div class="space-y-6 text-left">
@@ -212,7 +213,7 @@
                             </p>
 
                             <!-- Email Action Link -->
-                            <div class="pt-2 pb-6">
+                            <div class="pt-2 md:pb-6 pb-0">
                                 <a href="mailto:press@myalethra.com" class="inline-flex items-center text-xl text-klyr-dark hover:text-red-700 font-bold transition duration-150">
                                     <i class="fas fa-envelope text-2xl mr-3"></i>
                                     press@myalethra.com
@@ -230,10 +231,11 @@
                 </div>
 
                 <!-- Three Cards/Documents -> VERTICAL DIVIDER GRID -->
-                <div class="pt-6 grid grid-cols-1 md:grid-cols-3">
+                <!-- Rule 5: gap-y-8 added. Mobile padding/borders stripped. Desktop padding/borders restored. -->
+                <div class="pt-6 grid grid-cols-1 md:grid-cols-3 gap-y-8">
                     
                     <!-- Item 1: White Paper -->
-                    <div class="pl-0 pr-6 pb-6 md:pb-0 border-b border-gray-200 md:border-b-0 md:border-r-2 md:border-black flex flex-col justify-start h-full text-left">
+                    <div class="p-0 border-none md:border-solid md:pr-6 md:pb-0 md:border-r-2 md:border-black flex flex-col justify-start h-full text-left">
                         <a href="/white-papers" class="block hover:opacity-80 transition duration-300">
                             <p class="text-lg font-bold text-klyr-dark mb-1"><span class="text-klyr-red">ALETHRA</span>™ White Paper Series</p>
                             <p class="text-sm text-klyr-red font-semibold">(PDF)</p>
@@ -241,7 +243,8 @@
                     </div>
 
                     <!-- Item 2: Media Kit -->
-                    <div class="pl-0 md:pl-8 pr-6 pb-6 md:pb-0 border-b border-gray-200 md:border-b-0 md:border-r-2 md:border-black flex flex-col justify-start h-full pt-6 md:pt-0 text-left">
+                    <!-- Stripped mobile pt/pl/pb/borders. Restored md:pl-8, md:pr-6 -->
+                    <div class="p-0 border-none md:border-solid md:pl-8 md:pr-6 md:pb-0 md:border-r-2 md:border-black flex flex-col justify-start h-full md:pt-0 text-left">
                         <a href="/media-kit" class="block hover:opacity-80 transition duration-300">
                             <p class="text-lg font-bold text-klyr-dark mb-1">Corporate Media Kit</p>
                             <p class="text-sm text-klyr-red font-semibold">(logo & brand assets)</p>
@@ -249,7 +252,8 @@
                     </div>
 
                     <!-- Item 3: Patent Filings -->
-                    <div class="pl-0 md:pl-8 pt-6 md:pt-0 flex flex-col justify-start h-full text-left">
+                    <!-- Stripped mobile pt/pl. Restored md:pl-8 -->
+                    <div class="p-0 md:pl-8 md:pt-0 flex flex-col justify-start h-full text-left">
                         <div class="block">
                             <p class="text-lg font-bold text-klyr-dark mb-1">Patent Filings</p>
                             <p class="text-sm text-gray-500 font-medium">(PCT and USPTO pending)</p>
@@ -258,7 +262,8 @@
                 </div>
                 
                 <!-- Two New Red Buttons (UPDATED LINKS) - LEFT ALIGNED -->
-                <div class="mt-10 flex flex-col sm:flex-row justify-start space-y-4 sm:space-y-0 sm:space-x-6">
+                <!-- Rule 2: mt-8 (2rem) mobile, mt-12 (3rem) desktop -->
+                <div class="mt-8 md:mt-12 flex flex-col sm:flex-row justify-start space-y-4 sm:space-y-0 sm:space-x-6">
                     <a href="/interview" class="w-full sm:w-auto">
                          <button class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg shadow-xl transition duration-300 transform hover:scale-[1.02] uppercase tracking-wider text-base w-full sm:w-auto">
                             REQUEST INTERVIEW
@@ -273,10 +278,7 @@
                 
             </section>
 
-             <!-- Add a general message box for global feedback -->
-            <div id="general-message-box" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-                <div id="message-box-content" class="bg-gray-100 border border-gray-300 text-gray-700 p-4 rounded-lg hidden"></div>
-            </div>
+          
             
         </div>
 </main>

@@ -181,16 +181,17 @@
  <div id="homepage-content">
             
             <!-- HERO SECTION (Left Aligned) -->
+            <!-- RULE 1 & UPDATE: Top remains High Impact (4rem/6rem). Bottom updated to Standard (2rem/3rem) per request. -->
             <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     
-                    <div class="space-y-6 text-left">
+                    <div class="space-y-8 text-left">
                         <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-snug">
                             <span class="text-klyr-dark">SAVING LIVES,<br> PRODUCTS,<br> AND THE PLANET</span>
                         </h1>
                         <p class="text-gray-600 text-lg">
-                            Every confusion event — every recall, contamination, or misidentification — destroys usable goods and the trust that built them.
-                            <span class="text-klyr-red">ALETHRA</span>™ transforms waste prevention into planetary protection — safeguarding health, economy, and environment through clarity.  
+                            Every confusion event, every recall, contamination, or misidentification, destroys usable goods and the trust that built them.
+                            <span class="text-klyr-red">ALETHRA</span>™ transforms waste prevention into planetary protection, safeguarding health, economy, and environment through clarity.  
                         </p>
                     </div>
                     
@@ -202,10 +203,13 @@
 
             
             <!-- STATS SECTION (Vertical Divider Grid - 3 Columns) -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-12 pb-8 md:pb-12">
+            <!-- RULE 3 & 2: Previous section has padding. Start this with pt-0. 
+                 End with Standard pb-8 (mobile)/pb-12 (desktop). -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-8 md:pb-12">
                 <div class="grid grid-cols-1 md:grid-cols-3">
                     
                     <!-- Item 1 -->
+                    <!-- RULE 4: Left padding 0. -->
                     <div class="p-6 pl-0 text-left border-b border-gray-200 md:border-b-0 md:border-r-2 md:border-black h-full">
                         <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-klyr-dark uppercase leading-none mb-1">OVER</p>
                         <p class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-klyr-red uppercase leading-none mb-4 md:mt-2">100M</p>
@@ -213,14 +217,15 @@
                     </div>
 
                     <!-- Item 2 -->
-                    <!-- UPDATED: Added flex flex-col justify-center h-full to center content vertically -->
-                    <div class="p-6 md:pl-8 text-left border-b border-gray-200 md:border-b-0 md:border-r-2 md:border-black flex flex-col justify-center h-full">
+                    <!-- RULE 4: Stair-Step Fix. Added pl-0 so mobile is flush left, md:pl-8 restores desktop indent. -->
+                    <div class="p-6 pl-0 md:pl-8 text-left border-b border-gray-200 md:border-b-0 md:border-r-2 md:border-black flex flex-col justify-center h-full">
                         <p class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-klyr-red uppercase leading-none mb-4">BILLIONS</p>
                         <p class="text-base text-gray-700 font-medium">of dollars in economic value preserved</p>
                     </div>
 
                     <!-- Item 3 -->
-                    <div class="p-6 md:pl-8 text-left h-full">
+                    <!-- RULE 4: Stair-Step Fix. Added pl-0 so mobile is flush left, md:pl-8 restores desktop indent. -->
+                    <div class="pb-0 pt-6 pl-0 md:pl-8 text-left h-full">
                         <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-klyr-dark uppercase leading-none mb-1">MILLIONS OF TONS</p>
                         <p class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-klyr-red uppercase leading-none mb-4 md:mt-2">CO2</p>
                         <p class="text-base text-gray-700 font-medium">avoided every year.</p>
@@ -230,14 +235,16 @@
             
             
             <!-- Global Safety Infrastructure Statement -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8 text-left">
+            <!-- RULE 3 & 2: pt-0 to prevent double spacing with previous section. pb-8/pb-12 Standard. -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-8 md:pb-12 text-left">
                 <p class="text-lg italic font-bold text-gray-700">
                     Each verified product, package, and dose strengthens a new global infrastructure for safety — powered by <span class="text-klyr-red">ALETHRA</span>™.
                 </p>
             </section>
 
             <!-- HOW ALETHRA ENTERPRISE™ DELIVERS IMPACT -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <!-- RULE 3 & 2: pt-0 (Previous ended with pb-12). pb-8/pb-12 Standard. -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-8 md:pb-12">
                 <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark text-left mb-12 tracking-tight leading-snug">
                     HOW <span class="text-klyr-red">ALETHRA ENTERPRISE</span>™ DELIVERS IMPACT.
                 </h2>
@@ -302,19 +309,22 @@
             </section>
 
             <!-- End-to-End Clarity Network Statement -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8 text-left">
+            <!-- RULE 3: Cumulative spacing check. pt-0. pb-8/pb-12 Standard. -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-8 md:pb-12 text-left">
                 <p class="text-lg italic font-bold text-gray-700">
                     Together, these create an end-to-end clarity network — from factory to bedside to home.
                 </p>
             </section>
 
             <!-- DIGITAL ECOSYSTEM SECTION -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-                <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark text-left mb-12 tracking-tight leading-snug">
+            <!-- RULE 3 Exception: We set pb-0 here because the NEXT section is the CTA. 
+                 Since CTA is now Standard (pt-12), the gap is 0 + 3rem = 3rem. Perfect. -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-0">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark text-left mb-8 tracking-tight leading-snug">
                     DIGITAL ECOSYSTEM
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 max-w-4xl mr-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mr-auto">
                     
                     <!-- Group 7: ALETHRACERTIFIED™ -->
                     <div class="flex items-start text-left">
@@ -356,7 +366,8 @@
             
             
             <!-- CTA SECTION -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-10 text-left">
+            <!-- UPDATE: Changed from High Impact (py-24) to Standard Spacing (3rem / py-12 desktop, 2rem / py-8 mobile). -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 text-left">
                 <div class="flex flex-col sm:flex-row justify-start items-center space-y-4 sm:space-y-0 sm:space-x-6">
                     <a href="/sustainability" class="w-full sm:w-auto">
                         <button class="bg-klyr-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded shadow-lg transition duration-300 transform hover:scale-105 uppercase tracking-wider w-full sm:w-auto">
@@ -371,12 +382,13 @@
                 </div>
             </section>
             
-            <div id="general-message-box" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+            <div id="general-message-box" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0">
                 <div id="message-box-content" class="bg-gray-100 border border-gray-300 text-gray-700 p-4 rounded-lg hidden"></div>
             </div>
 
             <!-- RED FOOTER BANNER -->
-            <section class="bg-klyr-red py-10">
+            <!-- RULE 2: Standard Section spacing. -->
+            <section class="bg-klyr-red py-8 md:py-12">
                 <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 text-left text-white">
                     <p class="text-xl sm:text-2xl mb-1">
                         When We Stop Confusion, We Stop Waste.<br>

@@ -177,18 +177,24 @@
 <div class="bg-white shadow-sm sticky top-0 z-50" id="nav-placeholder"></div>
 
     <main class="">
-    
+  
     <!-- [IMAGE 1] HERO SECTION -->
-    <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-12 md:pb-16 text-left">
+    <!-- 
+        EXCEPTION RULE (Header Top): pt-16 md:pt-24
+        STANDARD RULE (Bottom): pb-8 md:pb-12
+    -->
+    <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12 text-left">
         
         <!-- Grid Container: 2 Columns (Headline + Image) -->
-        <div class="grid md:grid-cols-2 gap-12 items-start mb-10">
+        <!-- UPDATED: gap-8 on mobile, gap-12 on desktop -->
+        <!-- UPDATED: mb-8 on mobile, mb-12 on desktop -->
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start mb-8 md:mb-12">
             
             <!-- Left Column: Content -->
             <div class="space-y-6">
                 <!-- Headline -->
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-none text-klyr-dark mb-4 uppercase text-left">
-                    <span class="text-klyr-red">ALETHA</span>™ - YOUR<br> DIRECT LINE TO<br> REAL-WORLD TRUTH
+                    <span class="text-klyr-red">ALETHA</span>™ YOUR<br> DIRECT LINE TO<br> REAL-WORLD TRUTH
                 </h1>
 
                 <!-- Subline -->
@@ -207,7 +213,8 @@
         <!-- Content Moved Below Grid to Prevent Squeezing -->
         <div class="max-w-4xl">
             <!-- Paragraph -->
-            <p class="text-lg text-gray-500 max-w-4xl mb-8 text-left leading-relaxed">
+            <!-- UPDATED: mb-6 on mobile, mb-8 on desktop -->
+            <p class="text-lg text-gray-500 max-w-4xl mb-6 md:mb-12 text-left leading-relaxed">
                 <span class="text-klyr-red">ALETHA</span>™ is not a chatbot. Not an assistant. She is the operational intelligence layer that connects physical-world verification, cloud truth states, and executive decision-making - in real time.
             </p>
 
@@ -228,11 +235,16 @@
     </section>
 
     <!-- [IMAGE 1] SECTION — THE HUMAN-FACING MIND -->
-    <section id="role-purpose" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark mb-12 tracking-tight uppercase leading-snug text-left">
+    <!-- 
+        STANDARD RULE: py-8 (mobile) / py-12 (desktop)
+    -->
+    <section id="role-purpose" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-8 md:pb-12 md:pt-0">
+        <!-- UPDATED: mb-8 on mobile, mb-12 on desktop -->
+        <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark mb-8 md:mb-12 tracking-tight uppercase leading-snug text-left">
             THE HUMAN-FACING MIND<br> OF THE CLARITY LAYER
         </h2>
-        <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- UPDATED: gap-8 on mobile, gap-12 on desktop -->
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             <!-- Left: Paragraph -->
             <div>
                 <p class="text-gray-700 text-lg leading-relaxed text-left">
@@ -269,11 +281,15 @@
     </section>
 
     <!-- [IMAGE 1] SECTION — AI BECAME FAST (RED BANNER) -->
-    <section class="max-w-full mx-auto py-16 md:py-24 bg-klyr-red text-white">
+    <!-- 
+        STANDARD RULE: py-8 (mobile) / py-12 (desktop)
+    -->
+    <section class="max-w-full mx-auto py-8 md:py-12 bg-klyr-red text-white">
         <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 text-left">
             <!-- Content -->
             <div class="max-w-4xl">
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6 uppercase">
+                <!-- UPDATED: mb-6 on mobile, mb-8 on desktop -->
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6 md:mb-8 uppercase">
                     AI BECAME FAST.<br>
                     THE WORLD BECAME COMPLEX.<br>
                     TRUTH DIDN'T KEEP UP.
@@ -286,15 +302,22 @@
     </section>
 
     <!-- [IMAGE 2] SECTION — COGNITIVE ARCHITECTURE -->
-    <section id="intelligence-model" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+    <!-- 
+        STANDARD RULE: 
+        Top: pt-8 md:pt-12
+        Bottom: pb-8 md:pb-12
+    -->
+    <section id="intelligence-model" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 md:pt-12 md:pb-12">
         <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark text-left mb-2 tracking-tight uppercase leading-snug">
             THE COGNITIVE ARCHITECTURE
         </h2>
-        <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark text-left mb-16 tracking-tight uppercase leading-snug">
+        <!-- UPDATED: mb-8 on mobile, mb-12 on desktop -->
+        <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark text-left mb-8 md:mb-12 tracking-tight uppercase leading-snug">
             BEHIND <span class="text-klyr-red">ALETHA</span>™
         </h2>
         
         <!-- 4 Column Grid -->
+        <!-- UPDATED: gap-8 on mobile -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
             <!-- ALETHRA SCAN -->
@@ -343,23 +366,29 @@
         </div>
 
         <!-- Centered Italic Text -> Now Left Aligned -->
-        <p class="text-xl italic font-bold text-gray-800 text-left mt-16 max-w-4xl">
+        <!-- UPDATED: mt-8 on mobile, mt-16 on desktop -->
+        <p class="text-xl italic font-bold text-gray-800 text-left mt-8 md:mt-16 max-w-4xl">
             <span class="text-klyr-red">ALETHA</span>™ transforms high-density physical verification data into intelligent, executive-grade guidance.
         </p>
     </section>
 
     <!-- [IMAGE 2] SECTION — SINGLE INTERFACE -->
-    <section class="max-w-full mx-auto pb-16 md:pb-24 bg-white">
+    <!-- 
+        STANDARD RULE: pb-8 md:pb-12
+    -->
+    <section class="max-w-full mx-auto pb-8 md:pb-0 bg-white">
         <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark text-left mb-2 tracking-tight uppercase leading-snug">
                 A SINGLE INTERFACE.
             </h2>
-            <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark text-left mb-12 tracking-tight uppercase leading-snug">
+            <!-- UPDATED: mb-8 on mobile, mb-12 on desktop -->
+            <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark text-left mb-8 md:mb-12 tracking-tight uppercase leading-snug">
                 A GLOBAL INTELLIGENCE SYSTEM.
             </h2>
             
             <!-- 3 Column Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- UPDATED: gap-8 on mobile, gap-12 on desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                 
                 <!-- Insight Mode -->
                 <div class="text-left border-l-2 border-black pl-4">
@@ -399,69 +428,79 @@
     </section>
 
     <!-- [IMAGE 3] SECTION — HYPERSCALE & LOGOS -->
-    <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+    <!-- 
+        STANDARD RULE: py-8 md:py-12
+    -->
+    <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-8 md:py-12">
         <!-- Headings Stacked -->
         <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark mb-2 tracking-tight uppercase leading-snug text-left">
             DESIGNED FOR HYPERSCALE.
         </h2>
-        <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark mb-8 tracking-tight uppercase leading-snug text-left">
+        <!-- UPDATED: mb-6 on mobile, mb-8 on desktop -->
+        <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark mb-6 md:mb-8 tracking-tight uppercase leading-snug text-left">
             ENGINEERED FOR ZERO FAILURE.
         </h2>
 
         <!-- Paragraph Full Width -->
-        <p class="text-gray-700 text-lg leading-relaxed text-left max-w-5xl mb-12">
+        <!-- UPDATED: mb-8 on mobile, mb-12 on desktop -->
+        <p class="text-gray-700 text-lg leading-relaxed text-left max-w-5xl mb-8 md:mb-12">
             <span class="text-klyr-red">ALETHA</span>™ integrates natively with Oracle Cloud, AWS, Microsoft Azure, Google Cloud, and enterprise agent frameworks. She consumes <span class="text-klyr-red">ALETHRA</span>™ truth states and exposes them through APIs, dashboards, and intelligent workflows — powering verified decisions at cloud scale.
         </p>
 
         <!-- Logos Layout - Centered Stacked Grid (3 on top, 2 on bottom) -->
-        <div class="space-y-12 opacity-80 max-w-5xl mx-auto mt-16 flex flex-col items-center">
-            
-            <!-- Row 1: Oracle, AWS, Azure -->
-            <!-- Changed to w-full and justify-between to occupy maximum width -->
-            <div class="flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-0 px-4">
-                <!-- Oracle -->
-                <div class="flex items-center space-x-3">
-                    <i class="fas fa-database text-4xl text-gray-500"></i>
-                    <span class="text-3xl font-extrabold text-gray-700">Oracle</span>
+        <!-- UPDATED: mt-8 on mobile, mt-16 on desktop -->
+       <div class="space-y-8 md:space-y-12 opacity-80 max-w-5xl mx-auto mt-8 md:mt-16 flex flex-col items-start md:items-center">
+                
+                <!-- Row 1: Oracle, AWS, Azure -->
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-8 md:gap-0 px-4">
+                    <!-- Oracle -->
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-database text-4xl text-gray-500"></i>
+                        <span class="text-3xl font-extrabold text-gray-700">Oracle</span>
+                    </div>
+                    <!-- AWS -->
+                    <div class="flex items-center space-x-3">
+                        <i class="fab fa-aws text-4xl text-gray-500"></i>
+                        <span class="text-3xl font-extrabold text-gray-700">AWS</span>
+                    </div>
+                    <!-- Azure -->
+                    <div class="flex items-center space-x-3">
+                        <i class="fab fa-microsoft text-4xl text-gray-500"></i>
+                        <span class="text-3xl font-extrabold text-gray-700">Azure</span>
+                    </div>
                 </div>
-                <!-- AWS -->
-                <div class="flex items-center space-x-3">
-                    <i class="fab fa-aws text-4xl text-gray-500"></i>
-                    <span class="text-3xl font-extrabold text-gray-700">AWS</span>
-                </div>
-                <!-- Azure -->
-                <div class="flex items-center space-x-3">
-                    <i class="fab fa-microsoft text-4xl text-gray-500"></i>
-                    <span class="text-3xl font-extrabold text-gray-700">Azure</span>
-                </div>
-            </div>
 
-            <!-- Row 2: Google, Enterprise Agents -->
-            <!-- Kept justify-center with gap to occupy less width than top row -->
-            <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-32">
-                <!-- Google Cloud -->
-                <div class="flex items-center space-x-3">
-                    <i class="fab fa-google text-4xl text-gray-500"></i>
-                    <span class="text-3xl font-extrabold text-gray-700">Google Cloud</span>
+                <!-- Row 2: Google, Enterprise Agents -->
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-center gap-8 md:gap-32 w-full px-4 md:px-0">
+                    <!-- Google Cloud -->
+                    <div class="flex items-center space-x-3">
+                        <i class="fab fa-google text-4xl text-gray-500"></i>
+                        <span class="text-3xl font-extrabold text-gray-700">Google Cloud</span>
+                    </div>
+                    <!-- Enterprise Agent Systems -->
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-share-alt text-4xl text-gray-500"></i>
+                        <span class="text-3xl font-extrabold text-gray-700">Enterprise Agent Systems</span>
+                    </div>
                 </div>
-                <!-- Enterprise Agent Systems -->
-                <div class="flex items-center space-x-3">
-                    <i class="fas fa-share-alt text-4xl text-gray-500"></i>
-                    <span class="text-3xl font-extrabold text-gray-700">Enterprise Agent Systems</span>
-                </div>
+
             </div>
-        </div>
     </section>
 
     <!-- [IMAGE 3] SECTION — PERSONALITY -->
-    <section class="max-w-full mx-auto py-16 md:py-24 bg-white">
-        <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+    <!-- 
+        STANDARD RULE: py-8 md:py-12
+    -->
+    <section class="max-w-full mx-auto pt-0 pb-8 md:py-12 bg-white">
+        <!-- UPDATED: gap-8 on mobile, gap-12 on desktop -->
+        <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             
             <!-- Left: Text -->
             <div class="text-left">
                 <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark mb-2 uppercase">FORTUNE-100 CALM.</h2>
                 <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark mb-2 uppercase">HIGH-TECH PRECISION.</h2>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark mb-8 uppercase">HUMAN WARMTH.</h2>
+                <!-- UPDATED: mb-6 on mobile, mb-8 on desktop -->
+                <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark mb-6 md:mb-8 uppercase">HUMAN WARMTH.</h2>
                 
                 <ul class="text-lg text-gray-700 space-y-4">
                     <li class="flex items-start">
@@ -492,8 +531,12 @@
     </section>
 
     <!-- [IMAGE 3] SECTION — FIRST AI INTERFACE (RED BANNER) -->
-    <section class="max-w-full mx-auto py-16 md:py-24 bg-klyr-red text-white">
+    <!-- 
+        STANDARD RULE: py-8 md:py-12
+    -->
+    <section class="max-w-full mx-auto py-8 md:py-12 bg-klyr-red text-white">
         <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 text-left">
+            <!-- UPDATED: mb-4 on mobile (kept small for tightness) -->
             <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4 uppercase">
                 THE FIRST AI INTERFACE BUILT ON<br> VERIFIED PHYSICAL TRUTH
             </h2>
@@ -509,59 +552,83 @@
     </section>
 
     <!-- [IMAGE 4] SECTION — GLOBAL CLARITY OPERATOR -->
-    <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark text-left mb-16 tracking-tight uppercase leading-snug">
+    <!-- 
+        STANDARD RULE: py-8 md:py-12
+    -->
+    <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark text-left mb-8 md:mb-16 tracking-tight uppercase leading-snug">
             THE GLOBAL CLARITY OPERATOR
         </h2>
         
-        <div class="relative max-w-4xl mx-auto">
-            <!-- Central Line -->
-            <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-800 transform -translate-x-1/2 hidden md:block"></div>
+        <div class="relative max-w-5xl mx-auto">
+            
+            <!-- Central Line (Desktop Only) -->
+            <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-200 transform -translate-x-1/2 hidden md:block"></div>
+            <!-- Left Line (Mobile Only) -->
+            <div class="absolute left-6 top-0 bottom-0 w-1 bg-gray-200 md:hidden"></div>
             
             <!-- Step 1 -->
-            <div class="flex flex-col md:flex-row items-center mb-16 relative">
-                <!-- Text Left -->
-                <div class="md:w-1/2 text-center md:text-right pr-0 md:pr-12 mb-4 md:mb-0">
-                    <h3 class="text-xl font-bold text-klyr-dark">Regulatory Liaison</h3>
-                    <p class="text-gray-600 text-sm mt-1">Automated, real-time interface for cross-border regulatory alignment, simplifying audits and approvals.</p>
+            <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12">
+                <!-- Marker (Positioned: Left on Mobile, Center on Desktop) -->
+                <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-klyr-red text-white flex items-center justify-center font-bold text-xl border-4 border-white shadow-md z-10">
+                    1
                 </div>
-                <!-- Number -->
-                <div class="z-10 w-10 h-10 rounded-full bg-klyr-red text-white flex items-center justify-center font-bold text-lg border-4 border-white shadow-md">1</div>
-                <!-- Spacer Right -->
-                <div class="md:w-1/2"></div>
+                
+                <!-- Content Container -->
+                <div class="w-full flex flex-col md:flex-row">
+                    <!-- Text (Left on Desktop) -->
+                    <div class="pl-16 md:pl-0 md:pr-16 md:w-1/2 md:text-right">
+                        <h3 class="text-xl md:text-2xl font-bold text-klyr-dark">Regulatory Liaison</h3>
+                        <p class="text-gray-600 text-base mt-2">Automated, real-time interface for cross-border regulatory alignment, simplifying audits and approvals.</p>
+                    </div>
+                    <div class="md:w-1/2"></div>
+                </div>
             </div>
 
             <!-- Step 2 -->
-            <div class="flex flex-col md:flex-row items-center mb-16 relative">
-                <!-- Spacer Left -->
-                <div class="md:w-1/2"></div>
-                <!-- Number -->
-                <div class="z-10 w-10 h-10 rounded-full bg-klyr-red text-white flex items-center justify-center font-bold text-lg border-4 border-white shadow-md order-first md:order-none mb-4 md:mb-0">2</div>
-                <!-- Text Right -->
-                <div class="md:w-1/2 text-center md:text-left pl-0 md:pl-12">
-                    <h3 class="text-xl font-bold text-klyr-dark">Autonomous Clarity Governor</h3>
-                    <p class="text-gray-600 text-sm mt-1">AI-driven governance layer ensuring accuracy across enterprise AI systems and autonomously optimizing clarity protocols.</p>
+            <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12">
+                <!-- Marker -->
+                <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-klyr-red text-white flex items-center justify-center font-bold text-xl border-4 border-white shadow-md z-10">
+                    2
+                </div>
+                
+                <!-- Content Container -->
+                <div class="w-full flex flex-col md:flex-row">
+                    <div class="md:w-1/2"></div>
+                    <!-- Text (Right on Desktop) -->
+                    <div class="pl-16 md:pl-16 md:w-1/2 md:text-left">
+                        <h3 class="text-xl md:text-2xl font-bold text-klyr-dark">Autonomous Clarity Governor</h3>
+                        <p class="text-gray-600 text-base mt-2">AI-driven governance layer ensuring accuracy across enterprise AI systems and autonomously optimizing clarity protocols.</p>
+                    </div>
                 </div>
             </div>
 
             <!-- Step 3 -->
-            <div class="flex flex-col md:flex-row items-center relative">
-                <!-- Text Left -->
-                <div class="md:w-1/2 text-center md:text-right pr-0 md:pr-12 mb-4 md:mb-0">
-                    <h3 class="text-xl font-bold text-klyr-dark">Global Clarity Operator</h3>
-                    <p class="text-gray-600 text-sm mt-1">A worldwide safety and authenticity grid for healthcare, agriculture, manufacturing, and national infrastructure.</p>
+            <div class="relative flex flex-col md:flex-row items-start md:items-center">
+                <!-- Marker -->
+                <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-klyr-red text-white flex items-center justify-center font-bold text-xl border-4 border-white shadow-md z-10">
+                    3
                 </div>
-                <!-- Number -->
-                <div class="z-10 w-10 h-10 rounded-full bg-klyr-red text-white flex items-center justify-center font-bold text-lg border-4 border-white shadow-md">3</div>
-                <!-- Spacer Right -->
-                <div class="md:w-1/2"></div>
+                
+                <!-- Content Container -->
+                <div class="w-full flex flex-col md:flex-row">
+                    <!-- Text (Left on Desktop) -->
+                    <div class="pl-16 md:pl-0 md:pr-16 md:w-1/2 md:text-right">
+                        <h3 class="text-xl md:text-2xl font-bold text-klyr-dark">Global Clarity Operator</h3>
+                        <p class="text-gray-600 text-base mt-2">A worldwide safety and authenticity grid for healthcare, agriculture, manufacturing, and national infrastructure.</p>
+                    </div>
+                    <div class="md:w-1/2"></div>
+                </div>
             </div>
 
         </div>
     </section>
     
     <!-- [IMAGE 4] PAGE FOOTER (Brand Closeout) -->
-    <section class="max-w-full mx-auto py-12 bg-klyr-red">
+    <!-- 
+        STANDARD RULE: py-8 md:py-12
+    -->
+    <section class="max-w-full mx-auto py-8 md:py-12 bg-klyr-red">
         <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
             <p class="text-2xl md:text-3xl font-bold mb-2 tracking-wide italic">
                 ALETHA ™ - The Voice of Verified Reality.
@@ -571,7 +638,6 @@
             </p>
         </div>
     </section>
-
 
 
 </main>

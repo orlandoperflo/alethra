@@ -234,20 +234,21 @@
 
  
     <main class="fade-in-section">
-        
-    <div id="homepage-content">
+   <div id="homepage-content">
              <!-- Section 1: Hero - Global Standard of Clarity -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-12 text-left">
+            <!-- Rule 1: Desktop pt-24/pb-12, Mobile pt-16/pb-8 -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12 text-left">
                 
                 <!-- Grid Container: 2 Columns -->
-                <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Rule 1: Mobile Gap 2rem (gap-8) -->
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
                     
                     <!-- Left Column: Content -->
                     <div class="space-y-6">
                         
                         <!-- H1 Text -->
                         <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-snug text-klyr-dark inline-block text-left">
-                            BUILDING THE GLOBAL<br> STANDARD OF CLARITY.
+                            BUILDING THE GLOBAL<br> STANDARD OF CLARITY
                         </h1>
 
                         <!-- Paragraph Text -->
@@ -280,7 +281,8 @@
             </div>
 
             <!-- Section 1.5: Clarity Through Standardization + Regulatory Focus -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6 md:pt-16 md:pb-8 text-left">
+            <!-- Rule 2: Desktop py-12, Mobile py-8 (Standard Section) -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 text-left">
                 <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight mb-4 text-klyr-dark text-left">
                     <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> EXISTS TO ELIMINATE CONFUSION
                     <br class="hidden sm:inline"> THROUGH STANDARDIZATION.
@@ -291,7 +293,8 @@
                 </p>
 
                 <!-- New Content Block: Regulatory Focus -->
-                <div class="mt-16 text-left max-w-4xl">
+                <!-- Rule 2 Check: Margin top max 2rem mobile -->
+                <div class="mt-8 md:mt-12 text-left max-w-4xl">
                     
                     <!-- Subheading 1 -->
                     <h3 class="text-xl md:text-2xl font-extrabold tracking-tight mb-8 text-klyr-dark text-left">
@@ -300,7 +303,7 @@
                     </h3>
                     
                     <!-- Centered Image -->
-                    <div class="flex justify-start mb-12">
+                    <div class="flex justify-start mb-8 md:mb-12">
                         <img src="https://plusbrand.com/wp-content/uploads/2025/11/12-Regulatory-Standards-Engagement_Img_1-scaled.png" 
                              alt="Diagram illustrating regulatory engagement and standards development" 
                              class="w-full max-w-5xl h-auto rounded-xl"
@@ -308,45 +311,48 @@
                     </div>
                     
                     <!-- Subheading 2 -->
-                    <h3 class="text-xl md:text-2xl font-extrabold tracking-tight mb-12 text-klyr-dark text-left">
+                    <!-- Rule 2 Check: Margins restricted on mobile -->
+                    <h3 class="text-xl md:text-2xl font-extrabold tracking-tight mb-8 md:mb-12 text-klyr-dark text-left">
                         <span class="text-klyr-red">ALETHRA</span>™ INC. MAINTAINS ACTIVE <br> COLLABORATION AND TECHNICAL ALIGNMENT WITH
                     </h3>
                     
                     <!-- VERTICAL DIVIDER GRID TRANSFORMATION FOR LIST -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12">
+                    <!-- Rule 5 (Strip & Gap): Mobile gap-y-8, Items p-0 border-none -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-y-12">
                         
                         <!-- Item 1 -->
-                        <div class="pl-0 pr-6 border-b border-gray-200 md:border-b-0 md:border-r-2 md:border-black">
+                        <!-- Mobile: p-0, border-none. Desktop: restore padding/border -->
+                        <div class="p-0 border-none md:pr-6 md:border-solid md:border-b-0 md:border-r-2 md:border-black">
                             <p class="font-extrabold uppercase mb-2 text-klyr-dark">U.S. FDA (FOOD & DRUG ADMINISTRATION)</p>
                             <p class="text-gray-600 text-base">Supporting initiatives in medication safety and labeling clarity.</p>
                         </div>
 
                         <!-- Item 2 -->
-                        <div class="pl-0 md:pl-8 pr-6 border-b border-gray-200 md:border-b-0 lg:border-r-2 lg:border-black">
+                        <div class="p-0 border-none md:pl-8 md:pr-6 md:border-solid md:border-b-0 lg:border-r-2 lg:border-black">
                             <p class="font-extrabold uppercase mb-2 text-klyr-dark">U.S. DEPARTMENT OF AGRICULTURE (USDA)</p>
                             <p class="text-gray-600 text-base">Enhancing food safety and traceability programs.</p>
                         </div>
 
                         <!-- Item 3 -->
-                        <div class="pl-0 md:pl-0 lg:pl-8 pr-6 border-b border-gray-200 md:border-b-0 md:border-r-2 lg:border-r-0 md:border-black">
+                        <div class="p-0 border-none lg:pl-8 md:pr-6 md:border-solid md:border-b-0 md:border-r-2 lg:border-r-0 md:border-black">
                             <p class="font-extrabold uppercase mb-2 text-klyr-dark">EUROPEAN MEDICINES AGENCY (EMA)</p>
                             <p class="text-gray-600 text-base">Working toward harmonized verification standards in healthcare.</p>
                         </div>
 
                         <!-- Item 4 -->
-                        <div class="pl-0 lg:pl-0 pr-6 border-b border-gray-200 md:border-b-0 lg:border-r-2 md:border-black">
+                        <div class="p-0 border-none lg:pl-0 md:pr-6 md:border-solid md:border-b-0 lg:border-r-2 md:border-black">
                             <p class="font-extrabold uppercase mb-2 text-klyr-dark">WORLD HEALTH ORGANIZATION (WHO)</p>
                             <p class="text-gray-600 text-base">Research cooperation on confusion-related injury and prevention.</p>
                         </div>
 
                         <!-- Item 5 -->
-                        <div class="pl-0 md:pl-8 pr-6 border-b border-gray-200 md:border-b-0 md:border-r-2 md:border-black">
+                        <div class="p-0 border-none md:pl-8 md:pr-6 md:border-solid md:border-b-0 md:border-r-2 md:border-black">
                             <p class="font-extrabold uppercase mb-2 text-klyr-dark">ISO & IEC COMMITTEES</p>
                             <p class="text-gray-600 text-base">Participation in the development of next-generation data verification and product identification standards.</p>
                         </div>
 
                         <!-- Item 6 -->
-                        <div class="pl-0 md:pl-0 lg:pl-8">
+                        <div class="p-0 border-none lg:pl-8">
                             <p class="font-extrabold uppercase mb-2 text-klyr-dark">PRIVATE & PUBLIC INSTITUTIONS</p>
                             <p class="text-gray-600 text-base">Hospitals, logistics firms, and manufacturers participating in pilot deployments under the <span class="text-klyr-red">ALETHRACERTIFIED</span>™ framework.</p>
                         </div>
@@ -354,11 +360,13 @@
                     </div>
 
                     <!-- Subheading 3: GOVERNANCE AND ETHICS -->
-                    <h3 class="text-xl md:text-2xl font-extrabold tracking-tight mt-16 mb-4 text-klyr-dark text-left">
+                    <!-- Rule 2 Check: Margin top max 2rem mobile -->
+                    <h3 class="text-xl md:text-2xl font-extrabold tracking-tight mt-8 md:mt-12 mb-4 text-klyr-dark text-left">
                         GOVERNANCE AND ETHICS
                     </h3>
                     <!-- Paragraph Text -->
-                    <p class="text-gray-600 text-lg md:text-xl mb-10 text-left">
+                    <!-- Rule 2 Check: Margin bottom max 2rem mobile -->
+                    <p class="text-gray-600 text-lg md:text-xl mb-8 md:mb-10 text-left">
                         <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> maintains an independent internal Regulatory & Standards Committee
                         responsible for oversight of ethics, data governance, and compliance.
                     </p>
@@ -381,7 +389,8 @@
                     </ul>
 
                     <!-- Subheading 4: THE ROAD AHEAD -->
-                    <h3 class="text-xl md:text-2xl font-extrabold tracking-tight mt-12 mb-4 text-klyr-dark text-left">
+                    <!-- Rule 2 Check: Margin top max 2rem mobile -->
+                    <h3 class="text-xl md:text-2xl font-extrabold tracking-tight mt-8 md:mt-12 mb-4 text-klyr-dark text-left">
                         THE ROAD AHEAD
                     </h3>
                     <!-- Paragraph Text -->
@@ -390,23 +399,23 @@
                     </p>
 
                     <!-- Image for Road Ahead -->
-                    <div class="flex justify-start my-12">
+                    <div class="flex justify-start my-8 md:my-12">
                         <img src="https://plusbrand.com/wp-content/uploads/2025/11/12-Regulatory-Standards-Engagement_Map-scaled.png" 
                              alt="Global map showing partnership expansion" 
                              class="w-full max-w-4xl h-auto rounded-xl"
                              onerror="this.src='https://placehold.co/900x400/eeeeee/333333?text=Global+Partnership+Map';">
                     </div>
                     <!-- Bold Statement -->
-                    <p class="text-left text-gray-600 text-lg md:text-xl font-bold mb-10">
+                    <p class="text-left text-gray-600 text-lg md:text-xl font-bold mb-8 md:mb-10">
                         Each engagement brings the world closer to one shared language of safety — <span class="text-klyr-red">clarity</span>.
                     </p>
                     
                     <!-- New Heading: REGULATION THROUGH INNOVATION -->
-                    <h3 class="text-2xl md:text-4xl font-extrabold tracking-tight mt-12 mb-4 text-klyr-dark text-left">
+                    <h3 class="text-2xl md:text-4xl font-extrabold tracking-tight mt-8 md:mt-12 mb-4 text-klyr-dark text-left">
                         REGULATION THROUGH INNOVATION
                     </h3>
                     <!-- Paragraph Text -->
-                    <p class="text-gray-600 text-lg md:text-xl mb-4 text-left">
+                    <p class="text-gray-600 text-lg md:text-xl mb-0 md:mb-4 text-left">
                         <span class="text-klyr-red">ALETHRA</span><span class="text-klyr-dark">™</span> doesn’t adapt to standards — it advances them. Every verified product and every certified facility builds trust into the world’s infrastructure.
                     </p>
 
@@ -415,7 +424,8 @@
 
 
             <!-- UPDATED SECTION 2.5: Triple CTA Buttons (Left Aligned) -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-10 text-left">
+            <!-- Rule 2: Desktop py-12, Mobile py-8 (Standard Section) -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-8 md:pb-12 md:pt-0 text-left">
                 <div class="flex flex-col lg:flex-row justify-start items-center space-y-4 lg:space-y-0 lg:space-x-6 max-w-4xl">
                     <!-- Button 1: REQUEST REGULATORY PARTNERSHIP -->
                     <a href="#regulatory-form" class="w-full lg:w-auto smooth-scroll">
@@ -438,12 +448,10 @@
                 </div>
             </section>
             
-            <!-- Add a general message box for global feedback -->
-            <div id="general-message-box" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-                <div id="message-box-content" class="bg-gray-100 border border-gray-300 text-gray-700 p-4 rounded-lg hidden"></div>
-            </div>
+      
 
-             <section class="bg-klyr-red py-10">
+             <!-- Rule 2: Desktop py-12, Mobile py-8 (Standard Section) -->
+             <section class="bg-klyr-red py-8 md:py-12">
                 <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 text-left text-white">
                     <p class="text-xl sm:text-2xl mb-1">
                        ALETHRA™ is setting the clarity standard — one truth at a time.
@@ -452,10 +460,11 @@
             </section>
             
             <!-- NEW SECTION: Regulatory Engagement Request Form (Left Aligned Heading, Form Full Width in container) -->
-            <section id="regulatory-form" class="bg-apple-gray-light pt-10 pb-16 md:pb-24">
+            <!-- Rule 2: Desktop py-12, Mobile py-8 (Standard Section / Form) -->
+            <section id="regulatory-form" class="bg-apple-gray-light py-8 md:py-12">
                 <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
                     
-                    <h3 class="text-2xl md:text-4xl font-extrabold tracking-tight mb-10 text-klyr-dark text-center uppercase">
+                    <h3 class="text-2xl md:text-4xl font-extrabold tracking-tight mb-8 md:mb-12 text-klyr-dark text-center uppercase">
                         Regulatory Engagement Request
                     </h3>
                     
@@ -482,7 +491,7 @@
                                     <input type="text" name="first-name" id="first-name" autocomplete="given-name" required
                                            placeholder="First Name"
                                            class="block w-full rounded-xl border border-gray-300 shadow-sm focus:border-klyr-red focus:ring-klyr-red text-base p-4 placeholder-gray-400">
-                                    
+                                     
                                     <input type="text" name="last-name" id="last-name" autocomplete="family-name" required
                                            placeholder="Last Name"
                                            class="block w-full rounded-xl border border-gray-300 shadow-sm focus:border-klyr-red focus:ring-klyr-red text-base p-4 placeholder-gray-400">
@@ -504,7 +513,7 @@
                                     <input type="text" name="role" id="role" required
                                            placeholder="Role / Department"
                                            class="block w-full rounded-xl border border-gray-300 shadow-sm focus:border-klyr-red focus:ring-klyr-red text-base p-4 placeholder-gray-400">
-                                    
+                                     
                                     <!-- COUNTRY SELECTION (MODAL TRIGGER) -->
                                     <div class="relative">
                                         <!-- Hidden input to store the actual selected value -->
@@ -590,7 +599,6 @@
                 </div>
             </section>
         </div>
-        
         
 </main>
 <div id="country-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] hidden opacity-0 modal-transition">

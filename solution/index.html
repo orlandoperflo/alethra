@@ -184,12 +184,16 @@
 
     <main class="fade-in-section">
     <!-- Section 1: Hero - Clarity Technology Heading + Image/Content Grid -->
-             <!-- MODIFIED: Reduced bottom padding from py-24 to pb-12 on desktop -->
-             <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 md:pt-24 md:pb-12 fade-in-section">
+            <!-- 
+                 PADDING RULE: 
+                 Top: Max (6rem/4rem) -> pt-16 / md:pt-24
+                 Bottom: 0 (to allow next section to control gap) -> pb-0 / md:pb-0
+            -->
+             <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-0 md:pt-24 md:pb-0 fade-in-section">
                 
                 <!-- Reversed Grid (Content Left, Image Right) -->
                 <!-- MODIFIED: Changed items-center to items-start to align image with heading top -->
-                <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div class="grid md:grid-cols-2 gap-8 items-start">
                     
                     <!-- Column 1 (Content - Now Left - INCLUDES HEADING) -->
                     <div class="space-y-6">
@@ -219,16 +223,23 @@
             </section>
 
             <!-- Section 2: Centered Subheading (Replaces KEY SYSTEMS image section) -->
-            <!-- MODIFIED: Reduced bottom padding for tight fit (pb-4/pb-6) -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-4 md:pt-6 md:pb-6 text-center">
+            <!-- 
+                 PADDING RULE: Max 3rem/2rem gap.
+                 Gap from above: 0 (Hero bottom) + 2rem/3rem (This top) = 2rem/3rem. OK.
+                 Gap to below: 0 (This bottom) + 2rem/3rem (Next top) = 2rem/3rem. OK.
+            -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-0 md:pt-12 md:pb-0 text-center">
                 <h2 class="fade-in-section text-xl md:text-3xl font-bold tracking-tight text-klyr-dark">
                     EVERY PRODUCT, PACKAGE AND ITEM IS VERIFIED INSTANTLY
                 </h2>
             </section>
             
             <!-- NEW Section: Clarity Pillars (Images) -->
-            <!-- MODIFIED: Increased bottom padding for space to red banner -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12 md:pt-6 md:pb-20">
+            <!-- 
+                 PADDING RULE: Max 3rem/2rem gap from above.
+                 Top: 2rem/3rem (pt-8 / md:pt-12). OK.
+            -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 md:pt-12 md:pb-12">
                 <div class="fade-in-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Pillar 1: Visual Fingerprinting -->
                     <div class="text-center">
@@ -257,7 +268,8 @@
                 </div>
             </section>
             
-            <section class="bg-klyr-red py-10">
+            <!-- Section 4: Red Banner -->
+            <section class="bg-klyr-red py-8 md:py-12">
                 <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 text-left text-white">
                     <p class="text-xl sm:text-2xl mb-1">
                         Confusion isn’t random — it’s systemic.<br>
@@ -266,8 +278,13 @@
                 </div>
             </section>
 
-            
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <!-- Section 5: Join Movement -->
+            <!-- 
+                 PADDING RULE: Join Movement allows Max (6rem/4rem).
+                 Mobile: Top 4rem (pt-16), Bottom 4rem (pb-16)
+                 Desktop: Top 6rem (pt-24), Bottom 6rem (pb-24)
+            -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-16 md:pt-24 md:pb-24">
                 <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
                     JOIN THE CLARITY MOVEMENT
                 </h2>
@@ -285,7 +302,13 @@
             </section>
         </div>
         
-        <section id="beta-signup-page" class="hidden max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <!-- Beta Signup (Hidden) -->
+        <!-- 
+             PADDING RULE: Must be Max 3rem/2rem (NOT Join Movement, NOT Hero Head).
+             Mobile: 2rem (py-8)
+             Desktop: 3rem (py-12)
+        -->
+        <section id="beta-signup-page" class="hidden max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
             
             <div id="beta-form-container">
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4">
