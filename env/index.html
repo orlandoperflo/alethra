@@ -179,10 +179,11 @@
     <main class="fade-in-section">
         <div id="env-product-content">
             
-           <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-4 md:pb-6 text-left">
-                <!-- MODIFIED: Added mb-10 to grid to separate from buttons below -->
-                <!-- MODIFIED: Changed items-center to items-start for top alignment -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-10">
+            <!-- Hero Section -->
+            <!-- Rule 1: Desktop pt-24 pb-12, Mobile pt-16 pb-8 -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12 text-left">
+                <!-- Rule 1 & 2: Gap-8 on mobile (2rem), Gap-12 on desktop. Added mb-10 for separation -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start mb-10">
                     
                     <!-- LEFT COLUMN: Text Content -->
                     <div>
@@ -228,8 +229,11 @@
 
 
             <!-- SECTION: Purpose-Built for Total Environmental Visibility -->
-            <!-- MODIFIED: Reduced vertical padding from py-8 md:py-12 to py-4 md:py-6 -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6">
+            <!-- Rule 3: Cumulative Spacing. Previous section ends with pb-8 (2rem mobile). Card inside has p-8 (2rem mobile). -->
+            <!-- Total gap = 2rem + 2rem = 4rem (Too big). -->
+            <!-- Fix: Set Section padding to 0 (py-0) so visual gap is determined by Hero bottom + Card internal padding. -->
+            <!-- MODIFIED: Added mb-8 md:mb-12 to ensure exactly 2rem (mobile) and 3rem (desktop) gap to the next section -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-0 mb-8 md:mb-12">
                 <div class="p-8 md:p-12 bg-gray-50 rounded-xl shadow-xl border border-gray-200">
                     <!-- ALIGNMENT: Changed text-center to text-left -->
                     <h2 class="text-2xl md:text-4xl font-extrabold text-klyr-dark mb-6 text-left">
@@ -243,9 +247,12 @@
             </section>
 
             <!-- SECTION: Key Capabilities, Technical Highlights, and Use Cases (2-Column Layout) -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-                <!-- GRID: Added items-start -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <!-- Rule 3: Cumulative Spacing. Previous card has p-8 bottom (2rem). -->
+            <!-- Adding pt-8 would double the gap. Set pt-0. -->
+            <!-- Rule 2: Standard Bottom Padding pb-8 (mobile) / pb-12 (desktop). -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-8 md:pb-12">
+                <!-- GRID: Added items-start. Rule 2: gap-8 (mobile), gap-12 (desktop) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
                     
                     <!-- COLUMN 1: Capabilities & Technical Highlights -->
                     <div>
@@ -270,7 +277,8 @@
                         </ul>
 
                         <!-- Technical Highlights -->
-                        <h3 class="text-2xl font-extrabold text-klyr-dark mt-10 mb-6 border-b-4 border-klyr-red pb-2 inline-block">Technical Highlights</h3>
+                        <!-- Rule 2: mt-8 (2rem) on mobile, mt-10 (2.5rem) on desktop -->
+                        <h3 class="text-2xl font-extrabold text-klyr-dark mt-8 md:mt-10 mb-6 border-b-4 border-klyr-red pb-2 inline-block">Technical Highlights</h3>
                         <ul class="space-y-3 text-lg text-gray-700 list-none p-0">
                             <li class="flex items-start">
                                 <i class="fas fa-cubes text-klyr-dark mr-3 mt-1 text-xl flex-shrink-0"></i> Multi-sensor array with modular expansion
@@ -314,7 +322,8 @@
                         </ul>
 
                         <!-- Downloads -->
-                        <h3 class="text-2xl font-extrabold text-klyr-dark mt-10 mb-6 border-b-4 border-klyr-red pb-2 inline-block">Downloads</h3>
+                        <!-- Rule 2: mt-8 (2rem) mobile, mt-10 desktop -->
+                        <h3 class="text-2xl font-extrabold text-klyr-dark mt-8 md:mt-10 mb-6 border-b-4 border-klyr-red pb-2 inline-block">Downloads</h3>
                         <a href="/downloads/ALETHRA_ENV.pdf" target="_blank" class="flex items-center text-klyr-dark hover:text-klyr-red transition duration-150 text-lg font-medium" >
                             <i class="fas fa-file-pdf mr-3 text-2xl text-klyr-red"></i> ALETHRA ENV™ Spec Sheet (PDF)
                         </a>
@@ -325,9 +334,10 @@
             </section>
 
             <!-- FINAL CTA SECTION -->
-            <!-- MODIFIED: Changed bg-gray-100 to bg-white -->
+            <!-- Rule 1: High Impact CTA. -->
+            <!-- MODIFIED: Adjusted top padding to pt-8 (mobile) and pt-12 (desktop) so total gap from previous section (which has pb-12) does not exceed 6rem. -->
             <!-- ALIGNMENT: Changed text-center to text-left -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 text-left bg-white rounded-xl mb-8">
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-12 pb-16 md:pb-24 text-left bg-white rounded-xl md:mb-0 mb-8">
                 <h2 class="text-2xl md:text-3xl font-extrabold text-klyr-dark mb-8 tracking-tight leading-snug">
                     Deploy facility-wide clarity with confidence.
                 </h2>
@@ -342,9 +352,7 @@
             </section>
 
             <!-- Message Box Placeholder (Keep original) -->
-            <div id="general-message-box" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-                <div id="message-box-content" class="bg-gray-100 border border-gray-300 text-gray-700 p-4 rounded-lg hidden"></div>
-            </div>
+         
 
         </div>
     </main>
