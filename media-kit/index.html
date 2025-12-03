@@ -226,10 +226,12 @@
         
   <div id="homepage-content">
              <!-- Section 1: Hero - Media Kit -->
-             <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-12 text-left">
+             <!-- Rule 1: Desktop pt-24 pb-12, Mobile pt-16 pb-8 -->
+             <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12 text-left">
                 
                 <!-- Grid Container: 2 Columns -->
-                <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Rule 1 & 2: gap-8 (mobile) gap-12 (desktop) -->
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
                     
                     <!-- Left Column: Content -->
                     <div class="space-y-6">
@@ -251,16 +253,20 @@
             </section>
             
             <!-- NEW SECTION: Media Kit Assets Grid -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-12 pb-12">
+            <!-- Rule 3 Zero Padding: Prev section has pb-12. Set pt-0 here to avoid double gap. -->
+            <!-- Rule 2 Standard: Bottom padding pb-8 (mobile) pb-12 (desktop). -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-8 md:pb-12">
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-klyr-dark mb-10 text-left uppercase tracking-wide">
                     Available Assets
                 </h2>
                 
                 <!-- Vertical Divider Grid (4 Columns) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 md:gap-y-0">
+                <!-- Rule 5 Strip & Gap: Mobile gap-y-8. Desktop md:gap-y-0. -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 md:gap-y-0">
                     
                     <!-- Card 1: Logo Pack -->
-                    <div class="pl-0 pr-6 border-b border-gray-200 lg:border-b-0 sm:border-r-2 sm:border-black h-full flex flex-col text-left">
+                    <!-- Rule 5: Removed border-b on mobile (border-none). Restored borders on desktop. -->
+                    <div class="pl-0 pr-6 border-none lg:border-b-0 sm:border-r-2 sm:border-black h-full flex flex-col text-left">
                         <div class="flex items-center justify-start mb-4">
                             <i class="fas fa-file-image text-4xl text-klyr-red"></i>
                         </div>
@@ -269,8 +275,9 @@
                     </div>
 
                     <!-- Card 2: Brand Guidelines -->
-                    <!-- Border Right on LG. No border right on SM (end of row 1). -->
-                    <div class="pl-0 sm:pl-8 pr-6 border-b border-gray-200 lg:border-b-0 lg:border-r-2 lg:border-black h-full flex flex-col text-left">
+                    <!-- Rule 5: Removed border-b on mobile. Restored borders on desktop. -->
+                    <!-- Rule 4: Stair Step - pl-0 on mobile, sm:pl-8 on desktop. -->
+                    <div class="pl-0 sm:pl-8 pr-6 border-none lg:border-b-0 lg:border-r-2 lg:border-black h-full flex flex-col text-left">
                         <div class="flex items-center justify-start mb-4">
                             <i class="fas fa-book-open text-4xl text-klyr-red"></i>
                         </div>
@@ -279,7 +286,10 @@
                     </div>
 
                     <!-- Card 3: Aletha Avatar Renders -->
-                    <div class="pl-0 lg:pl-8 pr-6 border-b border-gray-200 lg:border-b-0 sm:border-r-2 sm:border-black h-full flex flex-col text-left pt-12 sm:pt-0">
+                    <!-- Rule 5: Removed border-b on mobile. Restored borders on desktop. -->
+                    <!-- Rule 4: Stair Step - pl-0 on mobile, lg:pl-8 on desktop. -->
+                    <!-- Removed explicit mobile top padding (pt-12) as gap-y-8 handles spacing now. -->
+                    <div class="pl-0 lg:pl-8 pr-6 border-none lg:border-b-0 sm:border-r-2 sm:border-black h-full flex flex-col text-left sm:pt-0">
                         <div class="flex items-center justify-start mb-4">
                             <i class="fas fa-user-circle text-4xl text-klyr-red"></i>
                         </div>
@@ -288,7 +298,9 @@
                     </div>
 
                     <!-- Card 4: Product & UI Shots -->
-                    <div class="pl-0 sm:pl-8 h-full flex flex-col text-left pt-12 sm:pt-0">
+                    <!-- Rule 4: Stair Step - pl-0 on mobile, sm:pl-8 on desktop. -->
+                    <!-- Removed explicit mobile top padding. -->
+                    <div class="pl-0 sm:pl-8 h-full flex flex-col text-left sm:pt-0">
                         <div class="flex items-center justify-start mb-4">
                             <i class="fas fa-tablet-alt text-4xl text-klyr-red"></i>
                         </div>
@@ -300,7 +312,9 @@
             
 
             <!-- UPDATED SECTION 2.5: Single CTA Button (Left Aligned) -->
-            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-10 text-left">
+            <!-- Rule 1 High Impact. -->
+            <!-- Rule 1 Gap Limit: Previous section has pb-12. Reduced top padding to pt-8/pt-12 to keep max visual gap 6rem. -->
+            <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-8 md:pb-12 text-left">
                 <div class="max-w-xs mr-auto">
                     <!-- Button 1: DOWNLOAD MEDIA KIT -->
                     <a href="#" class="w-full block">
@@ -310,13 +324,8 @@
                     </a>
                 </div>
             </section>
-             <!-- Add a general message box for global feedback -->
-            <div id="general-message-box" class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-                <div id="message-box-content" class="bg-gray-100 border border-gray-300 text-gray-700 p-4 rounded-lg hidden"></div>
-            </div>
-
+          
         </div>
-        
         
 </main>
 <div id="country-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] hidden opacity-0 modal-transition">
@@ -341,6 +350,7 @@
 
 <script src="/nav-logic.js"></script>
 <script src="/inject.js"></script>
+<script src="/symbol-formatter.js"></script>
 
 <!-- Cleaned up script block, retaining only the universal fade-in logic -->
 <script>
