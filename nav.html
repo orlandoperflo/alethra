@@ -38,48 +38,63 @@
     </style>
 
      <!-- DESKTOP NAV -->
-    <div class="max-w-super-wide mx-auto px-4 sm:px-6 lg:px-8 bg-white shadow-sm relative z-50">
+   <div class="max-w-super-wide mx-auto px-4 sm:px-6 lg:px-8 bg-white relative z-50">
         <div class="flex items-center justify-between h-16">
 
             <!-- Logo -->
             <a href="/">
                 <div class="flex-shrink-0 cursor-pointer">
-                    <img id="nav-logo-img" class="h-6 w-auto" alt="ALETHRA™ Logo" src="invalid-path-to-trigger-onerror.png"
+                    <img id="nav-logo-img" class="h-6 w-auto" alt="ALETHRA™ Logo" src="https://plusbrand.com/wp-content/uploads/2025/10/Copia-de-ALETHRA_Logo-scaled.png"
                          onerror="this.outerHTML = '<span class=\'text-xl font-bold text-klyr-red\'>ALETHRA™</span>';">
                 </div>
             </a>
 
             <!-- Desktop Links & Icons -->
-            <div class="flex items-center space-x-4">
+            <!-- Added h-full here to ensure children can expand to fill height -->
+            <div class="flex items-center space-x-4 h-full">
 
-                <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <!-- Added h-full here as well -->
+                <nav class="hidden md:flex space-x-6 text-sm font-medium h-full">
 
-                    <a href="/confusion" class="nav-item flex items-center h-16">THE PROBLEM</a>
+                    <!-- Added h-full and flex items-center to make the link fill the bar -->
+                    <a href="/confusion" class="nav-item flex items-center h-full hover:text-klyr-red transition-colors">THE PROBLEM</a>
+
+                     <a href="/solution" class="nav-item flex items-center h-full hover:text-klyr-red transition-colors">THE SOLUTION</a>
 
                     <!-- PRODUCTS MEGA MENU PARENT -->
-                    <div class="group static"> 
-                        <a href="/products" class="nav-item flex items-center h-16">
+                    <!-- Removed static, using relative for standard positioning context if needed, but 'static' on group allows full-width mega menu -->
+                    <div class="group static h-full flex items-center"> 
+                        <a href="#" class="nav-item flex items-center h-full hover:text-klyr-red transition-colors">
                             PRODUCTS
                             <i class="fas fa-chevron-down text-xs ml-1 transition-transform group-hover:rotate-180"></i>
                         </a>
 
                         <!-- Mega Menu Dropdown -->
-                        <div class="absolute top-full left-0 w-full bg-white border-t border-gray-200 z-50 
-                                    invisible opacity-0 -translate-y-0 transition-all duration-0 ease-out
+                        <!-- 
+                             UPDATES:
+                             1. top-full: Starts at bottom of header (64px).
+                             2. -mt-4: Pulls menu UP by 16px to sit closer to text (starts at 48px visual).
+                             3. pt-2: Small bridge padding.
+                        -->
+                        <div class="absolute top-full left-0 w-full z-50 -mt-4 pt-2
+                                    invisible opacity-0 -translate-y-0 transition-all duration-200 ease-out
                                     group-hover:visible group-hover:opacity-100 group-hover:translate-y-0">
                             
-                            <div class="bg-white w-full py-10"> 
+                            <!-- Inner Container -->
+                            <!-- Reduced pt-8 to pt-6 for tighter visual spacing -->
+                            <div class="bg-white  w-full pt-6 pb-10 shadow-xl"> 
                                 <div class="max-w-super-wide mx-auto px-8">
                                     <div class="grid grid-cols-4 gap-12">
                                         <!-- Column 1 -->
                                         <div>
                                             <span class="mega-menu-heading">ALETHRA Platform</span>
                                             <ul class="space-y-1">
-                                                <li><a href="/platform" class="mega-menu-link">Platform Overview</a></li>
-                                                <li><a href="/enterprise" class="mega-menu-link font-medium text-gray-800">ALETHRA ENTERPRISE™</a></li>
-                                                <li><a href="/mobile-app" class="mega-menu-link font-medium text-gray-800">ALETHRA MOBILE APP™</a></li>
+                                                <li><a href="/technology" class="mega-menu-link">Platform Overview</a></li>
+                                                <li><a href="/enterprise-hardware" class="mega-menu-link font-medium text-gray-800">ALETHRA ENTERPRISE™</a></li>
+                                                <li><a href="/vision" class="mega-menu-link font-medium text-gray-800">ALETHRA MOBILE APP™</a></li>
                                                 <li><a href="/cloud" class="mega-menu-link">ALETHRA CLOUD™</a></li>
-                                                <li><a href="/aletha-intelligence" class="mega-menu-link">ALETHA™ (Intelligence Layer)</a></li>
+                                                <li><a href="/aletha" class="mega-menu-link">ALETHA™</a></li>
+                                                 <li><a href="/all-scratch" class="mega-menu-link">ALL-SCRATCH®</a></li>
                                             </ul>
                                         </div>
                                         <!-- Column 2 -->
@@ -89,21 +104,24 @@
                                                 <li><a href="/scan" class="mega-menu-link">SCAN™ – Micro-Surface Fingerprinting</a></li>
                                                 <li><a href="/sense" class="mega-menu-link">SENSE™ – Spectral & Contamination</a></li>
                                                 <li><a href="/env" class="mega-menu-link">ENV™ – Environmental Intelligence</a></li>
-                                                <li><a href="/api" class="mega-menu-link">ALETHRA API & Integrations</a></li>
-                                                <li><a href="/security" class="mega-menu-link">Security & Compliance Architecture</a></li>
+                                                <li><a href="/flow" class="mega-menu-link">FLOW™ – Industrial Scanning</a></li>
+                                                <li><a href="/node" class="mega-menu-link">NODE™ – Secure Verification</a></li>
+                                                 <li><a href="/mobil" class="mega-menu-link">MOBIL™ –Instant Handheld Verification</a></li>
+                                                <li><a href="#" class="mega-menu-link">ALETHRA API & Integrations</a></li>
+                                                <li><a href="#" class="mega-menu-link">Security & Compliance Architecture</a></li>
                                             </ul>
                                         </div>
                                         <!-- Column 3 -->
                                         <div>
                                             <span class="mega-menu-heading">Industry Solutions</span>
                                             <ul class="space-y-1">
-                                                <li><a href="/healthcare" class="mega-menu-link">Healthcare & Senior Care</a></li>
-                                                <li><a href="/agriculture" class="mega-menu-link">Agriculture & Pesticides</a></li>
-                                                <li><a href="/food-beverage" class="mega-menu-link">Food & Beverage</a></li>
-                                                <li><a href="/pharma" class="mega-menu-link">Pharma & Life Sciences</a></li>
-                                                <li><a href="/construction" class="mega-menu-link">Construction & Manufacturing</a></li>
-                                                <li><a href="/logistics" class="mega-menu-link">Logistics & Supply Chain</a></li>
-                                                <li><a href="/environmental" class="mega-menu-link">Environmental Health & Water</a></li>
+                                                <li><a href="#" class="mega-menu-link">Healthcare & Senior Care</a></li>
+                                                <li><a href="#" class="mega-menu-link">Agriculture & Pesticides</a></li>
+                                                <li><a href="#" class="mega-menu-link">Food & Beverage</a></li>
+                                                <li><a href="#" class="mega-menu-link">Pharma & Life Sciences</a></li>
+                                                <li><a href="#" class="mega-menu-link">Construction & Manufacturing</a></li>
+                                                <li><a href="#" class="mega-menu-link">Logistics & Supply Chain</a></li>
+                                                <li><a href="#" class="mega-menu-link">Environmental Health & Water</a></li>
                                             </ul>
                                         </div>
                                         <!-- Column 4 -->
@@ -112,10 +130,10 @@
                                             <ul class="space-y-1">
                                                 <li><a href="/certified" class="mega-menu-link">ALETHRA CERTIFIED™</a></li>
                                                 <li><a href="/regulatory" class="mega-menu-link">Regulatory & Standards</a></li>
-                                                <li><a href="/global-clarity" class="mega-menu-link">Global Clarity Initiative</a></li>
-                                                <li><a href="/case-studies" class="mega-menu-link">Case Studies</a></li>
-                                                 <li><a href="/case-studies" class="mega-menu-link">Sustainability</a></li>
-                                                <li><a href="/resources" class="mega-menu-link text-gray-400">Resources & Documentation</a></li>
+                                                <li><a href="/global" class="mega-menu-link">Global Clarity Initiative</a></li>
+                                                <li><a href="/case" class="mega-menu-link">Case Studies</a></li>
+                                                 <li><a href="/sustainability" class="mega-menu-link">Sustainability</a></li>
+                                                <li><a href="#" class="mega-menu-link text-gray-400">Resources & Documentation</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -124,30 +142,34 @@
                         </div>
                     </div>
 
-                    <a href="/impact" class="nav-item flex items-center h-16">
-                        IMPACT
-                        <i class="fas fa-chevron-down text-xs ml-1 transition-transform group-hover:rotate-180"></i>
-                    </a>
-                    
-                    <!-- Hidden dropdown structure for Impact if needed, kept simple for now as per code provided -->
+                   <a href="/impact" class="nav-item flex items-center h-full hover:text-klyr-red transition-colors">IMPACT</a>
+               
 
+                    
                     <!-- ABOUT DROPDOWN -->
-                    <div class="relative group">
-                        <a href="/about" class="nav-item flex items-center h-16">
+                    <div class="relative group h-full flex items-center">
+                        <a href="/about" class="nav-item flex items-center h-full hover:text-klyr-red transition-colors">
                             ABOUT
                             <i class="fas fa-chevron-down text-xs ml-1 transition-transform group-hover:rotate-180"></i>
                         </a>
-                        <div class="absolute top-full left-0 w-80 bg-white rounded-b-lg shadow-xl py-2 border border-gray-100 z-50
+                        <!-- 
+                             UPDATES:
+                             1. -mt-2: Pulls it up slightly so it sits right under the text.
+                             2. No extra top padding needed as it's a simple list.
+                        -->
+                        <div class="absolute top-full left-0 w-40 -mt-2 z-50
                                     invisible opacity-0 -translate-y-2 transition-all duration-300 ease-out
                                     group-hover:visible group-hover:opacity-100 group-hover:translate-y-0">
-                            <a href="/regulatory" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase">Regulatory & Standards Engagement</a>
-                            <a href="/certified" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase">ALETHRA CERTIFIED™</a>
-                            <a href="/global" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase">GLOBAL INITIATIVE</a>
+                            <!-- Inner Container for Visuals -->
+                            <div class="bg-white rounded-b-lg shadow-xl py-2 border border-gray-100">
+                                <a href="#" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase">CONTACT US</a>
+                               
+                            </div>
                         </div>
                     </div>
 
-                    <a href="/press" class="nav-item h-16 flex items-center">PRESS & MEDIA</a>
-                    <a href="/join" class="nav-item font-bold h-16 flex items-center">JOIN THE MOVEMENT</a>
+                    <a href="/press" class="nav-item flex items-center h-full hover:text-klyr-red transition-colors">PRESS & MEDIA</a>
+                    <a href="/join" class="nav-item font-bold flex items-center h-full hover:text-klyr-red transition-colors">JOIN THE MOVEMENT</a>
                 </nav>
 
                 <!-- Desktop Icons -->
@@ -163,194 +185,188 @@
             </div>
         </div>
     </div>
-
 <!-- ███████████████████████████████████████████████████████████████ -->
 <!--                           MOBILE NAV                             -->
 <!-- ███████████████████████████████████████████████████████████████ -->
+<div id="mobile-menu-overlay"
+     class="fixed inset-y-0 right-0 w-3/4 h-full bg-white z-[90] mobile-menu-transition hidden opacity-0 translate-x-full shadow-2xl flex flex-col">
 
-    <div id="mobile-menu-overlay"
-         class="fixed inset-y-0 right-0 w-3/4 h-full bg-white z-[90] mobile-menu-transition hidden opacity-0 translate-x-full shadow-2xl flex flex-col">
-
-        <!-- Header with Static Close Button -->
-        <div class="flex justify-end p-4 border-b border-transparent">
-            <button id="close-mobile-menu-btn"
-                    class="p-2 text-klyr-dark hover:text-klyr-red transition"
-                    onclick="closeMobileMenu()">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-        </div>
-
-        <!-- Scrollable Navigation Container -->
-        <nav class="flex-1 overflow-y-auto">
-            <div class="flex flex-col min-h-full">
-                
-                <!-- Menu Items Wrapper -->
-                <div class="pb-8 space-y-0">
-                    <div class="w-full px-4">
-                        <a href="/confusion" class="block text-base font-normal py-0.5 text-klyr-dark hover:text-klyr-red"
-                           onclick="closeMobileMenu()">
-                            THE PROBLEM
-                        </a>
-                    </div>
-
-                    <div class="w-full px-4">
-                        <div class="flex justify-between items-center py-0.5">
-                            <a href="/products" class="text-base font-normal text-klyr-dark hover:text-klyr-red"
-                               onclick="closeMobileMenu()">
-                                PRODUCTS
-                            </a>
-                            <button id="mobile-products-toggle"
-                                    class="mobile-toggle-btn text-klyr-dark hover:text-klyr-red w-7 h-7 rounded-full flex items-center justify-center mr-1">
-                                <i id="mobile-products-icon" class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
-                            </button>
-                        </div>
-
-                        <div id="mobile-products-dropdown"
-                             class="mobile-dropdown-content pl-4">
-                             
-                             <!-- Platform Nested Group -->
-                             <div class="py-1">
-                                <div class="flex justify-between items-center py-1 cursor-pointer" onclick="toggleNested('nested-platform', 'icon-platform')">
-                                    <span class="text-xs font-bold text-gray-900 uppercase">ALETHRA Platform</span>
-                                    <i id="icon-platform" class="fas fa-plus text-xs text-gray-400 mr-2 transition-transform"></i>
-                                </div>
-                                <div id="nested-platform" class="mobile-dropdown-content pl-2">
-                                    <a href="/enterprise" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">ALETHRA ENTERPRISE™</a>
-                                    <a href="/mobile-app" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">ALETHRA MOBILE APP™</a>
-                                    <a href="/cloud" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">ALETHRA CLOUD™</a>
-                                    <a href="/aletha" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">ALETHA™</a>
-                                </div>
-                             </div>
-
-                             <!-- Modules Nested Group -->
-                             <div class="py-1">
-                                <div class="flex justify-between items-center py-1 cursor-pointer" onclick="toggleNested('nested-modules', 'icon-modules')">
-                                    <span class="text-xs font-bold text-gray-900 uppercase">Modules & Engines</span>
-                                    <i id="icon-modules" class="fas fa-plus text-xs text-gray-400 mr-2 transition-transform"></i>
-                                </div>
-                                <div id="nested-modules" class="mobile-dropdown-content pl-2">
-                                    <a href="/scan" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">SCAN™</a>
-                                    <a href="/sense" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">SENSE™</a>
-                                    <a href="/env" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">ENV™</a>
-                                    <a href="/api" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">API & Integrations</a>
-                                </div>
-                             </div>
-
-                             <!-- Industry Nested Group -->
-                             <div class="py-1">
-                                <div class="flex justify-between items-center py-1 cursor-pointer" onclick="toggleNested('nested-industry', 'icon-industry')">
-                                    <span class="text-xs font-bold text-gray-900 uppercase">Industry Solutions</span>
-                                    <i id="icon-industry" class="fas fa-plus text-xs text-gray-400 mr-2 transition-transform"></i>
-                                </div>
-                                <div id="nested-industry" class="mobile-dropdown-content pl-2">
-                                    <a href="/healthcare" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Healthcare</a>
-                                    <a href="/agriculture" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Agriculture</a>
-                                    <a href="/food" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Food & Bev</a>
-                                    <a href="/pharma" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Pharma</a>
-                                </div>
-                             </div>
-
-                             <!-- Programs Nested Group -->
-                             <div class="py-1">
-                                <div class="flex justify-between items-center py-1 cursor-pointer" onclick="toggleNested('nested-programs', 'icon-programs')">
-                                    <span class="text-xs font-bold text-gray-900 uppercase">Programs & Cert</span>
-                                    <i id="icon-programs" class="fas fa-plus text-xs text-gray-400 mr-2 transition-transform"></i>
-                                </div>
-                                <div id="nested-programs" class="mobile-dropdown-content pl-2">
-                                    <a href="/certified" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Certified</a>
-                                    <a href="/regulatory" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Regulatory</a>
-                                    <a href="/case-studies" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Case Studies</a>
-                                </div>
-                             </div>
-                        </div>
-                    </div>
-
-                    <div class="w-full px-4">
-                        <div class="flex justify-between items-center py-0.5">
-                            <a href="/impact" class="text-base font-normal text-klyr-dark hover:text-klyr-red"
-                               onclick="closeMobileMenu()">
-                                IMPACT
-                            </a>
-                            <button id="mobile-impact-toggle"
-                                    class="mobile-toggle-btn text-klyr-dark hover:text-klyr-red w-7 h-7 rounded-full flex items-center justify-center mr-1">
-                                <i id="mobile-impact-icon" class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
-                            </button>
-                        </div>
-
-                        <div id="mobile-impact-dropdown"
-                             class="mobile-dropdown-content pl-4">
-                            <div class="flex flex-col space-y-0 py-0.5">
-                                <a href="/case" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase"
-                                   onclick="closeMobileMenu()">CASE STUDIES</a>
-                                <a href="/sustainability" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase"
-                                   onclick="closeMobileMenu()">SUSTAINABILITY</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="w-full px-4">
-                        <div class="flex justify-between items-center py-0.5">
-                            <a href="/about" class="text-base font-normal text-klyr-dark hover:text-klyr-red"
-                               onclick="closeMobileMenu()">
-                                ABOUT
-                            </a>
-                            <button id="mobile-about-toggle"
-                                    class="mobile-toggle-btn text-klyr-dark hover:text-klyr-red w-7 h-7 rounded-full flex items-center justify-center mr-1">
-                                <i id="mobile-about-icon" class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
-                            </button>
-                        </div>
-
-                        <div id="mobile-about-dropdown"
-                             class="mobile-dropdown-content pl-4">
-                            <div class="flex flex-col space-y-0 py-0.5">
-                                <a href="/regulatory"
-                                   class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase"
-                                   onclick="closeMobileMenu()">Regulatory & Standards Engagement</a>
-                                <a href="/certified"
-                                   class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase"
-                                   onclick="closeMobileMenu()">ALETHRA CERTIFIED™</a>
-                                <a href="/global"
-                                   class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase"
-                                   onclick="closeMobileMenu()">GLOBAL INITIATIVE</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="w-full px-4">
-                        <a href="/press" class="block text-base font-normal py-0.5 text-klyr-dark hover:text-klyr-red"
-                           onclick="closeMobileMenu()">
-                            PRESS & MEDIA
-                        </a>
-                    </div>
-
-                    <div class="w-full px-4">
-                        <a href="/join" class="block text-base font-bold py-0.5 text-klyr-dark hover:text-klyr-red"
-                           onclick="closeMobileMenu()">
-                            JOIN THE MOVEMENT
-                        </a>
-                    </div>
-
-                    <div class="w-full px-4">
-                        <button id="mobile-global-toggle"
-                                class="text-base font-normal py-0.5 text-klyr-dark hover:text-klyr-red flex items-center w-full justify-start"
-                                onclick="closeMobileMenu(); openModal();">
-                            <i class="fas fa-globe text-base mr-2"></i>
-                            Select Region / Language
-                        </button>
-                    </div>
-                </div>
-
-                <!-- CTA Button at Bottom -->
-                <!-- mt-auto pushes this to the bottom of the flex container -->
-                <div class="px-4 pb-8 mt-auto text-center">
-                    <a href="/enterprise-request" 
-                       class="block w-1/2 mx-auto bg-klyr-dark text-white text-center py-2 rounded uppercase font-bold text-xs tracking-wide hover:bg-klyr-red transition-colors"
-                       onclick="closeMobileMenu()">
-                       Request Enterprise Access
-                    </a>
-                </div>
-            </div>
-        </nav>
-        
+    <!-- Header with Static Close Button -->
+    <div class="flex justify-end p-4 border-b border-transparent">
+        <button id="close-mobile-menu-btn"
+                class="p-2 text-klyr-dark hover:text-klyr-red transition"
+                onclick="closeMobileMenu()">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
     </div>
 
+    <!-- Scrollable Navigation Container -->
+    <nav class="flex-1 overflow-y-auto">
+        <div class="flex flex-col min-h-full">
+            
+            <!-- Menu Items Wrapper -->
+            <div class="pb-8 space-y-0">
+
+                <div class="w-full px-4">
+                    <a href="/confusion" class="block text-base font-normal py-0.5 text-klyr-dark hover:text-klyr-red"
+                       onclick="closeMobileMenu()">
+                        THE PROBLEM
+                    </a>
+                </div>
+
+                <div class="w-full px-4">
+                    <a href="/solution" class="block text-base font-normal py-0.5 text-klyr-dark hover:text-klyr-red"
+                       onclick="closeMobileMenu()">
+                        THE SOLUTION
+                    </a>
+                </div>
+
+                <!-- PRODUCTS (dropdown parent) -->
+                <div class="w-full px-4" data-dropdown="products">
+                    <div class="flex justify-between items-center py-0.5">
+                        <a href="/products" class="text-base font-normal text-klyr-dark hover:text-klyr-red"
+                           onclick="closeMobileMenu()">
+                            PRODUCTS
+                        </a>
+
+                        <button id="mobile-products-toggle"
+                                class="mobile-toggle-btn text-klyr-dark hover:text-klyr-red w-7 h-7 rounded-full flex items-center justify-center mr-1">
+                            <i id="mobile-products-icon" class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                    </div>
+
+                    <div id="mobile-products-dropdown"
+                         class="mobile-dropdown-content pl-4">
+                         
+                        <!-- Platform Nested Group -->
+                        <div class="py-1">
+                            <div class="flex justify-between items-center py-1 cursor-pointer" onclick="toggleNested('nested-platform', 'icon-platform')">
+                                <span class="text-xs font-bold text-gray-900 uppercase">ALETHRA Platform</span>
+                                <i id="icon-platform" class="fas fa-plus text-xs text-gray-400 mr-2 transition-transform"></i>
+                            </div>
+                            <div id="nested-platform" class="mobile-dropdown-content pl-2">
+                                <a href="/technology" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">PLATFORM OVERVIEW</a>
+                                <a href="/enterprise-hardware" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">ALETHRA ENTERPRISE™</a>
+                                <a href="/vision" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">ALETHRA MOBILE APP™</a>
+                                <a href="/cloud" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">ALETHRA CLOUD™</a>
+                                <a href="/aletha" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">ALETHA™</a>
+                                <a href="/all-scratch" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">ALL-SCRATCH®</a>
+                            </div>
+                        </div>
+
+                        <!-- Modules Nested Group -->
+                        <div class="py-1">
+                            <div class="flex justify-between items-center py-1 cursor-pointer" onclick="toggleNested('nested-modules', 'icon-modules')">
+                                <span class="text-xs font-bold text-gray-900 uppercase">Modules & Engines</span>
+                                <i id="icon-modules" class="fas fa-plus text-xs text-gray-400 mr-2 transition-transform"></i>
+                            </div>
+                            <div id="nested-modules" class="mobile-dropdown-content pl-2">
+                                <a href="/scan" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">SCAN™</a>
+                                <a href="/sense" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">SENSE™</a>
+                                <a href="/env" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">ENV™</a>
+                                <a href="/flow" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">FLOW™</a>
+                                <a href="/node" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">NODE™</a>
+                                <a href="/mobil" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">MOBIL™</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">API & Integrations</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Security & Compliance Architecture</a>
+                            </div>
+                        </div>
+
+                        <!-- Industry Nested Group -->
+                        <div class="py-1">
+                            <div class="flex justify-between items-center py-1 cursor-pointer" onclick="toggleNested('nested-industry', 'icon-industry')">
+                                <span class="text-xs font-bold text-gray-900 uppercase">Industry Solutions</span>
+                                <i id="icon-industry" class="fas fa-plus text-xs text-gray-400 mr-2 transition-transform"></i>
+                            </div>
+                            <div id="nested-industry" class="mobile-dropdown-content pl-2">
+                                <a href="#" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Healthcare</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Agriculture</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Food & Bev</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Pharma</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">CONSTRUCTION</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">LOGISTICS</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Environmental Health</a>
+                            </div>
+                        </div>
+
+                        <!-- Programs Nested Group -->
+                        <div class="py-1">
+                            <div class="flex justify-between items-center py-1 cursor-pointer" onclick="toggleNested('nested-programs', 'icon-programs')">
+                                <span class="text-xs font-bold text-gray-900 uppercase">Programs & Cert</span>
+                                <i id="icon-programs" class="fas fa-plus text-xs text-gray-400 mr-2 transition-transform"></i>
+                            </div>
+                            <div id="nested-programs" class="mobile-dropdown-content pl-2">
+                                <a href="/certified" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">ALETHRA CERTIFIED</a>
+                                <a href="/regulatory" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Regulatory & Standards</a>
+                                <a href="/global" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Global Clarity Initiative</a>
+                                <a href="/case" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Case Studies</a>
+                                <a href="/sustainability" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Sustainability</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase" onclick="closeMobileMenu()">Resources & Documentation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="w-full px-4">
+                    <a href="/impact" class="block text-base font-normal py-0.5 text-klyr-dark hover:text-klyr-red"
+                       onclick="closeMobileMenu()">
+                        IMPACT
+                    </a>
+                </div>
+
+                <!-- IMPACT (dropdown parent) -->
+                <div class="w-full px-4" data-dropdown="contact">
+                    <div class="flex justify-between items-center py-0.5">
+                        <a href="/about" class="text-base font-normal text-klyr-dark hover:text-klyr-red"
+                           onclick="closeMobileMenu()">
+                            ABOUT
+                        </a>
+
+                        <button id="mobile-contact-toggle"
+                                class="mobile-toggle-btn text-klyr-dark hover:text-klyr-red w-7 h-7 rounded-full flex items-center justify-center mr-1">
+                            <i id="mobile-impact-icon" class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                    </div>
+
+                    <div id="mobile-contact-dropdown"
+                         class="mobile-dropdown-content pl-4">
+                        <div class="flex flex-col space-y-0 py-0.5">
+                            <a href="#" class="block px-4 py-2 text-sm text-klyr-dark hover:bg-gray-100 hover:text-klyr-red uppercase"
+                               onclick="closeMobileMenu()">CONTACT US</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ABOUT (dropdown parent) -->
+                
+                 
+
+
+                <div class="w-full px-4">
+                    <a href="/press" class="block text-base font-normal py-0.5 text-klyr-dark hover:text-klyr-red"
+                       onclick="closeMobileMenu()">
+                        PRESS & MEDIA
+                    </a>
+                </div>
+
+                <div class="w-full px-4">
+                    <a href="/join" class="block text-base font-bold py-0.5 text-klyr-dark hover:text-klyr-red"
+                       onclick="closeMobileMenu()">
+                        JOIN THE MOVEMENT
+                    </a>
+                </div>
+
+                <div class="w-full px-4">
+                    <button id="mobile-global-toggle"
+                            class="text-base font-normal py-0.5 text-klyr-dark hover:text-klyr-red flex items-center w-full justify-start"
+                            onclick="closeMobileMenu(); openModal();">
+                        <i class="fas fa-globe text-base mr-2"></i>
+                        Select Region / Language
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+</div>

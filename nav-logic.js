@@ -71,24 +71,18 @@ function initNavLogic() {
     const closeMobileMenuBtn = $("close-mobile-menu-btn");
     const mobileMenuOverlay = $("mobile-menu-overlay");
 
-    /* FIXED: Dropdown sections (solution → products) */
-    const dropdowns = {
-        products: {
-            toggle: $("mobile-products-toggle"),
-            dropdown: $("mobile-products-dropdown"),
-            icon: $("mobile-products-icon")
-        },
-        impact: {
-            toggle: $("mobile-impact-toggle"),
-            dropdown: $("mobile-impact-dropdown"),
-            icon: $("mobile-impact-icon")
-        },
-        about: {
-            toggle: $("mobile-about-toggle"),
-            dropdown: $("mobile-about-dropdown"),
-            icon: $("mobile-about-icon")
-        }
-    };
+    /* ===== AUTO-DETECTED DROPDOWNS (REPLACES HARD-CODED LIST) ===== */
+    const dropdowns = {};
+
+    document.querySelectorAll("[data-dropdown]").forEach(section => {
+        const name = section.dataset.dropdown;
+
+        dropdowns[name] = {
+            toggle: document.getElementById(`mobile-${name}-toggle`),
+            dropdown: document.getElementById(`mobile-${name}-dropdown`),
+            icon: document.getElementById(`mobile-${name}-icon`)
+        };
+    });
 
     /* Mobile globe icon */
     const mobileGlobeBtn = $("mobile-globe-btn");
@@ -219,7 +213,7 @@ function initNavLogic() {
 
 
     /* ================================================================
-       8. GENERIC DROPDOWN ACCORDION
+       8. AUTO-DETECT DROPDOWN ACCORDION SYSTEM
     ================================================================= */
     function toggleDropdown(toggleBtn, dropdownEl, iconEl) {
         const isOpen = dropdownEl.classList.contains("open");
@@ -254,15 +248,12 @@ function initNavLogic() {
         toggleBtn?.classList.remove("bg-gray-100");
     }
 
-    dropdowns.products.toggle?.addEventListener("click", () =>
-        toggleDropdown(dropdowns.products.toggle, dropdowns.products.dropdown, dropdowns.products.icon)
-    );
-    dropdowns.impact.toggle?.addEventListener("click", () =>
-        toggleDropdown(dropdowns.impact.toggle, dropdowns.impact.dropdown, dropdowns.impact.icon)
-    );
-    dropdowns.about.toggle?.addEventListener("click", () =>
-        toggleDropdown(dropdowns.about.toggle, dropdowns.about.dropdown, dropdowns.about.icon)
-    );
+    /* Attach listeners to ALL auto-detected dropdowns */
+    Object.values(dropdowns).forEach(({ toggle, dropdown, icon }) => {
+        toggle?.addEventListener("click", () =>
+            toggleDropdown(toggle, dropdown, icon)
+        );
+    });
 
 
     /* ================================================================
