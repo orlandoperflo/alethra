@@ -175,8 +175,8 @@
 
     
 <div class="bg-white shadow-sm sticky top-0 z-50" id="nav-placeholder"></div>
- 
-        <!-- SECTION 1 (from 1.png) -->
+ <main>
+           <!-- SECTION 1 (from 1.png) -->
         <!-- Hero Padding Rules: Desktop Top 6rem (pt-24), Mobile Top 4rem (pt-16) -->
         <!-- Hero Padding Rules: Desktop Bottom 3rem (pb-12), Mobile Bottom 2rem (pb-8) -->
         <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12 border-b-0">
@@ -230,7 +230,8 @@
         <!-- SECTION 2 (from 2.png) -->
         <!-- Vertical White Space Rule: Top padding + Previous Bottom Padding <= 2rem(mob)/3rem(desk) -->
         <!-- Using section-gap classes defined in style -->
-        <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 section-gap-top section-gap-bottom">
+        <!-- UPDATED: Changed section-gap-bottom to pb-4 md:pb-6 for precise spacing control -->
+        <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 section-gap-top pb-4 md:pb-6">
             <h2 class="text-3xl md:text-5xl font-extrabold text-klyr-dark uppercase mb-8 md:mb-12 text-left leading-tight">
                 MOBILE-FIRST<br>
                 ENTERPRISE-READY<br>
@@ -259,7 +260,8 @@
                 </div>
 
                 <!-- Col 2 -->
-                <div class="border-l-2 md:border-l-2 border-klyr-dark pl-6 border-opacity-20 md:border-opacity-100 border-l-gray-300 md:border-l-gray-300">
+                <!-- UPDATED: Added 'md:' prefix to border-l-2 and pl-6 to remove them on mobile -->
+                <div class="md:border-l-2 border-klyr-dark md:pl-6 border-opacity-20 md:border-opacity-100 border-l-gray-300 md:border-l-black">
                     <div class="text-klyr-red text-4xl mb-4">
                         <i class="fas fa-users"></i> <!-- People Icon representation -->
                     </div>
@@ -281,7 +283,8 @@
                 </div>
 
                 <!-- Col 3 -->
-                <div class="border-l-2 md:border-l-2 border-klyr-dark pl-6 border-opacity-20 md:border-opacity-100 border-l-gray-300 md:border-l-gray-300">
+                <!-- UPDATED: Added 'md:' prefix to border-l-2 and pl-6 to remove them on mobile -->
+                <div class="md:border-l-2 border-klyr-dark md:pl-6 border-opacity-20 md:border-opacity-100 border-l-gray-300 md:border-l-black">
                     <div class="text-klyr-red text-4xl mb-4">
                         <i class="fas fa-cloud-upload-alt"></i> <!-- Cloud Icon representation -->
                     </div>
@@ -316,7 +319,7 @@
                     <li>Diverse product authenticity</li>
                     <li>Variable workflow data from real operations</li>
                 </ul>
-                <p class="text-base md:text-lg font-bold text-klyr-dark mt-6">
+                <p class="text-base md:text-lg font-bold text-klyr-dark mt-6 md:mt-12">
                     This creates the strongest clarity intelligence model in the world.
                 </p>
             </div>
@@ -324,14 +327,15 @@
 
 
         <!-- SECTION 3 (from 3.png) -->
-        <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 section-gap-top section-gap-bottom">
+        <!-- UPDATED: Replaced section-gap-top/bottom with pt-4 md:pt-6 pb-4 md:pb-6 (Total gap 2rem/3rem) -->
+        <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-6 pb-4 md:pb-6">
             <h2 class="text-2xl md:text-4xl font-extrabold text-klyr-dark uppercase mb-8 md:mb-12 text-left leading-tight">
                 A VERIFIED CONTRIBUTOR NETWORK<br>
                 (NOT PUBLIC, NOT OPEN)
             </h2>
 
             <!-- 4 Column Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-8 mb-8 text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-8 mb-8 md:mb-12 text-left">
                 <!-- Col 1 -->
                 <div class="md:border-r-2 border-black pr-4">
                     <h3 class="font-bold text-sm text-klyr-dark mb-2">Enterprise Operators</h3>
@@ -410,7 +414,8 @@
         </section>
 
         <!-- SECTION 4 (from 4.png) -->
-        <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 section-gap-top pb-8 md:pb-12">
+        <!-- UPDATED: Replaced section-gap-top with pt-4 md:pt-6 to complete the gap -->
+        <section class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-0 pb-8 md:pb-12">
             <h2 class="text-2xl md:text-4xl font-extrabold text-klyr-dark uppercase mb-6 text-left leading-tight">
                 WHY JOIN <span class="text-klyr-red">CLARITY CROWD™</span>
             </h2>
