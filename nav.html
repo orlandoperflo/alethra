@@ -170,14 +170,17 @@
                     </div>
 
                     <a href="/press" class="nav-item flex items-center h-full hover:text-klyr-red transition-colors">PRESS & MEDIA</a>
-                    <a href="/join" class="nav-item font-bold flex items-center h-full hover:text-klyr-red transition-colors">JOIN THE MOVEMENT</a>
+                    <a href="/join" class="nav-item flex items-center h-full hover:text-klyr-red transition-colors">JOIN THE MOVEMENT</a>
                 </nav>
 
                 <!-- Desktop Icons -->
-                <i id="global-icon-desktop"
-                   class="fas fa-globe text-gray-500 hover:text-klyr-red cursor-pointer transition md:ml-4 hidden md:block"
-                   onclick="openModal()"></i>
-
+                <!-- UPDATED: Wrapped text and icon in a clickable flex container -->
+                <div class="hidden md:flex items-center cursor-pointer group md:ml-4" onclick="openModal()">
+                    <i id="global-icon-desktop" class="fas fa-globe text-gray-500 group-hover:text-klyr-red transition-colors mr-2"></i>
+                    <span class="text-sm font-medium text-black group-hover:text-klyr-red transition-colors">GLOBAL</span>
+                </div>
+                
+               
                 <!-- Mobile Hamburger -->
                 <button id="mobile-menu-btn" type="button"
                         class="md:hidden text-gray-500 hover:text-klyr-red p-2 rounded-md focus:outline-none -mr-2">
@@ -352,7 +355,7 @@
                 </div>
 
                 <div class="w-full px-4">
-                    <a href="/join" class="block text-base font-bold py-0.5 text-klyr-dark hover:text-klyr-red"
+                    <a href="/join" class="block text-base font-normal py-0.5 text-klyr-dark hover:text-klyr-red"
                        onclick="closeMobileMenu()">
                         JOIN THE MOVEMENT
                     </a>
